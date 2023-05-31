@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Hourglass</title>
+    <defs>
+        <path d="M17,0 C17.5,0 18,0.5 18,1 C18,1.5 17.5,2 17,2 C17,6.16922917 14.392943,10.6583166 11.2173732,11.9190829 L11,12 L11.2173732,12.0809171 C14.392943,13.3416834 17,17.8307708 17,22 C17.5,22 18,22.5 18,23 C18,23.4642857 17.5688776,23.9285714 17.1069606,23.9925292 L17,24 L1,24 C0.5,24 0,23.5 0,23 C0,22.5 0.5,22 1,22 C1,17.8307708 3.60705704,13.3416834 6.78262685,12.0809171 L7,12 C3.72690625,10.8625313 1,6.26398437 1,2 C0.5,2 0,1.5 0,1 C0,0.5 0.5,0 1,0 L17,0 Z M9,13.5 C6.5,13.5 4,16 3.5,19 L3.5,19 L14.5,19 L14.4551162,18.7578919 C13.8648649,15.866691 11.4324324,13.5 9,13.5 Z M15,2 L3,2 L3.00391849,2.298184 C3.13141639,7.1386 6.34540969,10.5 9,10.5 C11.6050156,10.5 15.005,7 15,2 L15,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Hourglass" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(3.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-3.000000, 0.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

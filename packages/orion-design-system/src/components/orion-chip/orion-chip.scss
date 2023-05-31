@@ -1,0 +1,175 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+ * @prop --orion-chip-color__bg: HEX color value of the background and border
+ */
+
+/**
+ * @prop --orion-chip-color__text: HEX color value of the label and close button
+ */
+
+:host {
+  display: inline-block;
+  --orion-chip-color__bg: var(--orion-rhapsody-blue, #002244);
+  --orion-chip-color__text: var(--orion-white, #fff);
+}
+
+:host(:not([is-open])) {
+  display: none;
+}
+
+.orion-chip {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  font-weight: var(--orion-font-weight-semi-bold, 600);
+  line-height: 1;
+  font-size: var(--orion-font-size-label, 18px);
+  min-height: 44px;
+  padding: 8px 11px;
+  border: var(--orion-border-standard, 1px solid);
+  border-radius: 100px;
+  box-sizing: border-box;
+  background-color: var(--orion-white, #fff);
+  color: var(--orion-color-text, #333);
+  outline: none;
+  pointer-events: none;
+  cursor: default;
+
+  &--high {
+    border-color: var(--orion-red, #d50032);
+  }
+  &--medium {
+    border-color: var(--orion-orange, #f46335);
+  }
+  &--low {
+    border-color: var(--orion-yellow, #edb72b);
+  }
+  &--success {
+    border-color: var(--orion-green, #208500);
+  }
+  &--info {
+    border-color: var(--orion-rhapsody-blue, #002244);
+  }
+  &--custom {
+    border-color: var(--orion-chip-color__bg);
+    color: var(--orion-chip-color__text);
+  }
+
+  &.is-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  .white {
+    color: var(--orion-white, #fff);
+  }
+  .black {
+    color: var(--orion-black, #000);
+  }
+  .red {
+    color: var(--orion-alert-red, #d50032);
+  }
+  .orange {
+    color: var(--orion-alert-orange, #f46335);
+  }
+  .yellow {
+    color: var(--orion-alert-yellow, #edb72b);
+  }
+  .green {
+    color: var(--orion-alert-green, #208500);
+  }
+  .rhapsody-blue {
+    color: var(--orion-rhapsody-blue, #002244);
+  }
+
+  &--solid-bg {
+    &.orion-chip {
+      &--high {
+        background-color: var(--orion-red, #d50032);
+        color: var(--orion-white, #fff);
+      }
+      &--medium {
+        background-color: var(--orion-orange, #f46335);
+        color: var(--orion-black, #000);
+      }
+      &--low {
+        background-color: var(--orion-yellow, #edb72b);
+        color: var(--orion-black, #000);
+      }
+      &--success {
+        background-color: var(--orion-green, #208500);
+        color: var(--orion-white, #fff);
+      }
+      &--info {
+        background-color: var(--orion-rhapsody-blue, #002244);
+        color: var(--orion-white, #fff);
+      }
+      &--custom {
+        background-color: var(--orion-chip-color__bg);
+        color: var(--orion-chip-color__text);
+      }
+    }
+  }
+
+  &__close-btn {
+    float: right;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--orion-icon-size, 24px);
+    pointer-events: all;
+    margin: 0;
+    padding: 0;
+
+    .orion-icon {
+      display: flex;
+    }
+  }
+
+  &:has(.orion-chip__close-btn) {
+    &.orion-chip {
+      &--high:focus-visible {
+        outline: var(--orion-border-thicker) rgba(213, 0, 50, 0.25);
+      }
+      &--medium:focus-visible {
+        outline: var(--orion-border-thicker) rgba(244, 99, 53, 0.25);
+      }
+      &--low:focus-visible {
+        outline: var(--orion-border-thicker) rgba(237, 183, 43, 0.25);
+      }
+      &--success:focus-visible {
+        outline: var(--orion-border-thicker) rgba(32, 133, 0, 0.25);
+      }
+      &--info:focus-visible {
+        outline: var(--orion-border-thicker) rgba(12, 35, 64, 0.25);
+      }
+      &--custom:focus-visible {
+        outline: var(--orion-border-thicker) rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+
+::slotted(*) {
+  display: inline;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-chip {
+    min-height: 32px;
+    font-size: var(--orion-font-size-label, 16px);
+    padding: 4px 8px;
+
+    &.is-open {
+      gap: 9px;
+    }
+
+    &__close-btn {
+      font-size: var(--orion-icon-size, 20px);
+    }
+  }
+}

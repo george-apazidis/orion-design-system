@@ -1,0 +1,180 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+* @prop --orion-subheader-top-value-mobile: top starting position of subheader on mobile (default is 60px)
+* @prop --orion-subheader-top-value-desktop: top starting position of subheader on desktop (default is 80px)
+* @prop --orion-subheader-bg-color: Background color of subheader (default is #334e69)
+* @prop --orion-subheader-color: Text color of subheader (default is #fff)
+* @prop --orion-subheader-height-mobile: Height of subheader on mobile (default is 120px)
+* @prop --orion-subheader-height-desktop: Height of subheader on desktop (default is 120px)
+* @prop --orion-subheader-padding-x-mobile: Left/right padding of subheader on mobile (default is 18px)
+* @prop --orion-subheader-padding-x-desktop: Left/right padding of subheader on desktop (default is 24px)
+* @prop --orion-subheader-padding-y-mobile: Top/bottom padding of subheader on mobile (default is 16px)
+* @prop --orion-subheader-padding-y-desktop: Top/bottom padding of subheader on desktop (default is 16px)
+* @prop --orion-subheader-vertical-align: Alignment of subheader content. Can be set to center, flex-start or flex-end. (default is center)
+*/
+ 
+:host {
+  display: block;
+  --orion-subheader-top-value-mobile: 60px;
+  --orion-subheader-top-value-desktop: 80px;
+  --orion-subheader-bg-color: var(--orion-rhapsody-blue-80, #334e69);
+  --orion-subheader-color: var(--orion-white, #fff);
+  --orion-subheader-height-mobile: 120px;
+  --orion-subheader-height-desktop: 120px;
+  --orion-subheader-padding-x-mobile: 18px;
+  --orion-subheader-padding-x-desktop: 24px;
+  --orion-subheader-padding-y-mobile: 16px;
+  --orion-subheader-padding-y-desktop: 16px;
+  --orion-subheader-vertical-align: center;
+}
+
+.orion-subheader {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: var(--orion-subheader-vertical-align);
+  align-content: var(--orion-subheader-vertical-align);
+  white-space: nowrap;
+  width: 100%;
+  height: var(--orion-subheader-height-mobile);
+  margin: 0;
+  padding-left: var(--orion-subheader-padding-x-mobile);
+  padding-right: var(--orion-subheader-padding-x-mobile);
+  padding-top: var(--orion-subheader-padding-y-mobile);
+  padding-bottom: var(--orion-subheader-padding-y-mobile);
+  gap: 0;
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  background-color: var(--orion-subheader-bg-color);
+  color: var(--orion-subheader-color);
+  border: none;
+  border-top: var(--orion-border-standard, 1px solid) var(--orion-white, #fff); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: translate(0, -100%);
+  z-index: var(--orion-z-negative, -1);
+  visibility: hidden;
+  transition: var(--orion-transition, 200ms ease-in-out);
+
+  &__named-slots {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: var(--orion-subheader-vertical-align);
+    align-content: var(--orion-subheader-vertical-align);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  &.is-open {
+    top: var(--orion-subheader-top-value-mobile);
+    transform: translate(0, 0);
+    z-index: var(--orion-z-high, 500);
+    visibility: visible;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 24px;
+    background-color: transparent;
+    color: var(--orion-subheader-color);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 0;
+    height: 100%;
+
+    /* For browsers that don't support :focus-visible */
+    &:focus {
+      outline: var(--orion-border-thicker, 4px solid) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+      width: fit-content;
+    }
+
+    /* Remove :focus styling for browsers that do support :focus-visible */
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Add focus styling back in browsers that do support :focus-visible */
+    &:focus-visible {
+      outline: var(--orion-border-thicker, 4px solid) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+      width: fit-content;
+    }
+  }
+
+  &__named-slots-with-close-btn {
+    width: calc(100% - 48px);
+  }
+  &-content-with-close-btn {
+    margin-right: 48px;
+  }
+
+  &-content {
+    flex: 1;
+  }
+}
+
+.orion-subheader__left,
+::slotted([slot="orion-subheader-left"]),
+.orion-subheader__center,
+::slotted([slot="orion-subheader-center"]),
+.orion-subheader__right,
+::slotted([slot="orion-subheader-right"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: var(--orion-subheader-vertical-align);
+  align-content: var(--orion-subheader-vertical-align);
+  margin: 0;
+  padding: 0;
+  gap: var(--orion-space-md, 8px);
+}
+
+.orion-subheader__left,
+::slotted([slot="orion-subheader-left"]) {
+  justify-content: flex-start;
+}
+.orion-subheader__left {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.orion-subheader__center {
+  justify-content: center;
+}
+
+.orion-subheader__right,
+::slotted([slot="orion-subheader-right"]) {
+  justify-content: flex-end;
+}
+.orion-subheader__right {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-subheader {
+    height: var(--orion-subheader-height-desktop);
+    padding-left: var(--orion-subheader-padding-x-desktop);
+    padding-right: var(--orion-subheader-padding-x-desktop);
+    padding-top: var(--orion-subheader-padding-y-desktop);
+    padding-bottom: var(--orion-subheader-padding-y-desktop);
+
+    &.is-open {
+      top: var(--orion-subheader-top-value-desktop);
+    }
+  }
+}

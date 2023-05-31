@@ -1,0 +1,77 @@
+/* Typography styles */
+
+:root {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  font-size: var(--orion-font-size-body, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  line-height: var(--orion-line-height-normal, 24px);
+  color: var(--orion-color-text, #333);
+  text-align: left;
+}
+
+h1 {
+  font-size: var(--orion-font-size-title1, 32px);
+  line-height: var(--orion-line-height-xl, 40px);
+}
+h2 {
+  font-size: var(--orion-font-size-title2, 28px);
+  line-height: var(--orion-line-height-xl, 40px);
+}
+h3 {
+  font-size: var(--orion-font-size-title3, 24px);
+  line-height: var(--orion-line-height-lg, 32px);
+}
+h4 {
+  font-size: var(--orion-font-size-title4, 20px);
+  line-height: var(--orion-line-height-md, 24px);
+}
+h5 {
+  font-size: var(--orion-font-size-title5, 18px);
+  line-height: var(--orion-line-height-md, 24px);
+}
+h6 {
+  font-size: var(--orion-font-size-title6, 13px);
+  line-height: var(--orion-line-height-sm, 16px);
+}
+label {
+  font-size: var(--orion-font-size-label, 18px);
+  line-height: var(--orion-line-height-md, 24px);
+}
+p,
+li {
+  font-size: var(--orion-font-size-body, 18px);
+  line-height: var(--orion-line-height-md, 24px);
+}
+small {
+  font-size: var(--orion-font-size-small, 13px);
+  line-height: var(--orion-line-height-sm, 16px);
+}
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+strong,
+b {
+  font-weight: var(--orion-font-weight-semi-bold, 600);
+}
+
+@media screen and (min-width: 769px) {
+  :root {
+    font-size: var(--orion-font-size-body, 16px);
+  }
+  h5 {
+    font-size: var(--orion-font-size-title5, 16px);
+  }
+  label {
+    font-size: var(--orion-font-size-label, 16px);
+  }
+  p,
+  li {
+    font-size: var(--orion-font-size-body, 16px);
+  }
+}

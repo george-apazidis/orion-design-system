@@ -1,0 +1,139 @@
+@use '../../css/_orion-base.css';
+
+/**
+ * @prop --orion-toggle--vertical-align: Alignment of toggle label. Default is flex-start. Can be set to center or flex-end.
+ */
+
+:host {
+  --orion-toggle--vertical-align: flex-start;
+  display: block;
+}
+
+*::selection {
+  color: var(--orion-color-text, #333);
+  background-color: var(--orion-color-background--selection, #d8d9eb);
+}
+
+.orion-toggle {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: var(--orion-toggle--vertical-align);
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-body, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  padding: var(--orion-space-xxl, 18px) 0;
+  column-gap: var(--orion-space-md, 8px);
+  cursor: pointer;
+  transition: var(--orion-transition, 200ms ease-in-out);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.orion-toggle--disabled {
+  cursor: not-allowed;
+  user-select: none;
+  color: var(--orion-color-text--dimmed, #666);
+  -webkit-text-fill-color: var(--orion-color-text--dimmed, #666);
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.orion-toggle__input {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  min-width: 54px;
+  height: 32px;
+  background-color: var(--orion-gray-10, #e6e6e6);
+  border-radius: 50px;
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-text, #333);
+}
+.orion-toggle__input::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--orion-white, #fff);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-text, #333);
+  top: 0;
+  left: 0;
+  transition: var(--orion-transition, 200ms ease-in-out);
+}
+
+.orion-toggle input:checked ~ .orion-toggle__input {
+  background-color: var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+}
+.orion-toggle input:checked ~ .orion-toggle__input::after {
+  left: 22px;
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+}
+
+/* For browsers that don't support :focus-visible */
+.orion-toggle input:focus ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-text, #333);
+}
+.orion-toggle input:focus:checked ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+}
+/* Remove :focus styling for browsers that do support :focus-visible */
+.orion-toggle input:focus:not(:focus-visible) ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-text, #333);
+}
+.orion-toggle input:focus:not(:focus-visible):checked ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+}
+/* Add focus styling back in browsers that do support :focus-visible */
+.orion-toggle input:focus-visible ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-text, #333);
+}
+.orion-toggle input:focus-visible:checked ~ .orion-toggle__input {
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+}
+
+.orion-toggle input:disabled ~ .orion-toggle__input::after {
+  background-color: var(--orion-gray-10, #e6e6e6);
+  border: var(--orion-border-standard, 1px solid) var(--orion-gray-40, #999);
+}
+.orion-toggle input:disabled ~ .orion-toggle__input {
+  background-color: var(--orion-gray-20, #ccc);
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-gray-40, #999);
+}
+
+@media screen and (min-width: 769px) {
+  .orion-toggle {
+    width: fit-content;
+    justify-content: space-between;
+    font-size: var(--orion-font-size-body, 16px);
+    padding: var(--orion-space-md, 8px) 0;
+  }
+  .orion-toggle__input {
+    width: 40px;
+    min-width: 40px;
+    height: 24px;
+  }
+  .orion-toggle input:checked ~ .orion-toggle__input::after {
+    left: 16px;
+  }
+}

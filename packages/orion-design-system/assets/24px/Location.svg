@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Location</title>
+    <defs>
+        <path d="M8.15846258,8.892 C8.15846258,6.804 9.88199595,5.1 12.0060688,5.1 C14.118004,5.1 15.8415374,6.804 15.8415374,8.892 C15.8415374,10.992 14.118004,12.696 12.0060688,12.696 C9.88199595,12.696 8.15846258,10.992 8.15846258,8.892 M3,8.892 C3,10.788 3.60687795,12.552 4.62643291,13.992 L12.0060688,24 L19.2036413,14.22 C20.3324343,12.732 21,10.896 21,8.892 C21,3.996 16.9703304,0 12.0060688,0 C7.04180715,0 3,3.996 3,8.892 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Location" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

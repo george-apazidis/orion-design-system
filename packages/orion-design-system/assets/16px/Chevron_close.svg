@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Interface/Chevron close</title>
+    <defs>
+        <path d="M14.4833918,12.4130961 C14.8309768,12.7518146 15.3937896,12.7510976 15.7404694,12.4114948 C16.0871492,12.0718919 16.0864154,11.5220038 15.7388305,11.1832853 L8.62771935,4.25357059 C8.28077507,3.91547647 7.71922493,3.91547647 7.37228065,4.25357059 L0.261169544,11.1832853 C-0.0864154496,11.5220038 -0.0871492342,12.0718919 0.25953059,12.4114948 C0.606210414,12.7510976 1.16902325,12.7518146 1.51660824,12.4130961 L8,6.09508833 L14.4833918,12.4130961 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Interface/Chevron-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#002244" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

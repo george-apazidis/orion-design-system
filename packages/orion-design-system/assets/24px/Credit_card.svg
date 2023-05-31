@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Credit card</title>
+    <defs>
+        <path d="M24,10.1632424 L24,17.449009 C24,19.133156 22.656,20.5 21,20.5 L21,20.5 L3,20.5 C1.344,20.5 0,19.133156 0,17.449009 L0,17.449009 L0,10.1632424 L24,10.1632424 Z M7.8,11.993837 L3,11.993837 C2.676,11.993837 2.4,12.2623242 2.4,12.6040352 C2.4,12.9457462 2.676,13.2142334 3,13.2142334 L3,13.2142334 L7.8,13.2142334 C8.124,13.2142334 8.4,12.9457462 8.4,12.6040352 C8.4,12.2623242 8.124,11.993837 7.8,11.993837 L7.8,11.993837 Z M21,3.5 C22.656,3.5 24,4.87904795 24,6.563195 L24,6.563195 L24,7.72257159 L0,7.72257159 L0,6.563195 C0,4.87904795 1.344,3.5 3,3.5 L3,3.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Credit-card" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

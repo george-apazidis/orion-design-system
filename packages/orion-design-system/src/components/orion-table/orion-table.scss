@@ -1,0 +1,29 @@
+@use '../orion-data-table/orion-data-table-base.scss';
+
+/**
+* @prop --orion-table-column-min-width: min-width for columns
+* @prop --orion-table-width: width for the inner table component
+* @prop --orion-table-odd-row-background: background color for odd rows
+* @prop --orion-table-odd-row-background-hover: background color on hover for odd rows
+* @prop --orion-table-even-row-background: background color for even rows (ignored if table is lined)
+* @prop --orion-table-even-row-background-hover: background color on hover for even rows (ignored if table is lined)
+*/
+:host {
+  display: block;
+  
+  --orion-table-column-min-width: 160px;
+  --orion-table-width: auto;
+}
+
+.orion-table-wrapper {
+  width: var(--orion-table-width);
+  overflow-x: auto;
+}
+
+table {
+  width: var(--orion-table-width);
+}
+
+th {
+  min-width: var(--orion-table-column-min-width);
+}

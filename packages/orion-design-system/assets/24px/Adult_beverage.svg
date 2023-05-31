@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Travel &amp; Airport/Adult beverage</title>
+    <defs>
+        <path d="M7.84041158,1.2 L16.1773754,1.2 L16.8958656,6.612 C16.1278244,6.684 13.6131087,7.368 13.4272922,7.416 C9.16590212,8.484 7.61743187,7.224 7.13430915,6.6 L7.84041158,1.2 Z M18.4443359,8.892 L18.4443359,8.844 L17.341825,0.528 C17.3046617,0.228 17.0445187,0 16.7224369,0 L7.29535006,0 C6.98565601,0 6.72551301,0.228 6.67596196,0.528 L5.54867562,9.072 C5.424798,10.152 5.53628785,11.112 5.89553295,11.928 C6.79983958,14.004 8.91814688,15.384 11.3833115,15.588 L11.3833115,19.44 C8.90575912,19.536 6.45298224,20.256 6.45298224,21.708 C6.45298224,23.28 9.32694302,24 12.0026996,24 C14.6660684,24 17.5400292,23.28 17.5400292,21.708 C17.5400292,20.256 15.0996401,19.548 12.6220877,19.44 L12.6220877,15.588 C14.8271093,15.408 16.7224369,14.292 17.7877845,12.504 C18.382397,11.496 18.6177645,10.236 18.4443359,8.892 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Travel-&amp;-Airport/Adult-beverage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

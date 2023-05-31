@@ -1,0 +1,57 @@
+@use '../../css/_orion-base.css';
+
+/**
+ * @prop --orion-label--padding-right: Padding right of the label. Default: 8px
+ */
+
+:host {
+  --orion-label--padding-right: 8px;
+  display: block;
+}
+
+*::selection {
+  color: var(--orion-color-text, #333);
+  background-color: var(--orion-color-background--selection, #d8d9eb);
+}
+
+.orion-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-label, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  transition: var(--orion-transition, 200ms ease-in-out);
+}
+
+.orion-label__label {
+  padding: var(--orion-space-md, 8px) var(--orion-label--padding-right) var(--orion-space-md, 8px) 0;
+}
+.orion-label__label--disabled {
+  color: var(--orion-color-text--disabled, #666);
+}
+.orion-label__label--error {
+  color: var(--orion-color-error, #d50032);
+}
+.orion-label__conditional {
+  color: var(--orion-color-text--disabled, #666);
+  font-size: var(--orion-font-size-small, 13px);
+  line-height: var(--orion-line-height-sm, 16px);
+  padding: var(--orion-space-md, 8px) 0 var(--orion-space-md, 8px) var(--orion-space-md, 8px);
+}
+
+@media screen and (min-width: 769px) {
+  .orion-label {
+    font-size: var(--orion-font-size-label, 16px);
+  }
+}

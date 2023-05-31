@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Digital/Favorite/On</title>
+    <defs>
+        <path d="M8.2264,2.20256821 L8,2.50302143 L7.7664,2.20256821 C6.9336,1.12093664 5.6864,0.5 4.3264,0.5 C1.94,0.5 0,2.44293078 0,4.83293595 C0,5.87450709 0.3728,6.88242747 1.06,7.67722638 L7.5328,15.1949664 C7.87585449,15.6016779 8.13155111,15.6016779 8.46,15.1949664 L14.9336,7.67722638 C15.62,6.88242747 16,5.87450709 16,4.83293595 C16,2.44293078 14.0528,0.5 11.6664,0.5 C10.3136,0.5 9.06,1.12093664 8.2264,2.20256821 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Digital/Favorite/On" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

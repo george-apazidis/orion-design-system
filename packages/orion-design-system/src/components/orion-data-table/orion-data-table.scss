@@ -1,0 +1,208 @@
+@use '../../css/_orion-base.css';
+// /* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+// Base Table Styles
+@use './orion-data-table-base.scss';
+
+
+/**
+* @prop --orion-table-column-min-width: min-width for columns
+* @prop --orion-table-select-column-min-width: min-width for columns that use a dropdown select
+* @prop --orion-table-width: width for the inner table component
+* @prop --orion-table-checkbox-border: horizontal border for checkbox columns
+* @prop --orion-table-pinned-column-border: right-side border for pinned column
+* @prop --orion-table-odd-row-background: background color for odd rows
+* @prop --orion-table-odd-row-background-hover: background color on hover for odd rows
+* @prop --orion-table-even-row-background: background color for even rows (ignored if table is lined)
+* @prop --orion-table-even-row-background-hover: background color on hover for even rows (ignored if table is lined)
+*/
+:host {
+  display: block;
+  
+  --orion-table-column-min-width: 160px;
+  --orion-table-select-column-min-width: 175px;
+  --orion-table-width: auto;
+  --orion-table-checkbox-border: var(--orion-border-standard, 1px solid) var(--orion-gray-10, #e6e6e6);
+  --orion-table-pinned-column-border: var(--orion-border-thicker, 3px solid) var(--orion-gray-10, #e6e6e6);
+}
+
+.OrionTable {
+  position: relative;
+  * {
+    box-sizing: border-box;
+  }
+  &__table {
+    width: var(--orion-table-width);
+  }
+  &__wrapper {
+    overflow-x: auto;
+  }
+  .orion-table--striped {
+    .OrionTable__header--checkbox,
+    .OrionTable__data--checkbox {
+      border-right: var(--orion-table-checkbox-border);
+      &:not(:first-of-type) {
+        border-left: var(--orion-table-checkbox-border);
+      }
+      &.OrionTable__cell--sticky--last {
+        border-right: var(--orion-table-pinned-column-border);
+      }
+    }
+  }
+  &__cell {
+    &:not(.OrionTable__cell--sticky) {
+      &.OrionTable__cell--left {
+        text-align: left;
+      }
+      &.OrionTable__cell--center {
+        text-align: center;
+      }
+      &.OrionTable__cell--right {
+        text-align: right;
+      }
+    }
+    &.OrionTable__cell--sticky {
+      position: absolute;
+      &--last {
+        border-right: var(--orion-table-pinned-column-border);
+      }
+      & > span {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      &.OrionTable__cell--center > span {
+        justify-content: center;
+      }
+      &.OrionTable__cell--right > span {
+        justify-content: end;
+      }
+      &.OrionTable__header--checkbox,
+      &.OrionTable__data--checkbox {
+        padding: 0;
+        > span {
+          padding: 16px 12px;
+          align-items: center;
+        }
+      }
+      &.OrionTable__header--checkbox {
+        > span {
+          align-items: end;
+          bottom: 2px;
+        }
+      }
+    }
+  }
+  &__header {
+    position: relative;
+    min-width: var(--orion-table-column-min-width);
+    &.OrionTable__cell--sticky {
+      > span {
+        align-items: end;
+      }
+    }
+    &:not([data-sort-method="none"]) {
+      cursor: pointer;
+    }
+    .OrionTable__header-copy {
+      position: relative;
+      &::after {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        font-family: 'icons';
+      }
+    }
+    &[aria-sort="descending"] .OrionTable__header-copy::after {
+      content: "\f115";
+    }
+    &[aria-sort="ascending"] .OrionTable__header-copy::after {
+      content: "\f114";
+    }
+    &--checkbox {
+      min-width: 40px;
+      --orion-space-md: 0px;
+      --orion-space-xxl: 0px;
+      --orion-space-lg: 0px;
+      --orion-color-text--dimmed: var(--orion-white, #fff);
+      --orion-color-background: var(--orion-rhapsody-blue, #002244);
+      --orion-color-activation: var(--orion-white, #fff);
+      orion-checkbox[checked] {
+        --orion-color-background: var(--orion-atlantic-amethyst, #6244bb);
+      }
+      &:not(.OrionTable__cell--sticky) {
+        span {
+          position: relative;
+          bottom: -4px;
+        }
+      }
+    }
+    &--select {
+      min-width: var(--orion-table-select-column-min-width);
+    }
+  }
+  &__header-inner-wrapper {
+    &::after {
+      display: none;
+    }
+  }
+  &__data {
+    &--icon {
+      i {
+        margin-right: 8px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+    &--select {
+      box-shadow: none;
+      &:focus-within {
+        box-shadow: inset var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      }
+      &:not(.OrionTable__cell--sticky) {
+        position: relative;
+      }
+      select {
+        width: 100%;
+        color: var(--orion-gray-80, #333);
+        font-size: var(--orion-font-size-body, 16px);
+        line-height: var(--orion-line-height-normal, 24px);
+        background: none;
+        border: none;
+        cursor: pointer;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
+        &:focus {
+          outline: none;
+          &:active {
+            & + .OrionTable__select-arrow::after {
+              content: "\f11a";
+            }
+          }
+        }
+      }
+    }
+  }
+  &__select-arrow {
+    &::after {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-family: 'icons';
+      content: "\f11c";
+      pointer-events: none;
+    }
+  }
+  &__data-invalid-type {
+    color: var(--orion-color-error, #d50032);
+  }
+}

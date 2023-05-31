@@ -1,0 +1,74 @@
+@use '../../css/_orion-base.css';
+
+:host {
+  display: block;
+}
+
+textarea,
+input {
+  outline: none;
+}
+
+.orion-text-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  margin: 0;
+  padding: 0;
+}
+input {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: var(--orion-touch-size, 60px);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-text, #333);
+  border-radius: var(--orion-border-radius, 4px);
+  background-color: var(--orion-color-background, #fff);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-body, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  padding: var(--orion-space-xxl, 18px) var(--orion-space-lg, 12px);
+  transition: var(--orion-transition, 200ms ease-in-out);
+}
+input::placeholder {
+  color: var(--orion-color-text--dimmed, #666);
+  font-style: italic;
+  opacity: 1;
+}
+input:disabled {
+  background-color: var(--orion-color-background--dimmed, #e6e6e6);
+  color: var(--orion-color-text--dimmed, #666);
+  -webkit-text-fill-color: var(--orion-color-text--dimmed, #666);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-text--dimmed, #666);
+  opacity: 1;
+}
+input:focus {
+  -webkit-appearance: none;
+  appearance: none;
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+}
+input::selection {
+  background-color: var(--orion-color-background--selection, #d8d9eb);
+}
+.orion-text-input--error {
+  -webkit-appearance: none;
+  appearance: none;
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-error, #d50032);
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-error, #d50032);
+}
+
+@media screen and (min-width: 769px) {
+  input {
+    height: var(--orion-touch-size, 40px);
+    font-size: var(--orion-font-size-body, 16px);
+    padding: var(--orion-space-md, 8px);
+  }
+}

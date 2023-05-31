@@ -1,0 +1,190 @@
+:root {
+  /* COLORS */
+  /* Orion Primary Palette */
+  --orion-united-blue: #0033a0;
+  --orion-rhapsody-blue: #002244;
+  --orion-rhapsody-blue-80: #334e69;
+  --orion-atlantic-amethyst: #6244bb;
+  --orion-atlantic-amethyst-110: #49328c;
+  --orion-atlantic-amethyst-90: #8972cc;
+  --orion-runway-gray: #d4d4d0;
+  --orion-runway-gray-75: #dddddd;
+  --orion-runway-gray-50: #e7e7e5;
+  --orion-runway-gray-25: #f1f1f0;
+  --orion-dusk: #b6b8dc;
+  --orion-dusk-75: #c7c8e3;
+  --orion-dusk-50: #d8d9eb;
+  --orion-dusk-25: #eaeaf3;
+
+  /* Orion Secondary Palette */
+  --orion-steel-blue: #41748d;
+  --orion-premium-purple: #572c5f;
+  --orion-sky-blue: #69b3e7;
+  --orion-pacific-blue: #00b2a9;
+
+  /* Orion Grayscale Palette */
+  --orion-black: #000;
+  --orion-gray-80: #333;
+  --orion-gray-60: #666;
+  --orion-gray-40: #999;
+  --orion-gray-20: #ccc;
+  --orion-gray-10: #e6e6e6;
+  --orion-white: #fff;
+
+  /* Orion Message/Supporting Palette */
+  --orion-red: #d50032;
+  --orion-green: #208500;
+  --orion-orange: #f46335;
+  --orion-yellow: #edb72b;
+  --orion-info: var(--orion-rhapsody-blue);
+
+  /* Orion MileagePlus Membership Palette */
+  --orion-mp-silver: #c1c6c8;
+  --orion-mp-gold: #9f7d23;
+  --orion-mp-platinum: #7c878e;
+  --orion-mp-1k: #d4d4d0;
+  --orion-mp-gs: #25282a;
+
+  /* Base Colors */
+  --orion-color-text: var(--orion-gray-80);
+  --orion-color-background: var(--orion-white);
+  --orion-color-activation: var(--orion-atlantic-amethyst);
+  --orion-color-error: var(--orion-red);
+
+  /* Focus State */
+  --orion-color-focus: rgba(182, 184, 220, 0.5);
+  --orion-color-focus-25: rgba(182, 184, 220, 0.25);
+
+  /* Hover State */
+  --orion-color-hover-dark: var(--orion-atlantic-amethyst-90);
+  --orion-color-hover-medium: var(--orion-dusk-50);
+  --orion-color-hover-light: var(--orion-dusk-25);
+
+  /* Active State */
+  --orion-color-active: var(--orion-atlantic-amethyst-110);
+
+  /* Selection State */
+  --orion-color-background--selection: var(--orion-dusk-50);
+
+  /* Disabled State */
+  --orion-color-text--dimmed: var(--orion-gray-60);
+  --orion-color-background--dimmed: var(--orion-gray-10);
+
+  /* BORDERS */
+  --orion-border-radius: 4px;
+  --orion-border-radius-sm: 2px;
+  --orion-border-radius-md: 8px;
+  --orion-border-width: 1px;
+  --orion-border-width-thick: 3px;
+  --orion-border-width-thicker: 4px;
+
+  --orion-border-standard: var(--orion-border-width) solid;
+  --orion-border-thicker: var(--orion-border-width-thicker) solid;
+  --orion-box-shadow-standard: inset 0 0 0 var(--orion-border-width);
+  --orion-box-shadow-thick: 0 0 0 var(--orion-border-width-thick);
+  --orion-box-shadow-thicker: 0 0 0 var(--orion-border-width-thicker);
+
+  /* BREAKPOINTS */
+  --orion-breakpoint-xs: 414px;
+  --orion-breakpoint-sm: 744px;
+  --orion-breakpoint-desktop: 769px;
+  --orion-breakpoint-md: 1024px;
+  --orion-breakpoint-lg: 1440px;
+  --orion-breakpoint-xl: 1920px;
+
+  /* CONTAINERS */
+  --orion-container-width-xs: 368px;
+  --orion-container-width-sm: 656px;
+  --orion-container-width-md: 944px;
+  --orion-container-width-lg: 1320px;
+  --orion-container-width-xl: 1792px;
+
+  /* SPACING */
+  --orion-space-xxs: 0px;
+  --orion-space-xs: 4px;
+  --orion-space-sm: 6px;
+  --orion-space-md: 8px;
+  --orion-space-lg: 12px;
+  --orion-space-xl: 16px;
+  --orion-space-xxl: 18px;
+  --orion-space-xxxl: 32px;
+
+  /* SIZING */
+  --orion-touch-size: 60px;
+  --orion-touch-size-sm: 32px;
+
+  /* ICON SIZING */
+  --orion-icon-size: 24px;
+  --orion-icon-size-sm: 20px;
+
+  /* TYPOGRAPHY */
+
+  /* FONT FAMILY */
+  --orion-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  /* FONT SIZE */
+  --orion-font-size-title1: 32px;
+  --orion-font-size-title2: 28px;
+  --orion-font-size-title3: 24px;
+  --orion-font-size-title4: 20px;
+  --orion-font-size-title5: 18px;
+  --orion-font-size-title6: 13px;
+  --orion-font-size-body: 18px;
+  --orion-font-size-label: 18px;
+  --orion-font-size-small: 13px;
+
+  /* LINE HEIGHT */
+  --orion-line-height-sm: 16px;
+  --orion-line-height-md: 24px;
+  --orion-line-height-normal: 24px;
+  --orion-line-height-lg: 32px;
+  --orion-line-height-xl: 40px;
+
+  /* FONT WEIGHT */
+  --orion-font-weight-thin: 100;
+  --orion-font-weight-extra-light: 200;
+  --orion-font-weight-light: 300;
+  --orion-font-weight-normal: 400;
+  --orion-font-weight-medium: 500;
+  --orion-font-weight-semi-bold: 600;
+  --orion-font-weight-bold: 700;
+  --orion-font-weight-extra-bold: 800;
+  --orion-font-weight-heavy: 900;
+
+  /* ANIMATION */
+  --orion-transition: 200ms ease-in-out;
+  --orion-transition--slow: 400ms ease-in-out;
+
+  /* Z-INDEX */
+  --orion-z-negative: -1;
+  --orion-z-base: 1;
+  --orion-z-low: 10;
+  --orion-z-mid: 100;
+  --orion-z-high: 500;
+  --orion-z-very-high: 5000;
+  --orion-z-extreme: 9999;
+
+
+  /* TABLES */
+  --orion-table-even-row-background: var(--orion-runway-gray-25, #F1F1F0);
+  --orion-table-even-row-background-hover: var(--orion-dusk-50, #D8D9EB);
+  --orion-table-odd-row-background: var(--orion-white, #fff);
+  --orion-table-odd-row-background-hover: var(--orion-dusk-25, #EAEAF3);
+}
+
+/* DESKTOP VALUES */
+@media screen and (min-width: 769px) {
+  :root {
+    /* SIZING */
+    --orion-touch-size: 40px;
+
+    /* ICON SIZING */
+    --orion-icon-size: 20px;
+    --orion-icon-size-sm: 16px;
+
+    /* FONT SIZE */
+    --orion-font-size-title5: 16px;
+    --orion-font-size-body: 16px;
+    --orion-font-size-label: 16px;
+  }
+}

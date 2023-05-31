@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Digital/Trash</title>
+    <defs>
+        <path d="M13.6666667,4 L13.6666667,14 C13.6666667,15.1045695 12.7712362,16 11.6666667,16 L3.66666667,16 C2.56209717,16 1.66666667,15.1045695 1.66666667,14 L1.66666667,4 L13.6666667,4 Z M10,0 C10.5522847,-1.01453063e-16 11,0.44771525 11,1 L13.6666667,1 C14.2189514,1 14.6666667,1.44771525 14.6666667,2 L14.6666667,3 L0.666666667,3 L0.666666667,2 C0.666666667,1.44771525 1.11438192,1 1.66666667,1 L5,1 L5,1 C5,0.44771525 5.44771525,1.01453063e-16 6,0 L10,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Digital/Trash" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Trash" transform="translate(0.333333, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#6244BB" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-0.333333, 0.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

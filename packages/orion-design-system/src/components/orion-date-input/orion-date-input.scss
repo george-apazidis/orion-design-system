@@ -1,0 +1,225 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/* Flatpickr overrides */
+@use 'orion-date-input-flatpickr-overrides.css';
+
+/* Flatpickr light theme */
+@import '~flatpickr/dist/themes/light.css';
+
+/**
+@prop --orion-date-input-min-width: Minimum width of the date input. Defaults to 140px.
+@prop --orion-date-input-max-width: Maximum width of the date input. Defaults to 398px.
+@prop --orion-date-input-hover: Background color of the date input when hovered. Defaults to #eaeaf3.
+@prop --orion-date-input-focus-box-shadow: Box shadow of the date input when focused. Defaults to 0 0 0 4px rgba(241, 241, 240, 0.25).
+*/
+:host {
+  display: block;
+  --orion-date-input-min-width: 140px;
+  --orion-date-input-max-width: 398px;
+  --orion-date-input-hover: var(--orion-dusk-25, #eaeaf3);
+  --orion-date-input-focus-box-shadow: 0 0 0 4px var(--orion-color-focus-25, rgba(241, 241, 240, 0.25));
+
+  @media screen and (max-width: 769px) {
+    --orion-date-input-min-width: 124px;
+  }
+}
+
+// first label
+::slotted([slot='orion-date-input-first-label']) {
+  min-width: var(--orion-date-input-min-width);
+  width: 50%;
+  flex-grow: 1;
+}
+
+// second label
+::slotted([slot='orion-date-input-second-label']) {
+  min-width: var(--orion-date-input-min-width);
+  width: calc(50% + 40px);
+  flex-grow: 2;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.orion-date-input {
+  &__wrapper {
+    display: block;
+    max-width: var(--orion-date-input-max-width);
+    &--inline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .orion-date-input__label {
+        --orion-label--padding-right: 0;
+        orion-label {
+          min-width: 0;
+        }
+      }
+      .orion-date-input__inner-wrapper {
+        flex-grow: 1;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    orion-label {
+      min-width: var(--orion-date-input-min-width);
+      width: 50%;
+      flex-grow: 1;
+      &:last-of-type {
+        width: calc(50% + 40px);
+        flex-grow: 2;
+      }
+    }
+  }
+  &__inner-wrapper {
+    position: relative;
+    display: flex;
+    border-radius: var(--orion-border-radius, 4px);
+    transition: var(--orion-transition, 200ms ease-in-out);
+    &:focus-within {
+      .orion-date-input__button {
+        &:not(&--open) {
+          .orion-date-input__button-icon {
+            color: var(--orion-color-activation, #6244bb);
+          }
+        }
+      }
+      .orion-date-input__status {
+        box-shadow: inset 0 0 0 2px var(--orion-color-activation, #6244bb);
+      }
+    }
+    &--error {
+      .orion-date-input__button-icon {
+        color: var(--orion-color-error, #d50032);
+      }
+      .orion-date-input__status {
+        box-shadow: inset 0 0 0 2px var(--orion-color-error, #d50032);
+      }
+    }
+  }
+  &__status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: var(--orion-z-low, 10);
+    border-radius: var(--orion-border-radius, 4px);
+    box-shadow: inset 0 0 0 2px transparent;
+    transition: var(--orion-transition, 200ms ease-in-out);
+  }
+  &__button {
+    border: var(--orion-border-width, 1px) solid var(--orion-gray-80, #333);
+    border-radius: 0 var(--orion-border-radius, 4px) var(--orion-border-radius, 4px) 0;
+    padding: 8px 9px 6px;
+    background: none;
+    transition: var(--orion-transition, 200ms ease-in-out);
+    &:not(&--open) {
+      &:focus {
+        outline: none;
+        background: var(--orion-date-input-hover, #eaeaf3);
+      }
+    }
+    &:disabled {
+      background-color: var(--orion-color-background--dimmed, #e6e6e6);
+      color: var(--orion-color-text--dimmed, #666);
+      border-color: var(--orion-color-text--dimmed, #666);
+      cursor: auto;
+      .orion-date-input__button-icon {
+        color: var(--orion-gray-60, #666);
+      }
+    }
+    @media screen and (max-width: 769px) {
+      width: var(--orion-touch-size, 60px);
+      flex-shrink: 0;
+    }
+    &--open {
+      outline: none;
+      background: var(--orion-atlantic-amethyst, #6244bb);
+      &#{&} {
+        border-left-color: var(--orion-atlantic-amethyst, #6244bb);
+      }
+      .orion-date-input__button-icon {
+        color: white;
+      }
+    }
+  }
+  &__button-icon {
+    font-size: var(--orion-icon-size, 20px);
+    line-height: var(--orion-icon-size, 20px);
+    color: var(--orion-atlantic-amethyst, #6244bb);
+    transition: var(--orion-transition, 200ms ease-in-out);
+  }
+  &__text-input {
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 8px 6px;
+    flex: 1 1;
+    height: var(--orion-touch-size, 60px);
+    min-width: var(--orion-date-input-min-width);
+    border-radius: var(--orion-border-radius, 4px) 0 0 var(--orion-border-radius, 4px);
+    border: var(--orion-border-standard, 1px solid) var(--orion-color-text, #333);
+    color: var(--orion-color-text, #333);
+    font-size: var(--orion-font-size-body, 16px);
+    line-height: var(--orion-line-height-normal, 24px);
+    border-right: none;
+    transition: var(--orion-transition, 200ms ease-in-out);
+    background: var(--orion-white, #fff);
+    text-transform: uppercase;
+    &:nth-of-type(2) {
+      border-radius: 0;
+    }
+    &:focus {
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &:disabled {
+      background-color: var(--orion-color-background--dimmed, #e6e6e6);
+      color: var(--orion-color-text--dimmed, #666);
+      border-color: var(--orion-color-text, #333);
+      opacity: 1;
+    }
+    &--active {
+      background-color: var(--orion-dusk-25, #eaeaf3);
+    }
+    &::placeholder {
+      text-transform: uppercase;
+      font-style: italic;
+      color: var(--orion-gray-60, #666);
+      opacity: 1;
+    }
+    @media screen and (max-width: 769px) {
+      min-width: 0;
+    }
+  }
+  &__date-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: -1;
+    display: none;
+  }
+  .orion-icon {
+    font-size: var(--orion-icon-size-sm, 16px);
+    display: flex;
+    align-items: center;
+  }
+}

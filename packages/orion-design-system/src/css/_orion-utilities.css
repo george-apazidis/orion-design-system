@@ -1,0 +1,45 @@
+.orion-is-hidden-mobile {
+  display: none;
+}
+
+.orion-is-hidden-desktop {
+  display: block;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-is-hidden-mobile {
+    display: block;
+  }
+
+  .orion-is-hidden-desktop {
+    display: none;
+  }
+}
+
+.flip-x,
+.flip-y,
+.rotate-45,
+.rotate-90,
+.rotate-180 {
+  display: inline-block;
+}
+
+.flip-x {
+  transform: scaleX(-1);
+}
+
+.flip-y {
+  transform: scaleY(-1);
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}

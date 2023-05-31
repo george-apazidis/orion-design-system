@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Background shape/Clock</title>
+    <defs>
+        <path d="M8,-1.13686838e-13 C12.418278,-1.13686838e-13 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,-1.13686838e-13 8,-1.13686838e-13 Z M8,2.5 C7.63181017,2.5 7.33333333,2.79847683 7.33333333,3.16666667 L7.33333333,3.16666667 L7.33333333,9.33333333 L11.8333333,9.33333333 C12.2015232,9.33333333 12.5,9.0348565 12.5,8.66666667 C12.5,8.29847683 12.2015232,8 11.8333333,8 L11.8333333,8 L8.66666667,8 L8.66666667,3.16666667 C8.66666667,2.79847683 8.36818983,2.5 8,2.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Background-shape/Clock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#002244" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Interface/Download</title>
+    <defs>
+        <path d="M23,22 C23.5522847,22 24,22.4477153 24,23 C24,23.5522847 23.5522847,24 23,24 L1,24 C0.44771525,24 0,23.5522847 0,23 C0,22.4477153 0.44771525,22 1,22 L23,22 Z M12,0 C12.5522847,0 13,0.442709286 13,0.988818866 L13,16.685 L19.8146353,10.2718029 C20.2168091,9.89328641 20.8496835,9.91246442 21.2282,10.3146382 C21.6067165,10.7168119 21.5875384,11.3496864 21.1853647,11.7282029 L12.6853647,19.7282029 C12.3003147,20.0906029 11.6996853,20.0906029 11.3146353,19.7282029 L2.8146353,11.7282029 C2.41246155,11.3496864 2.39328354,10.7168119 2.77180001,10.3146382 C3.15031648,9.91246442 3.78319095,9.89328641 4.1853647,10.2718029 L11,16.685 L11,0.988818866 C11,0.442709286 11.4477153,0 12,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Interface/Download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask" fill-rule="nonzero"></g>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

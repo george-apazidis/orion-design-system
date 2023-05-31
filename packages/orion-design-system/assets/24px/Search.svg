@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Search</title>
+    <defs>
+        <path d="M11,0 C16.5228475,0 21,4.4771525 21,10 C21,12.9100804 19.7569582,15.5298327 17.7728753,17.3572563 L22.7071068,22.2928932 C23.0976311,22.6834175 23.0976311,23.3165825 22.7071068,23.7071068 C22.3165825,24.0976311 21.6834175,24.0976311 21.2928932,23.7071068 L16.2928932,18.7071068 C16.2470892,18.6613027 16.2066574,18.6121607 16.1715979,18.5604638 C14.6641953,19.4736995 12.8935597,20 11,20 C5.4771525,20 1,15.5228475 1,10 C1,4.4771525 5.4771525,0 11,0 Z M11,2 C6.581722,2 3,5.581722 3,10 C3,14.418278 6.581722,18 11,18 C15.418278,18 19,14.418278 19,10 C19,5.581722 15.418278,2 11,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

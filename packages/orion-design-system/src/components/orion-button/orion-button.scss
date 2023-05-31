@@ -1,0 +1,229 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+ * @prop --orion-button-radius: value of the border-radius property
+ */
+
+/**
+ * @prop --orion-button-width: value of the width property
+ */
+
+:host {
+  display: block;
+  --orion-button-radius: var(--orion-border-radius, 4px);
+  --orion-button-width: 100%;
+}
+
+.orion-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--orion-space-md, 8px);
+  width: var(--orion-button-width);
+  height: var(--orion-touch-size, 60px);
+  min-width: var(--orion-touch-size, 60px);
+  max-width: var(--orion-breakpoint-md, 1024px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  font-size: var(--orion-font-size-label, 18px);
+  font-weight: var(--orion-font-weight-semi-bold, 600);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  padding: var(--orion-space-xxl, 18px) var(--orion-space-xl, 16px);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  border-radius: var(--orion-button-radius);
+  outline: none;
+  transition: var(--orion-transition, 200ms ease-in-out);
+  cursor: pointer;
+
+  i[class^='orion-icon-']:before {
+    display: flex;
+  }
+}
+
+.orion-button--primary {
+  color: var(--orion-white, #fff);
+  background-color: var(--orion-color-activation, #6244bb);
+}
+.orion-button--secondary {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-white, #fff);
+}
+.orion-button--tertiary {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: transparent;
+  border: var(--orion-border-standard, 1px solid) transparent;
+}
+
+/* For browsers that don't support :focus-visible */
+.orion-button:focus {
+  -webkit-appearance: none;
+  appearance: none;
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+}
+/* Remove :focus styling for browsers that do support :focus-visible */
+.orion-button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+.orion-button--tertiary:focus:not(:focus-visible) {
+  border: var(--orion-border-standard, 1px solid) transparent;
+}
+/* Add focus styling back in browsers that do support :focus-visible */
+.orion-button:focus-visible {
+  -webkit-appearance: none;
+  appearance: none;
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+}
+
+.orion-button--primary:hover {
+  background-color: var(--orion-color-hover-dark, #8972cc);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-hover-dark, #8972cc);
+}
+.orion-button--secondary:hover {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-color-hover-light, #eaeaf3);
+}
+.orion-button--tertiary:hover {
+  background-color: rgba(182, 184, 220, 0.25);
+}
+
+.orion-button:active {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-dusk-50, #d8d9eb);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+}
+
+.orion-button--primary:active {
+  color: var(--orion-white, #fff);
+  background-color: var(--orion-color-active, #49328c);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-active, #49328c);
+}
+
+.orion-button--secondary:active {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-dusk-50, #d8d9eb);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+}
+
+.orion-button--tertiary:focus-visible {
+  border: var(--orion-border-standard, 1px solid) transparent;
+}
+
+.orion-button--tertiary:active {
+  color: var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+  border: none;
+}
+
+.orion-button:disabled {
+  color: var(--orion-color-text--dimmed, #666);
+  background-color: var(--orion-color-background--dimmed, #e6e6e6);
+  border: var(--orion-border-standard, 1px solid) var(--orion-gray-40, #999);
+  cursor: auto;
+}
+
+.orion-button--primary:disabled {
+  border: none;
+  background-color: var(--orion-gray-40, #999);
+  color: var(--orion-white, #fff);
+}
+
+.orion-button--tertiary:disabled {
+  border: none;
+  background-color: rgba(51, 51, 51, 0.08);
+}
+
+.orion-button--small {
+  width: fit-content;
+  font-size: 16px;
+}
+
+.orion-button--sticky,
+.orion-button--sticky-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  border-top: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  border-radius: 0;
+  z-index: var(--orion-z-low, 10);
+}
+.orion-button--sticky:disabled,
+.orion-button--sticky-mobile:disabled {
+  border: none;
+  border-top: var(--orion-border-standard, 1px solid) var(--orion-color-text--dimmed, #666);
+  border-radius: 0;
+}
+
+.orion-button.orion-button--no-text {
+  width: var(--orion-touch-size, 60px);
+  height: var(--orion-touch-size, 60px);
+}
+
+@media screen and (min-width: 769px) {
+  .orion-button,
+  .orion-button--sticky {
+    max-width: var(--orion-container-width-xs, 368px);
+    min-width: var(--orion-touch-size, 40px);
+    height: var(--orion-touch-size, 40px);
+    font-size: var(--orion-font-size-label, 16px);
+    padding: var(--orion-space-md, 8px);
+  }
+  .orion-button--sticky {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    z-index: unset;
+    border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+    border-radius: var(--orion-button-radius);
+  }
+  .orion-button--small {
+    font-size: var(---orion-font-size-small, 13px);
+    line-height: var(--orion-line-height-sm, 16px);
+    height: var(--orion-touch-size-sm, 32px);
+    min-width: var(--orion-touch-size-sm, 32px);
+  }
+  .orion-button--sticky-mobile {
+    display: none;
+  }
+
+  .orion-button.orion-button--no-text {
+    width: var(--orion-touch-size, 40px);
+    height: var(--orion-touch-size, 40px);
+  }
+
+  .orion-button.orion-button--no-text.orion-button--small {
+    width: var(--orion-touch-size-sm, 32px);
+    height: var(--orion-touch-size-sm, 32px);
+    padding: 0;
+  }
+}
+
+/* Fix for sticky hover state on mobile device after click */
+@media (hover: none) {
+  .orion-button--primary:hover {
+    color: var(--orion-white, #fff);
+    background-color: var(--orion-color-activation, #6244bb);
+  }
+  .orion-button--secondary:hover {
+    color: var(--orion-color-activation, #6244bb);
+    background-color: var(--orion-white, #fff);
+  }
+  .orion-button--tertiary:hover {
+    color: var(--orion-color-activation, #6244bb);
+    background-color: transparent;
+    border: var(--orion-border-standard, 1px solid) transparent;
+  }
+}

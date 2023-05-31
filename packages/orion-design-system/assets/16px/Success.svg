@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Background shape/Success</title>
+    <defs>
+        <path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M11.4267782,4.5716597 L6.47916948,9.51975192 L4.86274776,7.9033302 C4.49376667,7.53434911 3.89554874,7.53428875 3.52649319,7.90319536 C3.1858752,8.2436759 3.15957096,8.77953389 3.44765323,9.15018962 L3.52627951,9.23925913 L3.52627951,9.23925913 L5.1422408,10.855602 L5.1422408,10.8566806 L5.57808095,11.2927264 C5.96867229,11.68298 6.60163597,11.6832461 6.99255532,11.2933211 L7.62302818,10.6636106 L12.5701256,5.71506288 C12.8858118,5.39928412 12.8857743,4.88739219 12.5700418,4.5716597 C12.2543383,4.25595619 11.7424818,4.25595619 11.4267782,4.5716597 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Background-shape/Success" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(0.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#002244" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)" fill="#333333">
+                <g id="Color/Grayscale/80%">
+                    <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

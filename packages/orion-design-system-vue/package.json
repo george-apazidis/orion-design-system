@@ -1,0 +1,46 @@
+{
+  "name": "@orion/orion-design-system-vue",
+  "version": "1.4.0",
+  "description": "Vue library for Orion Design System",
+  "keywords": [
+    "vue",
+    "orion"
+  ],
+  "author": "Nick Villapiano <nvillapiano@onenorth.com>",
+  "homepage": "https://github.com/United-Airlines-Org/orion-design-system#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/United-Airlines-Org/orion-design-system.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://artifactory.ual.com/artifactory/api/npm/npm"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "npm run tsc",
+    "tsc": "tsc -p .",
+    "release-build": "npm run build",
+    "release-config_set": "npm config set registry https://artifactory.ual.com/artifactory/api/npm/npm/",
+    "release-publish": "npm publish --registry https://artifactory.ual.com/artifactory/api/npm/npm/",
+    "release-config_unset": "npm config set registry https://registry.npmjs.org/",
+    "release": "npm run release-build && npm run release-config_set && npm run release-publish && npm run release-config_unset"
+  },
+  "bugs": {
+    "url": "https://github.com/United-Airlines-Org/orion-design-system/issues"
+  },
+  "devDependencies": {
+    "vue": "^3.2.45"
+  },
+  "gitHead": "407d4b0b44b82ca85a532577c447bd00380bd0a0"
+}

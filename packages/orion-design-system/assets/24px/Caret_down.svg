@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Interface/Caret down</title>
+    <defs>
+        <path d="M1.13359551,0.5 L22.8664045,0.5 C23.492472,0.5 24,1.0023654 24,1.62206453 C24,1.91965454 23.880568,2.20505605 23.6679776,2.41548397 L12.8015731,13.1713549 C12.3588765,13.6095484 11.6411235,13.6095484 11.1984269,13.1713549 L0.332022438,2.41548397 C-0.110674146,1.97729051 -0.110674146,1.26683855 0.332022438,0.828645092 C0.544612835,0.618217173 0.83294729,0.5 1.13359551,0.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Interface/Caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(0.000000, 6.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#333333" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(0.000000, -6.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

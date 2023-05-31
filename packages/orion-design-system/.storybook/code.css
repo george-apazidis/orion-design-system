@@ -1,0 +1,165 @@
+.CodePreview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.CodePreview__buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  display: flex;
+}
+.CodePreview__input {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  margin: 0;
+  transform: translate(0, -100%);
+  z-index: 10;
+  border: none;
+}
+.CodePreview__label {
+  position: absolute;
+  --left-input-spacing: 0px;
+  top: 0;
+  margin: 0;
+  transform: translate(0, -100%);
+  z-index: 10;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+  color: #333333;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 4px 10px;
+  font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  transition: all 0.1s ease-out;
+}
+.CodePreview__label--react {
+  left: var(--left-input-spacing, 0px);
+}
+.CodePreview__label--angular {
+  left: calc(var(--left-input-spacing, 0px) + 53px);
+  z-index: 9;
+}
+.CodePreview__label--html {
+  left: calc(var(--left-input-spacing, 0px) + 117px);
+  z-index: 8;
+}
+.CodePreview__label--hide {
+  left: calc(var(--left-input-spacing, 0px) + 170px);
+  z-index: 7;
+}
+.CodePreview__input:checked + .CodePreview__code .CodePreview__label {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+}
+.CodePreview__input:focus + .CodePreview__label, .CodePreview__input:focus + .CodePreview__code .CodePreview__label {
+  box-shadow: #1EA7FD 0 -2px 0 0 inset, #1EA7FD -1px 2px 0 0;
+  top: -2px;
+}
+.CodePreview__code {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: block;
+}
+.CodePreview__code .PrismCode__outer-wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.85);
+  height: 0;
+  max-height: 250px;
+  padding: 0;
+}
+.CodePreview__input:checked + .CodePreview__code {
+  position: relative;
+}
+.CodePreview__input:checked + .CodePreview__code .PrismCode__outer-wrapper {
+  height: auto;
+}
+.CodePreview__input:checked + .CodePreview__code .CodePreview__copy {
+  display: block;
+}
+.CodePreview__copy {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border: none;
+  border-radius: 4px 0 0 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 4px 10px;
+  font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  z-index: 10;
+}
+.CodePreview__input:checked ~ .CodePreview__copy {
+  display: block;
+}
+
+#docs-root .CodePreview {
+  position: relative;
+  margin: 50px -20px -30px;
+}
+#docs-root .CodePreview__input {
+  bottom: -3px;
+  top: initial;
+  --left-input-spacing: 9px;
+}
+#docs-root .CodePreview__copy {
+  display: none;
+}
+#docs-root .CodePreview__input:checked + .CodePreview__code {
+  border-bottom: 5px solid #fff;
+}
+
+.PrismCode__outer-wrapper {
+  width: 100%;
+  display: block;
+  margin: 0;
+  color: #fff;
+}
+.PrismCode__inner-wrapper {
+  white-space: pre;
+  font-family: ui-monospace, Menlo, Monaco, "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Droid Sans Mono", "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 400;
+  display: block;
+  padding: 20px;
+}
+.PrismCode__inner-wrapper .tag {
+  color: #A8FF60;
+}
+.PrismCode__inner-wrapper .punctuation {
+  color: #EDEDED;
+}
+.PrismCode__inner-wrapper .attr-name {
+  color: #96CBFE;
+}
+.PrismCode__inner-wrapper .attr-value {
+  color: #B474DD;
+}
+.PrismCode__inner-wrapper .attr-equals {
+  color: #EDEDED;
+}
+
+.docs-story div:nth-of-type(1) {
+  overflow: visible;
+}
+.docs-story div:nth-of-type(1) div {
+  height: auto;
+}/*# sourceMappingURL=code.css.map */

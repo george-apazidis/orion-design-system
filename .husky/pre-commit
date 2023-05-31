@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\n\n[husky] Linting and formatting code before committing\n"
+
+echo "\n \n[husky] Running Prettier to format code according to standards... \n \n" 
+npm run husky-prettier
+
+echo "\n \n[husky] Running ESLint to check and fix JS... \n \n" 
+npm run husky-eslint-fix

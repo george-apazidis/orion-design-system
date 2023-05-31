@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Lock/Locked</title>
+    <defs>
+        <path d="M10,0.00309186284 C13,2.36320078e-13 16,2.66 16,6 L16,8 L16,8 L18,8 L18,8 C19,8 20,9 20,10 L20,21 L20,21 C20,22 19,23 18,23 L2,23 L2,23 C0.772002163,23 0,22 0,21 L0,10 L0,10 C0,9 1,8 2,8 L4,8 L4,8 L4,6 C4,2.66 7,0.00621623553 10,0.00309186284 Z M10,3 C8.5,3 7,4.33333333 7,6 L7,6 L7,8 L13,8 L13,8 L13,6 C13,4.33333333 11.5,3 10,3 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Lock/Locked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(2.000000, 1.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-2.000000, -1.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

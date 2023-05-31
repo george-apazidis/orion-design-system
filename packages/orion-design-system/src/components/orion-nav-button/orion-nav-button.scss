@@ -1,0 +1,93 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+
+/**
+ * @prop --orion-nav-button__background-color: Background color of nav button
+ * @prop --orion-nav-button__color: Color of nav button
+ */
+:host {
+  --orion-nav-button__background-color: transparent;
+  --orion-nav-button__color: var(--orion-white, #fff);
+  display: inline-flex;
+}
+
+.orion-nav-button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 60px;
+  margin: 0;
+  padding: 0 var(--orion-space-xxl, 18px);
+  gap: var(--orion-space-md, 8px);
+  border: none;
+  outline: none;
+  transition: var(--orion-transition, 200ms ease-in-out);
+  background-color: var(--orion-nav-button__background-color);
+  color: var(--orion-nav-button__color);
+
+  i[class^=orion-icon-]:before {
+    display: flex;
+    font-size: var(--orion-icon-size, 24px);
+    width: var(--orion-icon-size, 24px);
+    height: var(--orion-icon-size, 24px);
+    align-self: center;
+  }
+}
+
+/* For browsers that don't support :focus-visible */
+.orion-nav-button:focus {
+  box-shadow: inset 0 0 0 4px var(--orion-nav-button__color);
+}
+/* Remove :focus styling for browsers that do support :focus-visible */
+.orion-nav-button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+/* Add focus styling back in browsers that do support :focus-visible */
+.orion-nav-button:focus-visible {
+  box-shadow: inset 0 0 0 4px var(--orion-nav-button__color);
+}
+
+.orion-nav-button__label {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  font-size: var(--orion-font-size-small, 13px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  line-height: var(--orion-line-height-sm, 16px);
+  letter-spacing: 0;
+}
+
+.orion-nav-button:active,
+.orion-nav-button.active {
+  box-sizing: border-box;
+  background-color: var(--orion-rhapsody-blue-80, #334E69);
+  box-shadow: inset 0px -2px 0 0 var(--orion-white, #fff);
+  border-bottom: var(--orion-border-standard, 1px solid) var(--orion-white, #fff);
+}
+
+@media screen and (min-width: 769px) {
+  .orion-nav-button {
+    flex-direction: column;
+    min-width: 76px;
+    height: 80px;
+    padding: 0 24px;
+    gap: 2px;
+
+    i[class^=orion-icon-]:before {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;  
+    }
+  }
+  .orion-nav-button--label-left {
+    flex-direction: column-reverse;
+  }
+  .orion-nav-button__label {
+    font-size: 10px;
+    font-weight: var(--orion-font-weight-semi-bold, 600);
+  }
+}

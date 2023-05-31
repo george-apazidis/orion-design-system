@@ -1,0 +1,83 @@
+.orion-table {
+  border-collapse: collapse;
+  font-size: var(--orion-font-size-title5, 16px);
+  line-height: var(--orion-line-height-normal, 24px);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+
+  thead {
+    vertical-align: bottom;
+  }
+  
+  th {
+    background: var(--orion-rhapsody-blue, #002244);
+    color: var(--orion-white, #fff);
+    padding: 16px 12px;
+    font-weight: var(--orion-font-weight-semi-bold, 600);
+    > span {
+      position: relative;
+      display: inline-block;
+    }
+    & > span::after {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-family: 'icons';
+      height: 12px;
+    }
+    &[aria-sort="descending"] > span::after {
+      content: "\f115";
+    }
+    &[aria-sort="ascending"] > span::after {
+      content: "\f114";
+    }
+    &[data-sort-method]:not([data-sort-method="none"]) {
+      cursor: pointer;
+    }
+  }
+  
+  td {
+    padding: 16px 12px;
+    background: var(--orion-table-odd-row-background, var(--orion-white, #fff));
+    color: var(--orion-gray-80, #333);
+    transition: background var(--orion-transition, 200ms ease-in-out), box-shadow var(--orion-transition, 200ms ease-in-out);
+    font-weight: var(--orion-font-weight-normal, 400);
+  }
+
+  tr {
+    @at-root .orion-table--lined#{&} {
+      &:not(:last-of-type) {
+        td {
+          border-bottom: var(--orion-border-standard, 1px solid) var(--orion-gray-10, #e6e6e6);
+        }
+      }
+    }
+    &:hover td{
+      background: var(--orion-table-odd-row-background-hover, var(--orion-dusk-25, #EAEAF3)); 
+    }
+    @at-root .orion-table:not(.orion-table--lined)#{&} {
+      &:nth-of-type(2n) {
+        td {
+          background: var(--orion-table-even-row-background, var(--orion-dusk-50, #D8D9EB));
+        }
+        &:hover {
+          td {
+            background: var(--orion-table-even-row-background-hover, var(--orion-runway-gray-25, #F1F1F0));
+          }
+        }
+      }
+    }
+  }
+  .orion-table-cell {
+    &--left {
+      text-align: left;
+    }
+    &--center {
+      text-align: center;
+    }
+    &--right {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/* Open Sans font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap');
+
+/* Global variables */
+@import './_orion-variables.css';
+
+/* Grid layout */
+@import './_orion-grid.css';
+
+/* Typography */
+@import './_orion-typography.css';
+
+/* Links */
+@import './_orion-links.css';
+
+/* Utilities */
+@import './_orion-utilities.css';
+
+/* Tables */
+@import '../components/orion-data-table/orion-data-table-base.css';
+
+/* Icon font */
+@font-face {
+  font-family: 'icons';
+  src: url('../assets/icons/md/icons.woff2') format('woff2'), url('../assets/icons/md/icons.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'icons-sm';
+  src: url('../assets/icons/sm/icons-sm.woff2') format('woff2'), url('../assets/icons/sm/icons-sm.woff') format('woff');
+}
+
+@import '../assets/icons/md/icons.css';
+@import '../assets/icons/sm/icons-sm.css';
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap');
+}
+
+body {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

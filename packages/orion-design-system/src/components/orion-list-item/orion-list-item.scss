@@ -1,0 +1,177 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+ * @prop --orion-list-item-icon-color: value of the color property. Default is #024
+ * @prop --orion-list-item-trailing-icon-color: value of the background-color property of the trailing icon. Default is #024
+ * @prop --orion-list-item-marker-color: value of the background-color property of the marker. Default is #024
+ * @prop --orion-list-item-marker-size: value of the width and height properties. Default is 16px
+ * @prop --orion-list-item--vertical-align: Alignment of list item content. Default is center. Can be set to flex-start or flex-end.
+ */
+
+:host {
+  display: block;
+  --orion-list-item-icon-color: var(--orion-info, #024);
+  --orion-list-item-trailing-icon-color: var(--orion-info, #024);
+  --orion-list-item-marker-color: var(--orion-info, #024);
+  --orion-list-item-marker-size: var(--orion-space-xl, 16px);
+  --orion-list-item--vertical-align: center;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+.orion-list-item {
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: var(--orion-list-item--vertical-align);
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  min-height: var(--orion-touch-size, 60px);
+  background-color: var(--orion-white, #fff);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-body, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  padding: var(--orion-space-xxl, 18px) var(--orion-space-xl, 16px);
+  gap: var(--orion-space-md, 8px);
+  border: none;
+  transition: var(--orion-transition, 200ms ease-in-out);
+
+  // bottom border of each list item
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--orion-gray-40, #999);
+  }
+}
+
+.orion-list-item__marker-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: var(--orion-line-height-normal, 24px);
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.orion-list-item__marker {
+  height: var(--orion-list-item-marker-size);
+  width: var(--orion-list-item-marker-size);
+  border-radius: 50%;
+  background-color: var(--orion-list-item-marker-color);
+}
+
+.orion-list-item__icon,
+.orion-list-item__trailing-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: var(--orion-icon-size, 24px);
+  width: var(--orion-line-height-normal, 24px);
+  height: var(--orion-line-height-normal, 24px);
+}
+.orion-list-item__icon {
+  color: var(--orion-list-item-icon-color);
+  align-self: flex-start;
+}
+.orion-list-item__trailing-icon {
+  color: var(--orion-list-item-trailing-icon-color);
+}
+
+.orion-list-item__image {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: flex-start;
+}
+
+.orion-list-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.orion-list-item__heading {
+  font-weight: 600;
+}
+
+.orion-list-item__subheading {
+  font-size: var(--orion-font-size-small, 13px);
+  line-height: var(--orion-line-height-sm, 16px);
+}
+
+.orion-list-item--disabled,
+.orion-list-item--disabled .orion-list-item__icon,
+.orion-list-item--disabled .orion-list-item__trailing-icon {
+  background-color: var(--orion-color-background--dimmed, #e6e6e6);
+  color: var(--orion-color-text--dimmed, #666);
+}
+.orion-list-item--disabled .orion-list-item__marker {
+  background-color: var(--orion-color-text--dimmed, #666);
+}
+.orion-list-item--disabled .orion-list-item__image {
+  opacity: 0.5;
+}
+
+.orion-list-item__link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: var(--orion-list-item--vertical-align);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--orion-space-md, 8px);
+}
+
+.orion-list-item__link:focus-visible {
+  outline: var(--orion-border-thicker, 4px solid) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+  outline-offset: 4px;
+  z-index: 1;
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-list-item {
+    min-height: var(--orion-touch-size, 40px);
+    font-size: var(--orion-font-size-body, 16px);
+    padding: var(--orion-space-md, 8px) var(--orion-space-xl, 16px);
+  }
+  .orion-list-item__icon,
+  .orion-list-item__trailing-icon {
+    font-size: var(--orion-icon-size-sm, 16px);
+  }
+}

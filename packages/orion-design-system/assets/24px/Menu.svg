@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Interface/Menu</title>
+    <defs>
+        <path d="M23,19.9995 C23.552,19.9995 24,20.4475 24,20.9995 L24,20.9995 L23.9932682,21.1160685 C23.9354694,21.6132143 23.5125714,21.9995 23,21.9995 L23,21.9995 L1,21.9995 C0.448,21.9995 0,21.5515 0,20.9995 L0,20.9995 L0.00673177843,20.8829315 C0.0645306122,20.3857857 0.487428571,19.9995 1,19.9995 L1,19.9995 Z M23,11 C23.552,11 24,11.447 24,12 C24,12.552 23.552,13 23,13 L23,13 L1,13 C0.448,13 0,12.552 0,12 C0,11.447 0.448,11 1,11 L1,11 Z M23,2 C23.552,2 24,2.447 24,3 C24,3.552 23.552,4 23,4 L23,4 L1,4 C0.448,4 0,3.552 0,3 C0,2.447 0.448,2 1,2 L1,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Interface/Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Combined-Shape"></g>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

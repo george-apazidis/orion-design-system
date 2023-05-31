@@ -1,0 +1,18 @@
+@use '../../css/_orion-base.css';
+
+:host {
+  display: block;
+}
+
+.orion-note {
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text--disabled, #666);
+  font-size: var(--orion-font-size-small, 13px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-sm, 16px);
+  margin: 0;
+  padding: var(--orion-space-md, 8px) 0 0 0;
+}

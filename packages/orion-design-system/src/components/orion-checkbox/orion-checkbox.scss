@@ -1,0 +1,178 @@
+@use '../../css/_orion-base.css';
+
+/**
+ * @prop --orion-checkbox--vertical-align: Alignment of checkbox label. Default is flex-start. Can be set to center or flex-end.
+ */
+
+:host {
+  --orion-checkbox--vertical-align: flex-start;
+  display: block;
+}
+
+*::selection {
+  color: var(--orion-color-text, #333);
+  background-color: var(--orion-color-background--selection, #d8d9eb);
+}
+
+.orion-checkbox__label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: var(--orion-checkbox--vertical-align);
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-body, 18px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+  padding: var(--orion-space-xxl, 18px) var(--orion-space-lg, 12px) var(--orion-space-xxl, 18px) 0;
+  cursor: pointer;
+  transition: var(--orion-transition, 200ms ease-in-out);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.orion-checkbox__label--disabled {
+  color: var(--orion-color-text--dimmed, #666);
+  -webkit-text-fill-color: var(--orion-color-text--dimmed, #666);
+  cursor: not-allowed;
+  user-select: none;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.orion-checkbox__input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: var(--orion-icon-size, 24px);
+  height: var(--orion-icon-size, 24px);
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-text--dimmed, #666);
+  border-radius: var(--orion-border-radius, 4px);
+  background-color: var(--orion-color-background, #fff);
+  margin-right: var(--orion-space-md, 8px);
+}
+
+/* For browsers that don't support :focus-visible */
+.orion-checkbox__label input:focus ~ .orion-checkbox__input {
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+  border-radius: var(--orion-border-radius, 4px);
+}
+/* Remove :focus styling for browsers that do support :focus-visible */
+.orion-checkbox__label input:focus:not(:focus-visible) ~ .orion-checkbox__input {
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-text--dimmed, #666);
+  box-shadow: none;
+}
+/* Add focus styling back in browsers that do support :focus-visible */
+.orion-checkbox__label input:focus-visible ~ .orion-checkbox__input {
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5)),
+    var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-color-activation, #6244bb);
+  border-radius: var(--orion-border-radius, 4px);
+}
+
+.orion-checkbox__label input ~ .orion-checkbox__input {
+  transition: var(--orion-transition, 200ms ease-in-out);
+}
+
+.orion-checkbox__label input:checked ~ .orion-checkbox__input {
+  border: var(--orion-border-standard, 1px solid) var(--orion-color-activation, #6244bb);
+  background-color: var(--orion-color-activation, #6244bb);
+}
+
+.orion-checkbox__label input:disabled ~ .orion-checkbox__input {
+  border: var(--orion-border-standard, 1px solid) var(--orion-gray-40, #999);
+  background-color: var(--orion-color-background--dimmed, #e6e6e6);
+}
+
+.orion-checkbox__label input:disabled:checked ~ .orion-checkbox__input {
+  background-color: var(--orion-gray-40, #999);
+}
+
+.orion-checkbox__input:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.orion-checkbox__label input:checked ~ .orion-checkbox__input:after {
+  display: block;
+}
+
+.orion-checkbox__label .orion-checkbox__input:after {
+  left: 50%;
+  top: 45%;
+  width: 6px;
+  height: 12px;
+  border: solid var(--orion-color-background, #fff);
+  border-width: 0 3px 3px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.orion-checkbox__label--indeterminate {
+  input:disabled {
+    ~ .orion-checkbox__input {
+      background-color: var(--orion-gray-40, #999);
+    }
+  }
+  input:not(:checked):not(:disabled) {
+    ~ .orion-checkbox__input {
+      background-color: var(--orion-color-activation, #6244bb);
+    }
+  }
+  input:not(:checked) {
+    ~.orion-checkbox__input:after {
+      display: block;
+      border-bottom-width: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+      top: 40%;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .orion-checkbox__label {
+    font-size: var(--orion-font-size-body, 16px);
+    padding: var(--orion-space-md, 8px) var(--orion-space-md, 8px) var(--orion-space-md, 8px) 0;
+  }
+  .orion-checkbox__input {
+    width: var(--orion-icon-size, 20px);
+    height: var(--orion-icon-size, 20px);
+    border-radius: var(--orion-border-radius-sm, 2px);
+    margin-top: 2px;
+  }
+  .orion-checkbox__label input:focus ~ .orion-checkbox__input,
+  .orion-checkbox__label input:focus-visible ~ .orion-checkbox__input {
+    border-radius: var(--orion-border-radius-sm, 2px);
+  }
+  .orion-checkbox__label .orion-checkbox__input:after {
+    width: 5px;
+    height: 10px;
+    border-width: 0 2px 2px 0;
+  }
+  .orion-checkbox__label--indeterminate {
+    input:not(:checked) {
+      ~.orion-checkbox__input:after {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}

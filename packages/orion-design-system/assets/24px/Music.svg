@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Travel &amp; Airport/Music</title>
+    <defs>
+        <path d="M23.304,0.51164184 L9.204,2.68621626 C8.916,2.73400911 8.7,2.98492154 8.7,3.28362682 L8.7,15.3991129 C7.788,14.3357221 6.456,13.6427258 4.944,13.6427258 C2.22,13.6427258 0,15.8531449 0,18.577337 C0,21.2895809 2.22,23.5 4.944,23.5 C7.68,23.5 9.9,21.2895809 9.9,18.577337 L9.9,3.78545168 L22.8,1.79010043 L22.8,12.8302475 C21.888,11.7788049 20.556,11.0858087 19.044,11.0858087 C16.32,11.0858087 14.1,13.2962277 14.1,16.0204199 C14.1,18.7326638 16.32,20.9430828 19.044,20.9430828 C21.78,20.9430828 24,18.7326638 24,16.0204199 L24,1.09710418 C24,0.646881104 23.7901611,0.454681396 23.304,0.51164184 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Travel-&amp;-Airport/Music" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

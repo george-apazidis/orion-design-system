@@ -1,0 +1,161 @@
+@use '../../css/_orion-base.css';
+
+/**
+* @prop --orion-header-height-mobile: Height of header on mobile (default is 60px)
+* @prop --orion-header-height-desktop: Height of header on desktop (default is 80px)
+* @prop --orion-header-padding-x-mobile: Left/right padding of header on mobile (default is 0px, space defined by logo image)
+* @prop --orion-header-padding-x-desktop: Left/right padding of header on desktop (default is 0px, space defined by logo image)
+* @prop --orion-header-padding-y-mobile: Top/bottom padding of header on mobile (default is 0px, space defined by logo image)
+* @prop --orion-header-padding-y-desktop: Top/bottom padding of header on desktop (default is 0px, space defined by logo image)
+* @prop --orion-header-vertical-align: Alignment of header content. Can be set to center, flex-start or flex-end. (default is center)
+*/
+
+:host {
+  display: block;
+  --orion-header-height-mobile: 60px;
+  --orion-header-height-desktop: 80px;
+  --orion-header-padding-x-mobile: 0px;
+  --orion-header-padding-x-desktop: 0px;
+  --orion-header-padding-y-mobile: 0px;
+  --orion-header-padding-y-desktop: 0px;
+  --orion-header-vertical-align: center;
+}
+
+.orion-header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--orion-z-high, 500);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: var(--orion-header-vertical-align, center);
+  align-content: var(--orion-header-vertical-align, center);
+  width: 100%;
+  min-height: var(--orion-header-height-mobile);
+  margin: 0;
+  padding: var(--orion-header-padding-y-mobile) var(--orion-header-padding-x-mobile);
+  gap: 0;
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  transition: var(--orion-transition, 200ms ease-in-out);
+  background-color: var(--orion-rhapsody-blue, #024);
+  color: var(--orion-white, #fff);
+  border: none;
+
+  &__named-slots {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  &-content {
+    flex: 1;
+  }
+}
+
+.orion-header__left,
+::slotted([slot="orion-header-left"]),
+.orion-header__center,
+::slotted([slot="orion-header-center"]),
+.orion-header__right,
+::slotted([slot="orion-header-right"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.orion-header__left,
+::slotted([slot="orion-header-left"]) {
+  justify-content: flex-start;
+}
+.orion-header__left {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.orion-header__center,
+::slotted([slot="orion-header-center"]) {
+  justify-content: center;
+}
+
+.orion-header__right,
+::slotted([slot="orion-header-right"]) {
+  justify-content: flex-end;
+}
+.orion-header__right {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.orion-header__heading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0 18px;
+  gap: var(--orion-space-xxs, 4px);
+
+  &--left {
+    align-items: flex-start;
+  }
+  &--center {
+    align-items: center;
+  }
+  &--right {
+    align-items: flex-end;
+  }
+}
+
+.orion-header__heading {
+  font-size: var(--orion-font-size-label5, 18px);
+  font-weight: var(--orion-font-weight-semi-bold, 600);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+}
+
+.orion-header__subheading {
+  font-size: var(--orion-font-size-small, 13px);
+  font-weight: var(--orion-font-weight-normal, 400);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-sm, 16px);
+}
+
+.orion-header__logo {
+  width: 192px;
+  height: 60px;
+  aspect-ratio: 2173 / 679;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-header {
+    min-height: var(--orion-header-height-desktop);
+    padding: var(--orion-header-padding-y-desktop) var(--orion-header-padding-x-desktop);
+
+    &__logo {
+      width: 256px;
+      height: 80px;
+    }
+
+    &__heading {
+      font-size: var(--orion-font-size-label3, 24px);
+      line-height: var(--orion-line-height-lg, 32px);
+
+      &-container {
+        padding: 0 24px;
+      }
+    }
+  }
+}

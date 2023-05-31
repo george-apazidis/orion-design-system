@@ -1,0 +1,3069 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Orion Design System - Web Components</title>
+    <link rel="stylesheet" href="/build/orion-web-components.css">
+    <script type="module" src="/build/orion-web-components.esm.js"></script>
+    <script nomodule src="/build/orion-web-components.js"></script>
+  </head>
+  <body>
+
+    <orion-header heading="ORION" style="margin-bottom: 88px;">
+      <div slot="orion-header-left">
+        <orion-nav-button icon-name="menu" id="btnNavMenu">Menu</orion-nav-button>
+      </div>
+      <div slot="orion-header-right"> 
+        <orion-nav-button icon-name="search" label-position="left" id="btnSubheader">Search</orion-nav-button>
+      </div>
+    </orion-header>
+
+    <orion-nav-menu has-close-icon id="nav-menu">
+      <span slot="orion-nav-menu-title">Menu title</span>
+      <div slot="orion-nav-menu-body">
+      </div>
+    </orion-nav-menu>
+
+    <orion-subheader id="subheader" has-close-icon>
+      <span slot="orion-subheader-left">
+        <i class="orion-icon orion-icon-search" style="font-size: 24px;"></i>
+        <h3 style="font-weight: 600;">Search</h3>
+        <orion-text-input placeholder="Search for a fare" style="width: 190px;"></orion-text-input>
+      </span>
+    </orion-subheader>
+
+    <script>
+      function toggleNavMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        const btnNavMenu = document.getElementById('btnNavMenu');
+        
+        if (navMenu.hasAttribute('is-open')) {
+          navMenu.removeAttribute('is-open');
+          btnNavMenu.removeAttribute('is-active');
+        } else {
+          navMenu.setAttribute('is-open', '');
+          btnNavMenu.setAttribute('is-active', '');
+        }
+      }
+
+      document.getElementById('nav-menu').addEventListener('navMenuClose', function () {
+        toggleNavMenu();
+      })
+
+      document.getElementById('btnNavMenu').addEventListener('click', function () {
+        toggleNavMenu();
+      })
+
+      function toggleSubheader() {
+        const subheader = document.getElementById('subheader');
+        const btnSubheader = document.getElementById('btnSubheader');
+        
+        if (subheader.hasAttribute('is-open')) {
+          subheader.removeAttribute('is-open');
+          btnSubheader.removeAttribute('is-active');
+        } else {
+          subheader.setAttribute('is-open', '');
+          btnSubheader.setAttribute('is-active', '');
+        }
+      }
+
+      document.getElementById('subheader').addEventListener('subheaderClose', function () {
+        toggleSubheader();
+      })
+
+      document.getElementById('btnSubheader').addEventListener('click', function () {
+        toggleSubheader();
+      })
+    </script>
+
+    <orion-tabs min-tab-width="168px" scroll-to-starting-active-tab id="page-tabs" >
+      <orion-tab>Typography</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>Typography</h3>
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+              <p>Paragraph text &mdash; the quick <strong>strong</strong> brown fox <s>leaps</s> jumps<sub>1</sub> over the <b>bold</b> lazy dog <a href="https://www.united.com" target="new">a link</a> and over the <em>emphasized</em> river and through the <i>italic</i> woods <a href="https://www.united.com" target="new">a link with longer text</a> the slow black dog<sup>&reg;</sup> bows before the regal fox <a>a disabled link</a>.</p>
+        
+              <label>This is a label for a list</label>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+              </ul>
+              <label>This is a label for a list</label>
+              <ol>
+                <li>List item one</li>
+                <li>List item two</li>
+              </ol>    
+              <small>This is small text</small>
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Iconography</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-icon fonts</h3>
+              <p>Orion icon fonts are generated during the build process</p>
+              <p>The icon fonts are sourced from SVG files in /assets/16px and assets/24px</p>
+              <br/>
+              <p>Previews:</p>
+              <p><a href="http://localhost:3333/assets/icons/md/icons.html">All default icon fonts</a></p>
+              <p><a href="http://localhost:3333/assets/icons/sm/icons-sm.html">All icon fonts optimized for small sizes</a></p>
+              <br/>
+              <p><b>Icon font usage:</b></p>
+              <div>
+                <p><code>&lt;i class="orion-icon orion-icon-[name]"&gt;&lt;/i&gt;</code></p>
+                <p>Example:</p>
+                <p><code>&lt;i class="orion-icon orion-icon-alert"&gt;&lt;/i&gt;</code></p>
+                <i class="orion-icon orion-icon-alert"></i>
+              </div>
+              <br/>
+        
+              <p><b>Icon sizing:</b></p>
+              <div>
+                <p>Size can be set by the font-size style on the parent container or on the icon element explicitly</p>
+                <p>Example:</p>
+                <p><code>&lt;p style="font-size:30px"&gt;&lt;i class="orion-icon orion-icon-alert"&gt;&lt;/i&gt;&lt;/p&gt;</code></p>
+                <p style="font-size:30px;"><i class="orion-icon orion-icon-alert"></i></p>
+              </div>
+              <br/>
+        
+              <p><b>Icon color:</b></p>
+              <div>
+                <p>Color can be set by the color style on the parent container or on the icon element explicitly</p>
+                <p>Example:</p>
+                <p><code>&lt;i style="color:red" class="orion-icon orion-icon-alert"&gt;&lt;/i&gt;</code></p>
+                <i style="color:red" class="orion-icon orion-icon-alert"></i>
+              </div>
+              <br/>
+              
+              <p><b>Icon rotation:</b></p>
+              <div>
+                <p>Can be done by the app developer using custom styles or leveraging the following orion utility classes:</p>
+        
+                <code>rotate-45, rotate-90, rotate-180</code>
+                <br/>
+                <br/>
+                <p>Example:</p>
+                <p><code>&lt;i class="orion-icon orion-icon-teen rotate-90"&gt;&lt;/i&gt;</code></p>
+                <i class="orion-icon orion-icon-teen rotate-90"></i>
+              </div>
+              <br/>
+        
+              <p><b>Icon flipping:</b></p>
+              <div>
+                <p>Can be done by the app developer using custom styles or leveraging the following orion utility classes:</p>
+        
+                <code>flip-x, flip-y</code>
+                <br/>
+                <br/>
+                <p>Example:</p>
+                <p><code>&lt;i class="orion-icon orion-icon-teen flip-y"&gt;&lt;/i&gt;</code></p>
+                <i class="orion-icon orion-icon-teen flip-y"></i>
+              </div>
+              <br/>
+        
+              <p><b>MileagePlus membership icons:</b></p>
+              <div>
+                <i style="color: var(--orion-united-blue); font-size: 30px;" class="orion-icon orion-icon-mileageplus"></i>
+                <i style="color: var(--orion-mp-silver); font-size: 30px;" class="orion-icon orion-icon-mileageplus_silver"></i>
+                <i style="color: var(--orion-mp-gold); font-size: 30px;" class="orion-icon orion-icon-mileageplus_gold"></i>
+                <i style="color: var(--orion-mp-platinum); font-size: 30px;" class="orion-icon orion-icon-mileageplus_platinum"></i>
+                <i style="color: var(--orion-mp-1k); font-size: 30px;" class="orion-icon orion-icon-mileageplus_1k"></i>
+                <i style="color: var(--orion-mp-gs); font-size: 30px;" class="orion-icon orion-icon-mileageplus_gs"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Layout grid</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col">
+              <h3>Layout grid</h3>
+              <p>The layout grid is a 12-column grid that is used to create consistent layouts. It is based on the <a href="https://getbootstrap.com/docs/4.0/layout/grid" target="_blank">Bootstrap grid</a>.</p>
+              <p>The grid is responsive and will automatically adjust to the size of the viewport. The grid is built using CSS flexbox. Use the layout grid classes to create a responsive grid layout.</p>
+              <p>For viewports 768px and smaller (XS and SM), mobile patterns will be used.</p>
+              <p>For viewports 769px and larger (SM, MD, LG and XL), desktop patterns will be used.</p>
+              <p>The grid is built using containers. The container class <code>.orion-container</code> is used to create a container that will center the grid and add padding to the left and right of the grid. The container class is required for the grid to work.</p>
+              <p>The row class <code>.orion-row</code> is used to create a row that will contain the columns. The row class is required for the grid to work.</p>
+              <p>The column classes are used to create the columns. The column classes are required for the grid to work. The column classes are named using the format <code>.orion-col-breakpoint-number of columns</code>.</p>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col-6 orion-col-xs-12">
+              Breakpoints:
+              <ul>
+                <li>XS: 414px</li>
+                <li>SM: 744px</li>
+                <li>MD: 1024px</li>
+                <li>LG: 1440px</li>
+                <li>XL: 1920px</li>
+              </ul>
+            </div>
+            <div class="orion-col-6 orion-col-xs-12">
+              Containers:
+              <ul>
+                <li>XS: 368px</li>
+                <li>SM: 656px</li>
+                <li>MD: 944px</li>
+                <li>LG: 1320px</li>
+                <li>XL: 1792px</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <orion-accordion has-container>
+                <span slot="orion-accordion-header">orion-col-12</span>
+              </orion-accordion>
+            </div>
+          </div>
+          
+          <div class="orion-row">
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+          </div>
+    
+          <div class="orion-row">
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+          </div>
+        </div>
+        <br />
+    
+        <div class="orion-container-fluid" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <p>A fluid container is a container that will expand to the full width of the viewport and is not limited to a fixed width. It is useful for layouts that need to be full width. The fluid container class <code>.orion-container-fluid</code> is used to create a fluid container. The fluid container class is required for the grid to work.</p>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <orion-accordion has-container>
+                <span slot="orion-accordion-header">orion-col-12</span>>
+              </orion-accordion>
+            </div>
+          </div>
+          
+          <div class="orion-row">
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+          </div>
+    
+          <div class="orion-row">
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+          </div>
+        </div>
+        <br />
+    
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row orion-no-gutters">
+            <div class="orion-col-12">
+              <p>Gutters, the space between the columns, is pre-defined in the grid. The gutters are 16px wide for XS, SM and MD breakpoints. The gutters are 24px wide for LG breakpoints. The gutters are 32px wide for XL breakpoints. Gutters can be removed with <code>.orion-no-gutters</code> on the <code>.orion-row</code>.</p>
+            </div>
+          </div>
+          <div class="orion-row orion-no-gutters">
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+            <div class="orion-col-6">
+              <orion-text-input value="orion-col-6"></orion-text-input>
+            </div>
+          </div>
+          <div class="orion-row orion-no-gutters">
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+            <div class="orion-col-3">
+              <orion-text-input value="orion-col-3"></orion-text-input>
+            </div>
+          </div>
+          <div class="orion-row orion-no-gutters">
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+            <div class="orion-col-1">
+              <div style="background-color: #b6b8dc; width: 100%;">1</div>
+            </div>
+          </div>
+        </div>
+        <br />
+    
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <p>Columns can have different widths on different screen sizes. For example, here is a layout that is 1 column for XS, 2 columns for SM, 3 columns for MD, 4 columns for LG, and 6 columns for XL.</p>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+            <div class="orion-col-xs-12 orion-col-sm-6 orion-col-md-4 orion-col-lg-3 orion-col-xl-2">
+              <orion-text-input value="Variable width"></orion-text-input>
+            </div>
+          </div>
+        </div>
+        <br />
+    
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <p>Order can be used to change the order of columns on different screen sizes. For example, here is a layout where the order of the columns is 1, 2, 3, 4, 5, 6 for XS, 6, 5, 4, 3, 2, 1 for SM, 1, 2, 3, 4, 5, 6 for MD, 6, 5, 4, 3, 2, 1 for LG, and 1, 2, 3, 4, 5, 6 for XL.</p>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col orion-order-xs-1 orion-order-sm-6 orion-order-md-1 orion-order-lg-6 orion-order-xl-1">
+              <orion-text-input value="A"></orion-text-input>
+            </div>
+            <div class="orion-col orion-order-xs-2 orion-order-sm-5 orion-order-md-2 orion-order-lg-5 orion-order-xl-2">
+              <orion-text-input value="B"></orion-text-input>
+            </div>
+            <div class="orion-col orion-order-xs-3 orion-order-sm-4 orion-order-md-3 orion-order-lg-4 orion-order-xl-3">
+              <orion-text-input value="C"></orion-text-input>
+            </div>
+            <div class="orion-col orion-order-xs-4 orion-order-sm-3 orion-order-md-4 orion-order-lg-3 orion-order-xl-4">
+              <orion-text-input value="D"></orion-text-input>
+            </div>
+            <div class="orion-col orion-order-xs-5 orion-order-sm-2 orion-order-md-5 orion-order-lg-2 orion-order-xl-5">
+              <orion-text-input value="E"></orion-text-input>
+            </div>
+            <div class="orion-col orion-order-xs-6 orion-order-sm-1 orion-order-md-6 orion-order-lg-1 orion-order-xl-6">
+              <orion-text-input value="F"></orion-text-input>
+            </div>
+          </div>
+        </div>
+        <br />
+    
+        <div class="orion-container" style="background-color: #e6e6e6;">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <p>Offset can be used to move columns to the right. For example, here is a layout where the columns are offset by 1, 2, 3 for XS, 6, 5, 4 for SM, 4, 5, 6 for MD, 9, 8, 7 for LG, and 7, 8, 9 for XL.</p>
+            </div>
+          </div>
+          <div class="orion-row">
+            <div class="orion-col orion-offset-xs-1 orion-offset-sm-6 orion-offset-md-4 orion-offset-lg-9 orion-offset-xl-7">
+              <orion-text-input value="A"></orion-text-input>
+            </div>
+            <div class="orion-col orion-offset-xs-2 orion-offset-sm-5 orion-offset-md-5 orion-offset-lg-8 orion-offset-xl-8">
+              <orion-text-input value="B"></orion-text-input>
+            </div>
+            <div class="orion-col orion-offset-xs-3 orion-offset-sm-4 orion-offset-md-6 orion-offset-lg-7 orion-offset-xl-9">
+              <orion-text-input value="C"></orion-text-input>
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Accordions</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-accordion</h3>
+              <br />
+        
+              <orion-accordion id="accordion1">
+                <span slot="orion-accordion-header">Accordion header title</span>
+                <p slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </orion-accordion>
+        
+              <orion-accordion id="accordion2" chevron-left>
+                <div slot="orion-accordion-header">Chevron left (desktop only)</div>
+                <div slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </orion-accordion>
+        
+              <orion-accordion id="accordion3" open>
+                <span slot="orion-accordion-header">Open by default</span>
+                <p slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </orion-accordion>
+              <br />
+        
+              <orion-accordion id="accordion4" has-container>
+                <span slot="orion-accordion-header">Accordion with container</span>
+                <p slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </orion-accordion>
+              <br />
+        
+              <orion-accordion id="accordion5" chevron-left has-container>
+                <span slot="orion-accordion-header">Chevron left (desktop only)</span>
+                <span slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              </orion-accordion>
+              <br />
+        
+              <orion-accordion id="accordion6" open has-container>
+                <span slot="orion-accordion-header">Open by default</span>
+                <p slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </orion-accordion>
+              <br />
+        
+              <orion-accordion id="accordion7">
+                <orion-checkbox slot="orion-accordion-header" id="FareWorks" name="FareWorks" value="1">Checkbox item</orion-checkbox>
+                <p slot="orion-accordion-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </orion-accordion>
+    
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Buttons</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-button</h3>
+              <p>Regular buttons</p>
+              <orion-button id="default">Default button</orion-button>
+              <br />
+              <orion-button id="primary" variant="primary">Primary</orion-button>
+              <br />
+              <orion-button id="secondary" variant="secondary">Secondary</orion-button>
+              <br />
+              <orion-button id="tertiary" variant="tertiary">Tertiary</orion-button>
+              <br />
+              <orion-button id="default" style="--orion-button-width: fit-content">CSS var to not 100% width</orion-button>
+              <br />
+        
+              <p>Disabled buttons</p>
+              <orion-button id="defaultDisabled" disabled>Default disabled</orion-button>
+              <br />
+              <orion-button id="primaryDisabled" variant="primary" disabled>Primary disabled</orion-button>
+              <br />
+              <orion-button id="secondaryDisabled" variant="secondary" disabled>Secondary disabled</orion-button>
+              <br />
+              <orion-button id="tertiaryDisabled" variant="tertiary" disabled>Tertiary disabled</orion-button>
+              <br />
+        
+              <p>Small buttons</p>
+              <orion-button id="defaultSmall" small>Default small</orion-button>
+              <br />
+              <orion-button id="primarySmall" variant="primary" small>Primary small</orion-button>
+              <br />
+              <orion-button id="secondarySmall" variant="secondary" small>Secondary small</orion-button>
+              <br />
+              <orion-button id="tertiarySmall" variant="tertiary" small>Tertiary small</orion-button>
+              <br />
+        
+              <p>Disabled small buttons</p>
+              <orion-button id="defaultDisabledSmall" variant="" disabled small>Default disabled small</orion-button>
+              <br />
+              <orion-button id="primaryDisabledSmall" variant="primary" disabled small>Primary disabled small</orion-button>
+              <br />
+              <orion-button id="secondaryDisabledSmall" variant="secondary" disabled small>Secondary disabled small</orion-button>
+              <br />
+              <orion-button id="tertiaryDisabledSmall" variant="tertiary" disabled small>Tertiary disabled small</orion-button>
+              <br />
+        
+              <p>Regular buttons with icon</p>
+              <orion-button id="" icon-name="edit">
+                Default button with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="primary" icon-name="edit">
+                Primary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="secondary" icon-name="edit">
+                Secondary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" icon-name="edit">
+                Tertiary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" disabled icon-name="edit">
+                Disabled button with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" disabled icon-name="edit">
+                Disabled tertiary with icon
+              </orion-button>
+              <br />
+        
+              <p>Small buttons with icon</p>
+              <orion-button id="" small icon-name="edit">
+                Small default button with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="primary" small icon-name="edit">
+                Small primary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="secondary" small icon-name="edit">
+                Small secondary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" small icon-name="edit">
+                Small tertiary with icon
+              </orion-button>
+              <br />
+              <orion-button id="" disabled small icon-name="edit">
+                Small disabled with icon
+              </orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" disabled small icon-name="edit">
+                Small disabled tertiary & icon
+              </orion-button>
+              <br />
+        
+              <p>Regular icon buttons</p>
+              <orion-button id="" icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="primary" icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="secondary" icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" disabled icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" disabled icon-name="movies"></orion-button>
+              <br />
+        
+              <p>Small icon buttons</p>
+              <orion-button id="" icon-name="movies" small></orion-button>
+              <br />
+              <orion-button id="" variant="primary" small icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="secondary" small icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" small icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" disabled small icon-name="movies"></orion-button>
+              <br />
+              <orion-button id="" variant="tertiary" disabled small icon-name="movies"></orion-button>
+              <br />
+        
+              <p>Buttons with trailing icon</p>
+              <orion-button id="" icon-name="chevron_right" icon-right>
+                Next
+              </orion-button>
+              <br />
+              <orion-button id="" small icon-name="chevron_right" icon-right>
+                Next
+              </orion-button>
+              <br />
+        
+              <orion-button id="primarySticky" variant="primary" sticky>Primary sticky</orion-button>
+              <br />
+            
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Checkboxes</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-checkbox</h3>
+              <orion-label>Label</orion-label>
+              <orion-checkbox id="checkbox" name="checkbox" value="1">Checkbox item</orion-checkbox>
+              <script>
+                document.getElementById('checkbox')
+                  .addEventListener('valueChanged',
+                    (event) => console.log('checkbox: valueChanged', event.detail)
+                  )
+              </script>
+              <br />
+        
+              <orion-label>Options disabled and checked</orion-label>
+              <orion-checkbox id="checkbox1" name="checkbox1" value="1">Item 1</orion-checkbox>
+              <orion-checkbox name="checkbox1" value="2" checked>Item 2</orion-checkbox>
+              <orion-checkbox name="checkbox1" value="3" disabled>List item</orion-checkbox>
+              <orion-checkbox name="checkbox1" value="4" disabled checked>Item 4</orion-checkbox>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label error>Group error</orion-label>
+              <orion-error>Error feedback</orion-error>
+              <orion-checkbox name="checkbox2" value="item1" style="--orion-checkbox--vertical-align: center;">Item with a very long label that will wrap and keep the checkbox vertically alligned to the top lorem ipsum dolor sit amet</orion-checkbox>
+              <orion-checkbox name="checkbox2" value="item2">Item 2</orion-checkbox>
+              <orion-checkbox name="checkbox2" value="item3">List item</orion-checkbox>
+              <orion-checkbox name="checkbox2" value="item4">Item 4</orion-checkbox>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label>Inline group</orion-label>
+              <orion-checkbox-group inline>
+                <orion-checkbox name="checkbox3" value="item1">Item 1 has long text</orion-checkbox>
+                <orion-checkbox name="checkbox3" value="item2">Item 2 has even longer text</orion-checkbox>
+                <orion-checkbox name="checkbox3" value="item3">List item</orion-checkbox>
+              </orion-checkbox-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+
+              <orion-label>Inline group with custom column gap</orion-label>
+              <orion-checkbox-group inline style="--orion-checkbox-group-column-gap: 16px;">
+                <orion-checkbox name="checkbox3" value="item1">Item 1 has long text</orion-checkbox>
+                <orion-checkbox name="checkbox3" value="item2">Item 2 has even longer text</orion-checkbox>
+                <orion-checkbox name="checkbox3" value="item3">List item</orion-checkbox>
+              </orion-checkbox-group>
+              <br />
+        
+              <orion-label error>Inline group with error</orion-label>
+              <orion-checkbox-group inline>
+                <orion-error class="orion-is-hidden-desktop">Error feedback</orion-error>
+                <orion-checkbox name="checkbox4" value="item1">Item 1</orion-checkbox>
+                <orion-checkbox name="checkbox4" value="item2">Item 2</orion-checkbox>
+                <orion-checkbox name="checkbox4" value="item3">List item</orion-checkbox>
+              </orion-checkbox-group>
+              <orion-error class="orion-is-hidden-mobile">Error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label disabled>Group disabled</orion-label>
+              <orion-checkbox-group disabled>
+                <orion-checkbox name="checkbox5" value="item1">Item 1</orion-checkbox>
+                <orion-checkbox name="checkbox5" value="item2">Item 2</orion-checkbox>
+                <orion-checkbox name="checkbox5" value="item3">List item</orion-checkbox>
+              </orion-checkbox-group>
+              <br />
+
+              <orion-label>Indeterminate</orion-label>
+              <orion-checkbox value="3" indeterminate>indeterminate</orion-checkbox>
+              <orion-checkbox value="3" indeterminate disabled>indeterminate but disabled</orion-checkbox>
+              <orion-checkbox value="3" indeterminate checked>indeterminate but checked</orion-checkbox>
+
+              <ul id="ic-group" style="list-style: none; padding: 0;">
+                <li>
+                  <orion-checkbox value="item1">Main task</orion-checkbox>
+                  <ul style="list-style: none;">
+                    <li>
+                      <orion-checkbox value="item1-1">Sub task</orion-checkbox>
+                    </li>
+                    <li>
+                      <orion-checkbox value="item1-2">Sub task</orion-checkbox>
+                      <ul style="list-style: none;">
+                        <li>
+                          <orion-checkbox value="item1-2">Sub sub task</orion-checkbox>
+                          <ul style="list-style: none;">
+                            <li>
+                              <orion-checkbox value="item1-2">Sub sub sub task</orion-checkbox>
+                            </li>
+                            <li>
+                              <orion-checkbox value="item1-2">Sub sub sub task</orion-checkbox>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <orion-checkbox value="item1-2">Sub sub task</orion-checkbox>
+                        </li>
+                        <li>
+                          <orion-checkbox value="item1-2">Sub sub task</orion-checkbox>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <orion-checkbox value="item1">Main task</orion-checkbox>
+                  <ul style="list-style: none;">
+                    <li>
+                      <orion-checkbox value="item1-1">Sub task</orion-checkbox>
+                    </li>
+                    <li>
+                      <orion-checkbox value="item1-2">Sub task</orion-checkbox>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+              <script>
+                // Adjusted from https://css-tricks.com/indeterminate-checkboxes/#aa-use-case to work with orion-checkbox
+                const topLevel = document.querySelector('#ic-group');
+                const checkboxes = topLevel.querySelectorAll('orion-checkbox');
+                checkboxes.forEach(checkbox => {
+                  checkbox.addEventListener('valueChanged', e => {
+                    let check = e.target;
+                    check.indeterminate = false;
+
+                    // adjust any children
+                    const children = checkbox.parentElement.querySelectorAll('orion-checkbox');
+                    children.forEach(child => {
+                      child.checked = check.checked
+                      child.indeterminate = false;
+                    });
+
+                    while(check) {
+                      const closestUl = check.closest('ul');
+                      if (!closestUl) return;
+                      const parentCheck = closestUl.parentNode.querySelector('orion-checkbox');
+                      const siblingChecks = [...parentCheck.parentNode.querySelector('ul').querySelectorAll('li > orion-checkbox')];
+
+                      const checkStatus = siblingChecks.map(check => check.checked);
+                      const every = checkStatus.every(Boolean);
+                      const some = checkStatus.some(Boolean);
+
+                      parentCheck.checked = every;
+                      parentCheck.indeterminate = !every && every !== some;
+
+                      check = check != parentCheck ? parentCheck : null;
+                    }
+                  })
+                })
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Chips</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-chip</h3>
+              
+              <div>
+                <h4>Alert Red</h4>
+                <orion-chip variant="high" is-open>Chip label</orion-chip>
+                <orion-chip variant="high" is-open dismissible>Chip label</orion-chip>
+                <orion-chip variant="high" is-open solid-bg>Chip label</orion-chip>
+                <orion-chip variant="high" is-open solid-bg dismissible>Chip label</orion-chip>
+              </div>
+        
+              <div>
+                <h4>Alert Orange</h4>
+                <orion-chip variant="medium" is-open>Chip label</orion-chip>
+                <orion-chip variant="medium" is-open dismissible>Chip label</orion-chip>
+                <orion-chip variant="medium" is-open solid-bg >Chip label</orion-chip>
+                <orion-chip variant="medium" is-open solid-bg dismissible>Chip label</orion-chip>
+              </div>
+        
+              <div>
+                <h4>Alert Yellow</h4>
+                <orion-chip variant="low" is-open>Chip label</orion-chip>
+                <orion-chip variant="low" is-open dismissible>Chip label</orion-chip>
+                <orion-chip variant="low" is-open solid-bg >Chip label</orion-chip>
+                <orion-chip variant="low" is-open solid-bg dismissible>Chip label</orion-chip>
+              </div>
+        
+              <div>
+                <h4>Alert Green</h4>
+                <orion-chip variant="success" is-open>Chip label</orion-chip>
+                <orion-chip variant="success" is-open dismissible>Chip label</orion-chip>
+                <orion-chip variant="success" is-open solid-bg>Chip label</orion-chip>
+                <orion-chip variant="success" is-open solid-bg dismissible>Chip label</orion-chip>
+              </div>
+        
+              <div>
+                <h4>Alert Primary / Rhapsody Blue</h4>
+                <orion-chip variant="info" is-open>Chip label</orion-chip>
+                <orion-chip variant="info" is-open dismissible>Chip label</orion-chip>
+                <orion-chip variant="info" is-open solid-bg>Chip label</orion-chip>
+                <orion-chip variant="info" is-open solid-bg dismissible>Chip label</orion-chip>
+              </div>
+        
+              <div>
+                <h4>Custom Colors</h4>
+                <orion-chip variant="custom" is-open style="--orion-chip-color__bg: #41748d; --orion-chip-color__text: #41748d; ">Chip label</orion-chip> 
+                <orion-chip variant="custom" is-open dismissible style="--orion-chip-color__bg: #572c5f; --orion-chip-color__text: #572c5f; ">Chip label</orion-chip> 
+                <orion-chip variant="custom" is-open solid-bg style="--orion-chip-color__bg: #41748d; --orion-chip-color__text: #fff; ">Chip label</orion-chip> 
+                <orion-chip variant="custom" is-open solid-bg dismissible style="--orion-chip-color__bg: #572c5f; --orion-chip-color__text: #fff; ">Chip label</orion-chip>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+      
+      <orion-tab>Date Inputs</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-date-input</h3>  
+              <h4>Default</h4>
+              <orion-date-input id="default-date-input"></orion-date-input>
+              <br/>
+              <orion-date-input range multi-month></orion-date-input>
+              <h4>Disabled</h4>
+              <orion-date-input disabled></orion-date-input>
+              <br/>
+              <orion-date-input disabled range></orion-date-input>
+              <h4>Error</h4>
+              <orion-date-input error>
+                <orion-label error slot="orion-date-input-first-label">
+                  Depart
+                </orion-label>
+              </orion-date-input>
+              <orion-error>Inline feedback</orion-error>
+              <br/>
+              <orion-date-input error range>
+                <orion-label error slot="orion-date-input-first-label">
+                  Depart
+                </orion-label>
+                <orion-label error slot="orion-date-input-second-label">
+                  Return
+                </orion-label>
+              </orion-date-input>
+              <orion-error>Inline feedback</orion-error>
+              <h4>Label</h4>
+              <orion-date-input first-label="Depart">
+                <orion-label slot="orion-date-input-first-label">
+                  Depart
+                </orion-label>
+              </orion-date-input>
+              <br/>
+              <orion-date-input range>
+                <orion-label slot="orion-date-input-first-label">
+                  Depart
+                </orion-label>
+                <orion-label slot="orion-date-input-second-label">
+                  Return
+                </orion-label>
+              </orion-date-input>
+              <h4>Label + Condition</h4>
+              <orion-date-input>
+                <orion-label slot="orion-date-input-first-label">
+                  Depart
+                  <span slot="orion-label-conditional">(conditional)</span>
+                </orion-label>
+              </orion-date-input>
+              <br/>
+              <orion-date-input range>
+                <orion-label slot="orion-date-input-first-label">
+                  Depart
+                  <span slot="orion-label-conditional">(conditional)</span>
+                </orion-label>
+                <orion-label slot="orion-date-input-second-label">
+                  Return
+                  <span slot="orion-label-conditional">(2nd conditional)</span>
+                </orion-label>
+              </orion-date-input>
+              <h4>Note</h4>
+              <orion-date-input note="This is a note"></orion-date-input>
+              <orion-note>This is a note</orion-note>
+              <br/>
+              <orion-date-input range></orion-date-input>
+              <orion-note>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non hic laudantium, dolores cum natus illum facere distinctio. Tempora fugiat facere obcaecati voluptas eius, tenetur et quis quas culpa amet.</orion-note>
+              <h4>Inline Label</h4>
+              <orion-date-input inline>
+                <orion-label slot="orion-date-input-first-label">
+                  Label
+                </orion-label>
+              </orion-date-input>
+              <br/>
+              <orion-date-input disabled inline>
+                <orion-label disabled slot="orion-date-input-first-label">
+                  Label
+                </orion-label>
+              </orion-date-input>
+              <br/>
+              <orion-date-input inline error>
+                <orion-label error slot="orion-date-input-first-label">
+                  Label
+                </orion-label>
+              </orion-date-input>
+              <orion-error>Inline Feedback</orion-error>
+              <script>
+                const defaultInput = document.querySelector('#default-date-input');
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 100);
+                defaultInput.minDate = new Date();
+                defaultInput.maxDate = tomorrow;
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Drawers</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-drawer</h3> 
+              <br/>
+              <orion-button id="drawerBTN">Open drawer (default)</orion-button>
+              <br/>
+              <orion-button id="drawerBTN-right">Open drawer (right)</orion-button>
+              <br/>
+              <orion-button id="drawerBTN-left">Open drawer (left)</orion-button>
+              <br/>
+              <orion-button id="drawerBTN-bottom">Open drawer (bottom)</orion-button>
+              <br/>
+              <orion-button id="drawerBTN-5">Open a drawer (custom width)</orion-button>
+              <br/>
+        
+                <script>
+                  document.getElementById('drawerBTN').addEventListener('click', function(){
+                    document.getElementById('drawer1').setAttribute('is-open','');
+                  })
+                  document.getElementById('drawerBTN-right').addEventListener('click', function(){
+                    document.getElementById('drawer2').setAttribute('is-open','');
+                  })
+                  document.getElementById('drawerBTN-left').addEventListener('click', function(){
+                    document.getElementById('drawer3').setAttribute('is-open','');
+                  })
+                  document.getElementById('drawerBTN-bottom').addEventListener('click', function(){
+                    document.getElementById('drawer4').setAttribute('is-open','');
+                  })
+                  document.getElementById('drawerBTN-5').addEventListener('click', function(){
+                    document.getElementById('drawer5').setAttribute('is-open','');
+                  })
+                </script>
+        
+              <orion-drawer id="drawer1">
+                <span slot="orion-drawer-title">Drawer title</span>
+                <div slot="orion-drawer-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quis ab, modi dolor similique sit voluptatum autem pariatur facere veritatis?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, numquam amet porro laboriosam quae itaque error molestiae perferendis esse eum.</p>
+                </div>
+        
+                <span slot="orion-drawer-footer-content">Optional footer content</span>
+                <span slot="orion-drawer-secondary-button">Secondary</span>
+                <span slot="orion-drawer-primary-button">Primary</span>
+        
+              </orion-drawer>
+        
+              <script>
+                (function () {
+                    document.getElementById('drawer1').addEventListener('orionDrawerFooterBtnClicked', ev => {
+                    if (ev.detail.variant === 'primary') {
+                      console.log('primary button clicked');
+                    }
+        
+                    if (ev.detail.variant === 'secondary') {
+                      console.log('secondary button clicked');
+                    }
+                  })
+                })()
+              </script>
+        
+              <orion-drawer id="drawer2" open-from="right">
+                <span slot="orion-drawer-title">Right drawer</span>
+                <div slot="orion-drawer-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quis ab, modi dolor similique sit voluptatum autem pariatur facere veritatis?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, numquam amet porro laboriosam quae itaque error molestiae perferendis esse eum.</p>
+                </div>
+                <span slot="orion-drawer-footer-content"></span>
+                <span slot="orion-drawer-secondary-button">Secondary</span>
+                <span slot="orion-drawer-primary-button">Primary</span>
+              </orion-drawer>
+        
+              <orion-drawer id="drawer3" open-from="left">
+                <span slot="orion-drawer-title">Left drawer</span>
+                <div slot="orion-drawer-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quis ab, modi dolor similique sit voluptatum autem pariatur facere veritatis?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, numquam amet porro laboriosam quae itaque error molestiae perferendis esse eum.</p>
+                </div>
+                <span slot="orion-drawer-footer-content"></span>
+                <span slot="orion-drawer-secondary-button">Secondary</span>
+                <span slot="orion-drawer-primary-button">Primary</span>
+              </orion-drawer>
+        
+              <orion-drawer id="drawer4" open-from="bottom">
+                <span slot="orion-drawer-title">Bottom drawer</span>
+                <div slot="orion-drawer-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quis ab, modi dolor similique sit voluptatum autem pariatur facere veritatis?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, numquam amet porro laboriosam quae itaque error molestiae perferendis esse eum.</p>
+                </div>
+                <span slot="orion-drawer-primary-button">Primary</span>
+              </orion-drawer>
+              
+              <orion-drawer id="drawer5" style="--orion-drawer-max-width-sm: 75%; --orion-drawer-max-width-md: 65%; --orion-drawer-max-width-lg: 55%">
+                <span slot="orion-drawer-title">Drawer with a longer title</span>
+                <div slot="orion-drawer-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit amet facilisis magna etiam. Turpis in eu mi bibendum neque. Sapien faucibus et molestie ac. Blandit libero volutpat sed cras ornare arcu dui. Cursus metus aliquam eleifend mi. Luctus venenatis lectus magna fringilla urna porttitor. Ut tellus elementum sagittis vitae et. Congue eu consequat ac felis donec et odio pellentesque diam. At auctor urna nunc id cursus metus aliquam eleifend mi. Id volutpat lacus laoreet non curabitur gravida arcu ac. Volutpat blandit aliquam etiam erat velit scelerisque in dictum.</p>
+                  <p>Blandit libero volutpat sed cras ornare arcu. Tellus orci ac auctor augue. Tortor aliquam nulla facilisi cras. Mauris pellentesque pulvinar pellentesque habitant morbi. Erat velit scelerisque in dictum non consectetur a. Faucibus turpis in eu mi bibendum. Suspendisse sed nisi lacus sed viverra. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Volutpat ac tincidunt vitae semper quis lectus nulla. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Integer vitae justo eget magna. Vitae justo eget magna fermentum iaculis. Suspendisse in est ante in nibh mauris cursus mattis. Ac odio tempor orci dapibus ultrices. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Eget egestas purus viverra accumsan in nisl. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant.</p>
+                  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Id cursus metus aliquam eleifend mi. Morbi quis commodo odio aenean sed adipiscing diam. Velit euismod in pellentesque massa placerat. Mauris pellentesque pulvinar pellentesque habitant morbi. Tellus mauris a diam maecenas sed enim ut sem viverra. Quis hendrerit dolor magna eget est lorem ipsum. Nunc sed id semper risus in hendrerit gravida rutrum. Cursus vitae congue mauris rhoncus aenean. Leo duis ut diam quam nulla porttitor massa.</p>
+                  <p>Urna porttitor rhoncus dolor purus non enim praesent elementum. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Nisl condimentum id venenatis a condimentum vitae sapien. Arcu dictum varius duis at consectetur lorem. Lacus viverra vitae congue eu consequat ac. In nisl nisi scelerisque eu ultrices vitae auctor eu. Sit amet massa vitae tortor condimentum lacinia quis. Felis imperdiet proin fermentum leo. Lorem mollis aliquam ut porttitor leo. Nisi est sit amet facilisis magna etiam tempor. Luctus venenatis lectus magna fringilla urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Nibh venenatis cras sed felis eget velit aliquet. Id faucibus nisl tincidunt eget.</p>
+                  <p>Nisl condimentum id venenatis a condimentum vitae. Ipsum consequat nisl vel pretium lectus quam id leo in. Quis vel eros donec ac. Non enim praesent elementum facilisis leo vel. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Diam sit amet nisl suscipit adipiscing bibendum est ultricies. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Posuere morbi leo urna molestie at elementum eu facilisis. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Pellentesque dignissim enim sit amet venenatis. Diam phasellus vestibulum lorem sed risus ultricies. Donec massa sapien faucibus et molestie ac feugiat. Auctor eu augue ut lectus arcu bibendum at varius vel. Nec ultrices dui sapien eget mi proin sed.</p>
+                </div>
+              </orion-drawer>
+
+            </div>
+          </div> 
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Dropdowns</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-dropdown</h3>
+              <orion-label>With placeholder</orion-label>
+              <orion-dropdown id="dropdown1" placeholder="Select one">
+                <orion-dropdown-option value="ORD">Chicago</orion-dropdown-option>
+                <orion-dropdown-option value="CLE" disabled>Cleveland</orion-dropdown-option>
+                <orion-dropdown-option value="DEN">Denver</orion-dropdown-option>
+                <orion-dropdown-option value="IAH">Houston</orion-dropdown-option>
+                <orion-dropdown-option value="LAX">Los Angeles</orion-dropdown-option>
+                <orion-dropdown-option value="EWR">New York/Newark</orion-dropdown-option>
+                <orion-dropdown-option value="SFO">San Francisco</orion-dropdown-option>
+                <orion-dropdown-option value="IAD">Washington D.C.</orion-dropdown-option>
+              </orion-dropdown>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <script>
+                document.getElementById('dropdown1')
+                  .addEventListener('valueChanged',
+                    (event) => console.log('dropdown1: valueChanged', event.detail)
+                  )
+              </script>
+        
+              <orion-label>Option pre-selected</orion-label>
+              <orion-dropdown id="dropdown2" value="item-1">
+                <orion-dropdown-option value="item-1">Item 1</orion-dropdown-option>
+                <orion-dropdown-option value="item-2" disabled>Item 2</orion-dropdown-option>
+                <orion-dropdown-option value="item-3">List item</orion-dropdown-option>
+              </orion-dropdown>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label disabled>Disabled with placeholder</orion-label>
+              <orion-dropdown id="dropdown3" disabled placeholder="Disabled placeholder">
+                <orion-dropdown-option value="item-1">Item 1</orion-dropdown-option>
+                <orion-dropdown-option value="item-2">Item 2</orion-dropdown-option>
+                <orion-dropdown-option value="item-3">List item</orion-dropdown-option>
+              </orion-dropdown>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label disabled>Disabled with option pre-selected</orion-label>
+              <orion-dropdown id="dropdown4" disabled value="item-2">
+                <orion-dropdown-option value="item-1">Item 1</orion-dropdown-option>
+                <orion-dropdown-option value="item-2">Item 2</orion-dropdown-option>
+                <orion-dropdown-option value="item-3">List item</orion-dropdown-option>
+              </orion-dropdown>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label error>Label with error</orion-label>
+              <orion-dropdown id="dropdown5" error value="item-1">
+                <orion-dropdown-option value="item-1">Error value</orion-dropdown-option>
+                <orion-dropdown-option value="item-2">Item 2</orion-dropdown-option>
+                <orion-dropdown-option value="item-3">List item</orion-dropdown-option>
+              </orion-dropdown>
+              <orion-error>Error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Error</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-error</h3>
+              <orion-error>Error</orion-error>
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Label</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-label</h3>
+              <orion-label>Label</orion-label>
+              <orion-label disabled>Disabled label</orion-label>
+              <orion-label error>Error label</orion-label>
+              <orion-label>
+                Required label
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-label>
+                Optional label
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Links</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-link</h3>
+              <p>Link is an accessible element used for navigation. It is also known as <code>Anchor</code>, <code>&lt;a&gt;</code>, <code>Text Link</code> or <code>Hyperlink</code> . This component is styled to resemble a hyperlink and semantically renders an <code>&lt;a&gt;</code>. Links are visually similar to tertiary buttons, but are semantically different, which matters for accessibility. Use a link when you want to navigate the user to a different location. Use a button when you want to cause a change in either back-end or the front-end of the website. (A "Log in" link will navigate the user to a form, a "Log in" button will submit the form and log the user into the application.)</p>
+              <p>Using an <code>&lt;a&gt;</code> tag is an acceptable way to render a text link, but a component is also available with additional options.</p>
+              <p>All links can have a subtle quiet style, without an underline. This style should only be used when the placement and context of the link is explicit enough that a visible underline is not necessary. Color alone is not enough context to meet accessibility requirements. Commonly used in footer navigation.</p>
+              <p>A link can be disabled by removing the <code>href</code> or adding the <code>disabled</code> prop.</p>
+        
+              <p><strong>Using an <code>&lt;a&gt;</code> tag:</strong></p>
+              <p>A <a href="https://www.united.com" target="new"> link</a> and a <a disabled="disabled">disabled link</a> and a <a href="#" style="text-decoration: none; padding-right: 4px;">link <i class="orion-icon orion-icon-chevron_right" style="font-size: var(--orion-font-size-body)
+                ;"></i>&nbsp;</a> with an icon and a <a href="#" style="text-decoration: none; padding-right: 4px;"><i class="orion-icon orion-icon-edit" style="font-size: var(--orion-font-size-body)
+                ;"></i> link</a> with a leading icon and a <a disabled="disabled" style="text-decoration: none; padding-right: 4px;">link <i class="orion-icon orion-icon-chevron_right" style="font-size: var(--orion-font-size-body)
+              ;"></i>&nbsp;</a> with a disabled icon.</p>
+        
+              <p><strong>Using the <code>&lt;orion-link&gt;</code> component:</strong></p>
+              <p>A <orion-link href="https://www.united.com" target="new"> link</orion-link> and a <orion-link disabled>disabled link</orion-link> and a <orion-link href="#" icon-name="chevron_right" style="--orion-link-icon-top: 2px;" >link</orion-link> with an icon and a <orion-link href="#" icon-name="edit" style="--orion-link-icon-top: 1px;" icon-left>link</orion-link> with a leading icon and a <orion-link disabled icon-name="chevron_right" style="--orion-link-icon-top: 2px;">link</orion-link> with a disabled icon.</p>
+        
+              <h4>orion-link component examples:</h4>
+              
+              <p><strong>Underlined</strong></p>
+              <p><orion-link href="https://www.united.com" target="new">Text link</orion-link></p>
+        
+              <p><strong>Underlined disabled</strong></p>
+              <p><orion-link href="https://www.united.com" target="new" disabled>Text link</orion-link></p>
+        
+              <p><strong>Href missing</strong></p>
+              <p><orion-link>Text link</orion-link></p>
+              
+              <p><strong>Arrow</strong></p>
+              <p><orion-link href="#" icon-name="chevron_right" style="--orion-link-icon-top: 2px;">Text link</orion-link></p>
+              
+              <p><strong>Arrow disabled</strong></p>
+              <p><orion-link href="#" icon-name="chevron_right" style="--orion-link-icon-top: 2px;" disabled>Text link</orion-link></p>
+              
+              <p><strong>Arrow left</strong></p>
+              <p><orion-link href="#" icon-name="chevron_left" style="--orion-link-icon-top: 2px; --orion-link-icon-left: -4px" icon-left>Text link</orion-link></p>
+              
+              <p><strong>Another icon</strong></p>
+              <p><orion-link href="#" icon-name="detach" style="--orion-link-icon-top: 1px;">Text link</orion-link></p>
+        
+              <p><strong>No underline</strong></p>
+              <p><orion-link href="#" no-underline>Text link</orion-link></p>
+        
+              <p><strong>Different color</strong></p>
+              <p style="background-color: #024;"><orion-link href="#" icon-name="detach" style="--orion-link-color: #fff; --orion-link-color--hover: #69b3e7; --orion-link-color--active: #00b2a9; --orion-link-icon-top: 1px;">Text link</orion-link></p>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Lists</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-list</h3>
+              <orion-list>
+        
+                <orion-list-item>List item one</orion-list-item>
+        
+                <orion-list-item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</orion-list-item>
+        
+                <orion-list-item>
+                  <div slot="orion-list-item-heading">List item three</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item>
+                  <div slot="orion-list-item-heading">List item four</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                </orion-list-item>
+        
+                <orion-list-item disabled>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+              
+                <orion-list-item has-icon icon-name="location">
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item has-icon icon-name="location" style="--orion-list-item-icon-color: #00b2a9;">
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item disabled has-icon icon-name="location">
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item has-marker>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item has-marker style="--orion-list-item-marker-color: #208500;">
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item has-marker disabled>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item has-marker has-icon icon-name="home" style="--orion-list-item-marker-color: #208500; --orion-list-item-marker-size: 8px;--orion-list-item-icon-color: #0033a0; --orion-list-item--vertical-align: center;">List item</orion-list-item>
+        
+                <orion-list-item>
+                  <div slot="orion-list-item-image">
+                    <img src="http://via.placeholder.com/56x56/00b2a9/fff" />
+                  </div>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item disabled>
+                  <div slot="orion-list-item-image">
+                    <img src="http://via.placeholder.com/56x56/00b2a9/fff" />
+                  </div>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                  <div slot="orion-list-item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </orion-list-item>
+        
+                <orion-list-item>
+                  <div slot="orion-list-item-image">
+                    <img src="http://via.placeholder.com/56x56/00b2a9/fff" />
+                  </div>
+                  List item
+                </orion-list-item>
+        
+                <orion-list-item>
+                  <div slot="orion-list-item-image">
+                    <img src="http://via.placeholder.com/100x100/00b2a9/fff" />
+                  </div>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                </orion-list-item>
+        
+                <orion-list-item href="#">List item</orion-list-item>
+        
+                <orion-list-item href="#">
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                </orion-list-item>
+        
+                <orion-list-item href="#" trailing-icon-name="trash" style="--orion-list-item-trailing-icon-color: #6244bb;">List item</orion-list-item>
+        
+                <orion-list-item has-trailing-icon trailing-icon-name="sunny">Trailing icon w/ no link</orion-list-item>
+        
+                <orion-list-item href="#" disabled>List item</orion-list-item>
+        
+                <orion-list-item href="#" disabled>
+                  <div slot="orion-list-item-heading">List item</div>
+                  <div slot="orion-list-item-subheading">Subtitle</div>
+                </orion-list-item>
+        
+                <orion-list-item href="#" trailing-icon-name="trash" style="--orion-list-item-trailing-icon-color: #6244bb;" disabled>List item</orion-list-item>
+        
+              </orion-list>
+              <br />
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Messages</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+       
+              <style>
+      
+                message-wrapper.placement-top-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: var(--orion-z-extreme, 9999);
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                justify-content: center;
+                padding: 16px;
+                margin: 0 auto;
+                align-items: stretch;
+                height: 100vh;
+                }
+              @media screen and (min-width: 769px) {
+                message-wrapper.placement-top-right {
+                  position: fixed; 
+                  top: 100px; 
+                  right: 16px; 
+                  width:382px;
+                  height: unset;
+                  left: unset;
+                  padding: 0;
+                }
+              }
+      
+            </style>
+            <message-wrapper class="placement-top-right">
+              <orion-message variant="low" heading="Low priority" dismissible has-icon is-open>
+                <p>Temporary messages should take up a smaller footprint and float over existing content.</p>
+              </orion-message>
+              <orion-message variant="medium" heading="Medium priority" dismissible has-icon is-open>
+                <p>When more than one appears, they stack vertically and move up the page...</p>
+              </orion-message>
+              <orion-message variant="success" heading="Success" dismissible has-icon is-open>
+                <p>...as the older, upper messages automatically dissappear.</p>
+              </orion-message>
+            </message-wrapper>
+      
+            <h3>orion-message</h3> 
+            <br/><br/> 
+            <h4>Temoporary ('Toast')</h4>
+            <br/>
+            <h5>Priority high</h5> 
+            <orion-message variant="high" heading="High priority" placement="top-right" dismissible has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <orion-message variant="high" heading="High priority" placement="top-right" dismissible is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <orion-message variant="high"  dismissible has-icon is-open placement="top-left">
+              <p>Lorem ipsum dolor sit</p>
+            </orion-message> 
+            <br/>
+            <orion-message variant="high"  dismissible is-open  placement="top-left">
+              <p>Lorem ipsum dolor sit</p>
+            </orion-message> 
+            <br/>
+            <h5>Priority medium</h5> 
+            <orion-message variant="medium" heading="Medium priority" dismissible has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Priority low</h5> 
+            <orion-message variant="low" heading="Low priority" dismissible has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Success</h5> 
+            <orion-message variant="success" heading="Success" dismissible has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Information</h5> 
+            <orion-message variant="info" heading="Information" dismissible has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <br/>
+            <br/>
+            <h4>Permanent ('On Load')</h4>
+            <br/>
+            <h5>Priority high</h5> 
+            <orion-message variant="high" heading="High priority" has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <orion-message variant="high" heading="High priority" is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <orion-message variant="high" has-icon is-open>
+              <p>Lorem ipsum dolor sit</p>
+            </orion-message>
+            <br/>
+            <orion-message variant="high" is-open>
+              <p>Lorem ipsum dolor sit</p>
+            </orion-message> 
+            <br/>
+            <h5>Priority medium</h5> 
+            <orion-message variant="medium" heading="Medium priority" has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Priority low</h5> 
+            <orion-message variant="low" heading="Low priority" has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Success</h5> 
+            <orion-message variant="success" heading="Success" has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/>
+            <h5>Information</h5> 
+            <orion-message variant="info" heading="Information" has-icon is-open>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio et quisque.</p>
+            </orion-message>
+            <br/> 
+            <br/>
+            <br/>
+            <h4>Permanent ('On Load')</h4>
+            <br/>
+            <p>click on buttons below to activate mobile overlay</p>
+            <br/>
+            <orion-button id="successBTN1">w/ Icon, title + message</orion-button>
+            <orion-message id="success1" variant="success-overlay" heading="Success" overlay-time="99000" has-icon style="margin-top: 8px;">
+              <p>Your submission was successful. Thank you.</p>
+            </orion-message>
+            <br/>
+      
+            <orion-button id="successBTN2">w/ Icon, title</orion-button>
+            <orion-message id="success2" variant="success-overlay" heading="Success" has-icon  style="margin-top: 8px;"></orion-message>
+            <br/>
+      
+            <orion-button id="successBTN3">Icon only</orion-button>
+            <orion-message id="success3" variant="success-overlay" has-icon  style="margin-top: 8px;"></orion-message>
+      
+            <br/>
+      
+              <script>
+                document.getElementById('successBTN1').addEventListener('click', function(){
+                  document.getElementById('success1').setAttribute('is-open','');
+                })
+                document.getElementById('successBTN2').addEventListener('click', function(){
+                  document.getElementById('success2').setAttribute('is-open','');
+                })
+                document.getElementById('successBTN3').addEventListener('click', function(){
+                  document.getElementById('success3').setAttribute('is-open','');
+                })
+              </script>
+
+            </div>
+          </div>
+       </div>
+      </orion-tab-panel>
+
+      <orion-tab>Modals</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-modal</h3>
+              
+              <orion-button id="open-modal1" variant="primary">Open modal</orion-button>
+              
+              <orion-modal id="modal1" has-cancel-icon has-icon icon-name="alert">
+                <div slot="orion-modal-title">Modal title</div>
+                <span slot="orion-modal-primary-button">Primary</span>
+              </orion-modal>
+              <br />
+        
+              <orion-button id="open-modal2" variant="secondary">Open another modal</orion-button>
+        
+              <orion-modal id="modal2" has-cancel-icon has-icon icon-name="plane">
+                <div slot="orion-modal-title">Modal title</div>
+                <div slot="orion-modal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. The quick brown fox jumps over the lazy dog. The five boxing wizards jump quickly. Pack my box with five dozen liquor jugs. The slow black dog bows before the regal fox.
+                </div>
+                <span slot="orion-modal-secondary-button">Secondary</span>
+                <span slot="orion-modal-primary-button">Primary</span>
+              </orion-modal>
+              <br />
+        
+              <orion-button id="open-modal3" variant="secondary">Open custom modal</orion-button>
+        
+              <orion-modal id="modal3" has-cancel-icon is-title-centered is-fullscreen-mobile has-icon icon-name="plane">
+                <div slot="orion-modal-title">Modal title</div>
+                <div slot="orion-modal-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit amet facilisis magna etiam. Turpis in eu mi bibendum neque. Sapien faucibus et molestie ac. Blandit libero volutpat sed cras ornare arcu dui. Cursus metus aliquam eleifend mi. Luctus venenatis lectus magna fringilla urna porttitor. Ut tellus elementum sagittis vitae et. Congue eu consequat ac felis donec et odio pellentesque diam. At auctor urna nunc id cursus metus aliquam eleifend mi. Id volutpat lacus laoreet non curabitur gravida arcu ac. Volutpat blandit aliquam etiam erat velit scelerisque in dictum.</p>
+                  <p>Blandit libero volutpat sed cras ornare arcu. Tellus orci ac auctor augue. Tortor aliquam nulla facilisi cras. Mauris pellentesque pulvinar pellentesque habitant morbi. Erat velit scelerisque in dictum non consectetur a. Faucibus turpis in eu mi bibendum. Suspendisse sed nisi lacus sed viverra. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Volutpat ac tincidunt vitae semper quis lectus nulla. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Integer vitae justo eget magna. Vitae justo eget magna fermentum iaculis. Suspendisse in est ante in nibh mauris cursus mattis. Ac odio tempor orci dapibus ultrices. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Eget egestas purus viverra accumsan in nisl. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant.</p>
+                  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Id cursus metus aliquam eleifend mi. Morbi quis commodo odio aenean sed adipiscing diam. Velit euismod in pellentesque massa placerat. Mauris pellentesque pulvinar pellentesque habitant morbi. Tellus mauris a diam maecenas sed enim ut sem viverra. Quis hendrerit dolor magna eget est lorem ipsum. Nunc sed id semper risus in hendrerit gravida rutrum. Cursus vitae congue mauris rhoncus aenean. Leo duis ut diam quam nulla porttitor massa.</p>
+                  <p>Urna porttitor rhoncus dolor purus non enim praesent elementum. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Nisl condimentum id venenatis a condimentum vitae sapien. Arcu dictum varius duis at consectetur lorem. Lacus viverra vitae congue eu consequat ac. In nisl nisi scelerisque eu ultrices vitae auctor eu. Sit amet massa vitae tortor condimentum lacinia quis. Felis imperdiet proin fermentum leo. Lorem mollis aliquam ut porttitor leo. Nisi est sit amet facilisis magna etiam tempor. Luctus venenatis lectus magna fringilla urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Nibh venenatis cras sed felis eget velit aliquet. Id faucibus nisl tincidunt eget.</p>
+                </div>
+                <span slot="orion-modal-footer-left">
+                  <orion-button variant="tertiary" icon-name="chevron_left">Previous</orion-button>
+                </span>
+                <span slot="orion-modal-footer-center">3 of 5</span>
+                <span slot="orion-modal-footer-right">
+                  <orion-button variant="tertiary" icon-name="chevron_right" icon-right>Next</orion-button>
+                </span>
+              </orion-modal>
+              <br />
+
+              <orion-button id="open-modal4" variant="tertiary">Open modal</orion-button>
+              
+              <orion-modal id="modal4" is-fullscreen>
+                <div slot="orion-modal-title">
+                  Customize Dashboard<br/>
+                  <small>Drag and drop items to reorder your dashboard view</small>
+                </div>
+                <div slot="orion-modal-body" class="orion-container-fluid">
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Announcements</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Current event preview</orion-toggle>
+                    </div>
+                  </div>
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Key dates</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Feature spotlights</orion-toggle>
+                    </div>
+                  </div>
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Pay summary</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Comms</orion-toggle>
+                    </div>
+                  </div>
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                  </div>
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                  </div>
+                  <div class="orion-row orion-no-row-gap">
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                    <div class="orion-col-6 orion-col-xs-12">
+                      <orion-toggle justify>Placeholder widget</orion-toggle>
+                    </div>
+                  </div>
+                </div>
+                <span slot="orion-modal-button-row">
+                  <small>Last updated 04/14/2023 2:18 PM (CT)</small>
+                </span>
+                <span slot="orion-modal-secondary-button" id="cancel">
+                  Cancel
+                </span>
+                <span slot="orion-modal-primary-button" id="save">
+                  Save
+                </span>
+              </orion-modal>
+              <br />
+        
+              <script>
+                document.getElementById('open-modal1').addEventListener('click', function () {
+                  document.getElementById('modal1').setAttribute('is-open', '');
+                })
+                document.getElementById('modal1')
+                .addEventListener('orionModalFooterBtnClicked',
+                (event) => console.log('modal1: button clicked', event.detail)
+                )
+              
+                document.getElementById('open-modal2').addEventListener('click', function(){
+                  document.getElementById('modal2').setAttribute('is-open','');
+                })
+                document.getElementById('modal2')
+                .addEventListener('orionModalFooterBtnClicked',
+                (event) => console.log('modal2: button clicked', event.detail)
+                )
+                      
+                document.getElementById('open-modal3').addEventListener('click', function(){
+                  document.getElementById('modal3').setAttribute('is-open','');
+                })
+
+                document.getElementById('open-modal4').addEventListener('click', function(){
+                  document.getElementById('modal4').setAttribute('is-open','');
+                })
+
+                document.getElementById('modal4').addEventListener('orionModalFooterBtnClicked', function (e) {
+                  if (e.detail.variant === 'primary') {
+                    alert('Save button clicked');
+                  }
+                  if (e.detail.variant === 'secondary') {
+                    alert('Cancel button clicked');
+                    document.getElementById('modal4').removeAttribute('is-open');
+                  }
+                })
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Nav menu</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-nav-menu</h3>
+
+              <h4>Menu title and close icon</h4>
+              <div class="orion-row">  
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-nav-menu1" variant="secondary">Open nav menu 1</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-nav-menu1" variant="secondary">Close nav menu 1</orion-button>
+                </div>
+
+                <orion-nav-menu has-close-icon id="nav-menu1">
+                  <span slot="orion-nav-menu-title">Menu title</span>
+                  <div slot="orion-nav-menu-body">
+                  </div>
+                </orion-nav-menu>
+              </div>
+              <br />
+
+              <h4>Menu title and no close icon</h4>
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-nav-menu2" variant="secondary">Open nav menu 2</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-nav-menu2" variant="secondary">Close nav menu 2</orion-button>
+                </div>
+                
+                <orion-nav-menu id="nav-menu2">
+                  <span slot="orion-nav-menu-title">Menu title</span>
+                  <div slot="orion-nav-menu-body">
+                      
+                  </div>
+                </orion-nav-menu>
+              </div>
+              <br />
+
+              <h4>No menu title with close icon</h4>
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-nav-menu3" variant="secondary">Open nav menu 3</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-nav-menu3" variant="secondary">Close nav menu 3</orion-button>
+                </div>
+                
+                <orion-nav-menu has-close-icon id="nav-menu3">
+                  <div slot="orion-nav-menu-body">
+                      
+                  </div>
+                </orion-nav-menu>
+              </div>
+              <br />
+
+              <h4>No menu title and no close icon</h4>
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-nav-menu4" variant="secondary">Open nav menu 4</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-nav-menu4" variant="secondary">Close nav menu 4</orion-button>
+                </div>
+                
+                <orion-nav-menu id="nav-menu4">
+                  <div slot="orion-nav-menu-body">
+                      
+                  </div>
+                </orion-nav-menu>
+              </div>
+              <br />
+              
+              <script>
+                document.getElementById('open-nav-menu1').addEventListener('click', function () {
+                  document.getElementById('nav-menu1').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-nav-menu1').addEventListener('click', function () {
+                  document.getElementById('nav-menu1').removeAttribute('is-open');
+                })
+
+                document.getElementById('open-nav-menu2').addEventListener('click', function () {
+                  document.getElementById('nav-menu2').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-nav-menu2').addEventListener('click', function () {
+                  document.getElementById('nav-menu2').removeAttribute('is-open');
+                })
+
+                document.getElementById('open-nav-menu3').addEventListener('click', function () {
+                  document.getElementById('nav-menu3').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-nav-menu3').addEventListener('click', function () {
+                  document.getElementById('nav-menu3').removeAttribute('is-open');
+                })
+
+                document.getElementById('open-nav-menu4').addEventListener('click', function () {
+                  document.getElementById('nav-menu4').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-nav-menu4').addEventListener('click', function () {
+                  document.getElementById('nav-menu4').removeAttribute('is-open');
+                })
+
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Note</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-note</h3>
+              <orion-note>Note</orion-note>
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Popovers</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-popover</h3>
+
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      bottom-start
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="bottom-start">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      bottom
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="bottom">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      bottom-end
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="bottom-end">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      top-start
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="top-start">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      top
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="top">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      top-end
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover 
+                      popper-width="150" 
+                      placement="top-end">
+                        <div slot="orion-popover-body">Popover content</div>
+                        toggle this popover
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                </div>
+                
+                <div class="orion-col-6 orion-col-xs-12">
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      right-end
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover  popper-width="150" placement="right-end">       
+                        <div slot="orion-popover-body">Popover content</div>
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      right
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover popper-width="150" placement="right">      
+                        <div slot="orion-popover-body">Popover content</div> 
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      right-start
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover popper-width="150" placement="right-start">  
+                        <div slot="orion-popover-body">Popover content</div>     
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      left-end
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover popper-width="150" placement="left-end">  
+                        <div slot="orion-popover-body">Popover content</div>     
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      left
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover popper-width="150" placement="left">
+                        <div slot="orion-popover-body">Popover content</div>     
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                  <div class="orion-row">
+                    <div class="orion-col">
+                      left-start
+                    </div>
+                    <div class="orion-col">
+                      <orion-popover  popper-width="150" placement="left-start">
+                        <div slot="orion-popover-body">Popover content</div>       
+                  
+                        <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                      </orion-popover>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+        
+              <orion-popover popper-width="460" placement="right">
+                <span slot="orion-popover-title">Change of Gauge | UA2135 ORD - LAS - SFO</span>
+                <div slot="orion-popover-body">
+                  <i>Your flight from <a href='#'>Phoenix</a>, AZ, US (PHX) to Washington, DC, US (IAD) makes a stop at <a href='#'>Chicago</a>, IL, US (ORD) where you'll change planes, but will keep the same flight number.</i><br/><br/>
+        
+                  Time on Ground in <a href='#'>Chicago</a>, IL, US (ORD) is 55m<br/><br/>
+                  
+                  <strong>Equipment changes in Chicago, IL, US (ORD) from a Boeing 737-900 to a Boeing 787-8 Dreamliner</strong><br/><br/>
+                  
+                  <strong>Arrives:</strong> ORD at 08:22 PM<br/>
+                  <strong>Departs:</strong> ORD at 09:15 PM
+        
+                </div>    
+                toggle this popover with HTML [right]
+              </orion-popover> 
+              - 
+              <orion-popover popper-width="460" placement="bottom">
+                <span slot="orion-popover-title">Change of Gauge | UA2135 ORD - LAS - SFO</span>
+                <div slot="orion-popover-body">
+                  <i>Your flight from <a href='#'>Phoenix</a>, AZ, US (PHX) to Washington, DC, US (IAD) makes a stop at <a href='#'>Chicago</a>, IL, US (ORD) where you'll change planes, but will keep the same flight number.</i><br/><br/>
+        
+                  Time on Ground in <a href='#'>Chicago</a>, IL, US (ORD) is 55m<br/><br/>
+                  
+                  <strong>Equipment changes in Chicago, IL, US (ORD) from a Boeing 737-900 to a Boeing 787-8 Dreamliner</strong><br/><br/>
+                  
+                  <strong>Arrives:</strong> ORD at 08:22 PM<br/>
+                  <strong>Departs:</strong> ORD at 09:15 PM</div>   
+                toggle this popover with HTML [bottom]
+              </orion-popover>
+              -
+              <orion-popover data-popover-title="" popper-width="460" placement="top">     
+                <span slot="orion-popover-title">Change of Gauge | UA2135 ORD - LAS - SFO</span>
+                <div slot="orion-popover-body">
+                  <i>Your flight from <a href='#'>Phoenix</a>, AZ, US (PHX) to Washington, DC, US (IAD) makes a stop at <a href='#'>Chicago</a>, IL, US (ORD) where you'll change planes, but will keep the same flight number.</i><br/><br/>
+        
+                  Time on Ground in <a href='#'>Chicago</a>, IL, US (ORD) is 55m<br/><br/>
+                  
+                  <strong>Equipment changes in Chicago, IL, US (ORD) from a Boeing 737-900 to a Boeing 787-8 Dreamliner</strong><br/><br/>
+                  
+                  <strong>Arrives:</strong> ORD at 08:22 PM<br/>
+                  <strong>Departs:</strong> ORD at 09:15 PM
+                </div>  
+                toggle this popover with HTML [top]
+              </orion-popover>
+              -
+              <orion-popover popper-width="460" placement="left">       
+                <span slot="orion-popover-title">Change of Gauge | UA2135 ORD - LAS - SFO</span>
+                <div slot="orion-popover-body">
+                  <i>Your flight from <a href='#'>Phoenix</a>, AZ, US (PHX) to Washington, DC, US (IAD) makes a stop at <a href='#'>Chicago</a>, IL, US (ORD) where you'll change planes, but will keep the same flight number.</i><br/><br/>
+        
+                  Time on Ground in <a href='#'>Chicago</a>, IL, US (ORD) is 55m<br/><br/>
+                  
+                  <strong>Equipment changes in Chicago, IL, US (ORD) from a Boeing 737-900 to a Boeing 787-8 Dreamliner</strong><br/><br/>
+                  
+                  <strong>Arrives:</strong> ORD at 08:22 PM<br/>
+                  <strong>Departs:</strong> ORD at 09:15 PM
+                </div>
+                toggle this popover with HTML [left]
+              </orion-popover>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Progress meter</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-progress-meter</h3>
+              <br />
+        
+              <orion-progress-meter id="progress1" value="25" max="100" ></orion-progress-meter>
+              <small>Linear progress meter</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress2" value="25" max="100" is-circle size="medium"></orion-progress-meter>
+              <small>Circular progress meter</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress3" value="50" max="100" is-circle segments="10" show-value></orion-progress-meter>
+              <small>Value in circle with segments</small>
+              <br />
+              <br />
+          
+              <orion-progress-meter id="progress4" value=".5" max="1"  style="
+              --orion-progress-meter__color-progress: #2b73f5; --orion-progress-meter__color-progess-background: #a5ebff;"></orion-progress-meter>
+              <small>Color variants</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress5" value="7.5" max="10" is-circle show-value style=" --orion-progress-meter__color-progress: var(--orion-pacific-blue); --orion-progress-meter__color-progess-background: var(--orion-premium-purple);"></orion-progress-meter>
+              <small>Color variants</small>
+              <br />
+              <br />
+        
+              <div class="orion-container-fluid">
+                <div class="orion-row">
+                  <div class="orion-col-5" style="background-color: #b6b8dc; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 16px;">
+                    <orion-progress-meter id="progress6" value="75" max="100" is-circle show-value style="--orion-progress-meter__color-circle-label: #b6b8dc;"></orion-progress-meter>
+                    <orion-label style="--orion-label--padding-right: 0;">On background color</orion-label>
+                  </div>
+                </div>
+              </div>
+              <br />
+        
+              <orion-progress-meter id="progress7" value=".6" max="1" target="1"></orion-progress-meter>
+              <small>Error color when target value supplied and current value is less than 80% of target value</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress8" value=".8" max="1" target="1"></orion-progress-meter>
+              <small>Warn color when target value supplied and current value is 80% to 99% of target value</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress9" value="1" max="1" target="1"></orion-progress-meter>
+              <small>Success color when target value supplied and current value equals target value</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress10" value="60" max="100" target="100" is-circle show-value></orion-progress-meter>
+              <small>Circular error</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress11" value="80" max="100" target="100" is-circle show-value></orion-progress-meter>
+              <small>Circular warn</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress12" value="100" max="100" target="100" is-circle show-value></orion-progress-meter>
+              <small>Circular success</small>
+              <br />
+              <br />
+        
+              <orion-progress-meter id="progress13" value=".8" max="1" target="1" style="--orion-progress-meter__color-success: var(--orion-rhapsody-blue); --orion-progress-meter__color-warn: var(--orion-rhapsody-blue); --orion-progress-meter__color-error: var(--orion-rhapsody-blue);"></orion-progress-meter>
+              <small>Target value supplied but error, warn and success colors overwritten</small>
+              <br />
+              <br />
+
+            </div>
+            <br />
+      
+            <orion-progress-meter id="progress7" value=".6" max="1" target="1"></orion-progress-meter>
+            <small>Error color when target value supplied and current value is less than 80% of target value</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress8" value=".8" max="1" target="1"></orion-progress-meter>
+            <small>Warn color when target value supplied and current value is 80% to 99% of target value</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress9" value="1" max="1" target="1"></orion-progress-meter>
+            <small>Success color when target value supplied and current value equals target value</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress10" value="60" max="100" target="100" is-circle show-value></orion-progress-meter>
+            <small>Circular error</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress11" value="80" max="100" target="100" is-circle show-value></orion-progress-meter>
+            <small>Circular warn</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress12" value="100" max="100" target="100" is-circle show-value></orion-progress-meter>
+            <small>Circular success</small>
+            <br />
+            <br />
+      
+            <orion-progress-meter id="progress13" value=".8" max="1" target="1" style="--orion-progress-meter__color-success: var(--orion-rhapsody-blue); --orion-progress-meter__color-warn: var(--orion-rhapsody-blue); --orion-progress-meter__color-error: var(--orion-rhapsody-blue);"></orion-progress-meter>
+            <small>Target value supplied but error, warn and success colors overwritten</small>
+            <br />
+            <br />
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Radio buttons</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-radio-button</h3>
+              <orion-label>Label</orion-label>
+              <orion-radio-button-group id="radio-group-1" value="value-3" name="radio-group-1">
+                <orion-radio-button value="value-1">Item 1</orion-radio-button>
+                <orion-radio-button value="value-2">Item 2</orion-radio-button>
+                <orion-radio-button value="value-3" disabled>List item</orion-radio-button>
+                <orion-radio-button value="value-4">Item 4</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+              
+              <script>
+                document.getElementById('radio-group-1')
+                  .addEventListener('valueChanged',
+                    (event) => console.log('radio-group: valueChanged', event.detail)
+                  )
+              </script>
+        
+              <orion-label>Inline</orion-label>
+              <orion-radio-button-group id="radio-group-2" name="radio-group-2" inline>
+                <orion-radio-button value="value-1">Item 1 has long text</orion-radio-button>
+                <orion-radio-button value="value-2">Item 2 has even longer text</orion-radio-button>
+                <orion-radio-button value="value-3">List item</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+
+              <orion-label>Inline group with custom column gap</orion-label>
+              <orion-radio-button-group inline style="--orion-radio-group-column-gap: 16px;">
+                <orion-radio-button value="value-1">Item 1 has long text</orion-radio-button>
+                <orion-radio-button value="value-2">Item 2 has even longer text</orion-radio-button>
+                <orion-radio-button value="value-3">List item</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+              
+              <orion-label error>Group error</orion-label>
+              <orion-error>Inline feedback</orion-error>
+              <orion-radio-button-group id="radio-group-3" name="radio-group-3">
+                <orion-radio-button style="--orion-radio--vertical-align: center;" value="value-1">Item with a very long label that will wrap and keep the radio button vertically alligned to the top lorem ipsum dolor sit amet</orion-radio-button>
+                <orion-radio-button value="value-2">Item 2</orion-radio-button>
+                <orion-radio-button value="value-3">List item</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label error>Inline group with error</orion-label>
+              <orion-error class="orion-is-hidden-desktop">Error feedback</orion-error>
+              <orion-radio-button-group id="radio-group-4" name="radio-group-4" inline>
+                <orion-radio-button value="value-1">Value 1</orion-radio-button>
+                <orion-radio-button value="value-2">Value 2</orion-radio-button>
+                <orion-radio-button value="value-3">Value 3</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-error class="orion-is-hidden-mobile">Error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              
+              <orion-label disabled>Group disabled</orion-label>
+              <orion-radio-button-group id="radio-group-5" value="value-2" name="radio-group-5" disabled>
+                <orion-radio-button value="value-1">Value 1</orion-radio-button>
+                <orion-radio-button value="value-2">Value 2</orion-radio-button>
+                <orion-radio-button value="value-3">Value 3</orion-radio-button>
+              </orion-radio-button-group>
+              <orion-note>This is a note</orion-note>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Steppers</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-stepper</h3>
+              <orion-label>Label - Default stepper</orion-label>
+              <orion-stepper id="stepper1" value="5" step="1" min="0" max="10"></orion-stepper>
+              <orion-note>Examples using a min value of 0, a max value of 10, an initial value of 5, and incrementing steps by 1.</orion-note>
+              <br />
+              <orion-label>Stepper - No tally</orion-label>
+              <orion-stepper id="stepper2" value="5" step="1" min="0" max="10" hide-tally></orion-stepper>
+              <orion-note>Note</orion-note>
+              <br />
+              <orion-label>Disabled stepper</orion-label>
+              <orion-stepper id="stepper3" value="5" step="1" min="0" max="10" disabled></orion-stepper>
+              <orion-note>Note</orion-note>
+              <br />
+              <orion-label>Disabled stepper with no tally</orion-label>
+              <orion-stepper id="stepper4" value="5" step="1" min="0" max="10" hide-tally disabled></orion-stepper>
+              <orion-note>Note</orion-note>
+              <br />
+              <orion-label error>Stepper with error</orion-label>
+              <orion-stepper id="stepper5" value="3.14159" error></orion-stepper>
+              <orion-error>Error feedback</orion-error>
+              <orion-note>If attributes not provided, this component will use a default min of 0, a default max of 100, and a default step of 1.</orion-note>
+              <br />
+              <orion-label>Stepper with variable width</orion-label>
+              <orion-stepper id="stepper6" value="5" step="1" min="0" max="10" style="--orion-stepper-tally-width: 100%;"></orion-stepper>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Subheader</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-subheader</h3>
+              <br />
+              <br />
+              <br />
+
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-subheader1" variant="secondary">Open subheader 1</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-subheader1" variant="secondary">Close subheader 1</orion-button>
+                </div>
+              </div>
+              <orion-subheader id="subheader1">
+                <span slot="orion-subheader-left">
+                  Subheader left
+                </span>
+                <span slot="orion-subheader-center">
+                  Subheader center
+                </span>
+                <span slot="orion-subheader-right">
+                  Subheader right
+                </span>
+              </orion-subheader>
+              <br />
+
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-subheader2" variant="secondary">Open subheader 2</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-subheader2" variant="secondary">Close subheader 2</orion-button>
+                </div>
+              </div>
+              <orion-subheader id="subheader2" has-close-icon>
+                <span slot="orion-subheader-left">
+                  <i class="orion-icon orion-icon-search" style="font-size: 24px;"></i>
+                  <h3 style="font-weight: 600;">Search</h3>
+                  <orion-text-input placeholder="Search for a fare" style="width: 190px;"></orion-text-input>
+                </span>
+              </orion-subheader>
+              <br />
+
+              <div class="orion-row">
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="open-subheader3" variant="secondary">Open subheader 3</orion-button>
+                </div>
+                <div class="orion-col-6 orion-col-xs-12">
+                  <orion-button id="close-subheader3" variant="secondary">Close subheader 3</orion-button>
+                </div>
+              </div>
+              <orion-subheader id="subheader3" has-close-icon style="--orion-subheader-color: #333; --orion-subheader-bg-color: #fff; --orion-subheader-vertical-align: flex-end;"
+              >
+                <div class="orion-container-fluid">
+                  <div class="orion-row">
+                    <div class="orion-col-3 orion-col-xs-4">
+                      <orion-label>Station</orion-label>
+                      <orion-text-input placeholder="Station code"></orion-text-input>
+                    </div>
+                    <div class="orion-col-3 orion-col-xs-4">
+                      <orion-label>Zone</orion-label>
+                      <orion-dropdown placeholder="Select zone">
+                        <orion-dropdown-option value="1">Zone 1</orion-dropdown-option>
+                        <orion-dropdown-option value="2">Zone 2</orion-dropdown-option>
+                        <orion-dropdown-option value="3">Zone 3</orion-dropdown-option>
+                      </orion-dropdown>
+                    </div>
+                    <div class="orion-col-4 orion-is-hidden-mobile">
+                    </div>
+                    <div class="orion-col-2 orion-col-xs-4" style="align-self: flex-end;">
+                      <orion-button variant="primary">Filter flights</orion-button>
+                    </div>
+                  </div>
+                </div>
+              </orion-subheader>
+              <br />
+
+              <script>
+                document.getElementById('open-subheader1').addEventListener('click', function () {
+                  document.getElementById('subheader1').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-subheader1').addEventListener('click', function () {
+                  document.getElementById('subheader1').removeAttribute('is-open');
+                })
+
+                document.getElementById('open-subheader2').addEventListener('click', function () {
+                  document.getElementById('subheader2').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-subheader2').addEventListener('click', function () {
+                  document.getElementById('subheader2').removeAttribute('is-open');
+                })
+
+                document.getElementById('open-subheader3').addEventListener('click', function () {
+                  document.getElementById('subheader3').setAttribute('is-open', '');
+                })
+
+                document.getElementById('close-subheader3').addEventListener('click', function () {
+                  document.getElementById('subheader3').removeAttribute('is-open');
+                })
+              </script>
+
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Tables</orion-tab>
+        <orion-tab-panel>
+          <div class="orion-container">
+            <div class="orion-row">
+              <div class="orion-col-12">
+                <h3>orion-table</h3>
+          
+                <h4>Atomic - striped</h4>
+                <orion-table sortable>
+                  <orion-table-row>
+                    <orion-table-header align="left">Flight name</orion-table-header>
+                    <orion-table-header align="center">Flight status</orion-table-header>
+                    <orion-table-header align="right">Flight number</orion-table-header>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to NYC</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane_arriving"></i></orion-table-cell>
+                    <orion-table-cell>1</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Toronto</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane"></i></orion-table-cell>
+                    <orion-table-cell>3</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Vancouver</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane_departing"></i></orion-table-cell>
+                    <orion-table-cell>4</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Berlin</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane"></i></orion-table-cell>
+                    <orion-table-cell>2</orion-table-cell>
+                  </orion-table-row>
+                </orion-table>
+
+                <br />
+                <h4>Atomic - lined</h4>
+                <orion-table pin="1" sortable variant="lined" style="--orion-table-width: 100%">
+                  <orion-table-row>
+                    <orion-table-header>Flight name</orion-table-header>
+                    <orion-table-header align="center">Flight status</orion-table-header>
+                    <orion-table-header align="right">Flight number</orion-table-header>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to NYC</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane_arriving"></i></orion-table-cell>
+                    <orion-table-cell>1</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Toronto</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane"></i></orion-table-cell>
+                    <orion-table-cell>3</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Vancouver</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane_departing"></i></orion-table-cell>
+                    <orion-table-cell>4</orion-table-cell>
+                  </orion-table-row>
+                  <orion-table-row>
+                    <orion-table-cell>London to Berlin</orion-table-cell>
+                    <orion-table-cell><i class="orion-icon orion-icon-plane"></i></orion-table-cell>
+                    <orion-table-cell>2</orion-table-cell>
+                  </orion-table-row>
+                </orion-table>
+
+                <br />
+                <h4>Data - striped</h4>
+                <orion-data-table sortable pin="7"></orion-data-table>
+                <br />
+                <h4>Data - checkbox</h4>
+                <orion-data-table checkbox sortable pin="1"></orion-data-table>
+                <br />
+                <h4>Data - lined</h4>
+                <orion-data-table sortable variant="lined"></orion-data-table>
+                <br />
+                <h4>Data - no min column width - lined</h4>
+                <orion-data-table sortable variant="lined" style="--orion-table-column-min-width: 0"></orion-data-table>
+                <script>
+                  const columns = [
+                    {
+                      header: {
+                          name: 'checkbox',
+                          type: 'checkbox',
+                          align: 'center',
+                        },
+                      body: [true, false]
+                    },
+                    {
+                      header: 'Flight origin and destination',
+                      body: ['Toronto to London', 'London to Toronto', 'Toronto to New York City', 'London to Dublin']
+                    },
+                    {
+                      header: {
+                        name: 'Departure time',
+                        type: 'number',
+                        sortable: false,
+                      },
+                      body: [{ value: '14:00', sortValue: 14 }, { value: '2:00', sortValue: 2 }, { value: '8:00', sortValue: 8 }, { value: '22:00', sortValue: 22 }]
+                    },
+                    {
+                      header: { name: 'Fog level', type: 'icon', align: 'center' },
+                      body: [{ iconName: 'fog', iconCount: 1 }, { iconName: 'fog', iconCount: 2 }, { iconName: 'fog', iconCount: 3 }, { iconName: 'fog', iconCount: 4 }]
+                    },
+                    {
+                      header: {
+                        name: 'Priority',
+                        type: 'select',
+                        selectOptions: [
+                          { text: 'High', value: 3 },
+                          { text: 'Medium', value: 2 },
+                          { text: 'Low', value: 1 },
+                        ]
+                      },
+                      body: [{ default: 'Low' }, { default: 'Medium' }, { default: 'High' }]
+                    },
+                    {
+                      header: { name: 'Fees', align: 'right' },
+                      body: ['$0.00', '$10.00', '$100.00', '$2,000.00']
+                    },
+                    {
+                      header: 'Flight type',
+                      body: [1, 2, 3, 4]
+                    }
+                  ]
+                  const generateTableContent = (table, columnCount, rowCount, includeCheckbox = true) => {
+                    const headers = [];
+                    const rows = [];
+
+                    const usableColumnIndices = columns.map((_, i) => i);
+
+                    if (!includeCheckbox) {
+                      usableColumnIndices.shift();
+                    }
+                    
+                    const columnChoices = [];
+                    for (let i = 0; i < columnCount; i += 1) {
+                      if (usableColumnIndices.length > 0) {
+                        const choice = usableColumnIndices.shift();
+                        columnChoices.push(columns[choice]);
+                      } else {
+                        columnChoices.push(
+                          {
+                            header: 'Label',
+                            body: ['Data', 'Some data', 'A long piece of data that should get truncated']
+                          }
+                        )
+                      }
+                    }
+
+                    columnChoices.forEach((choice) => {
+                        headers.push(choice.header);
+                    })
+                    const maxStringLength = 25;
+                    for (let i = 0; i < rowCount; i += 1) {
+                      const newRow = [];
+                      columnChoices.forEach((column, x) => {
+                        const bodyChoices = column.body;
+                        const choiceIndex = Math.floor(Math.random() * bodyChoices.length);
+                        let bodyText = bodyChoices[choiceIndex];
+                        if (typeof bodyText === 'string') {
+                          const length = bodyText.length;
+                          if (length > maxStringLength) {
+                            bodyText = bodyText.split('').slice(0, 25).join('') + '...'
+                          }
+                        }
+                        newRow.push(bodyText);
+                      })
+                      rows.push(newRow);
+                    }
+                    if (table) {
+                      table.headers = headers;
+                      table.rows = rows;
+                    }
+                  }
+                  document.querySelectorAll('orion-data-table').forEach((table, i) => {
+                    generateTableContent(table, 12, 4, i !== 1);
+                  })
+                  document.querySelector('orion-data-table').hiddenColumns = [1, 7];
+                </script>
+                <br />
+                <h4>Native striped table</h4>
+                <table class="orion-table">
+                  <thead>
+                    <tr>
+                      <th>Flight name</th>
+                      <th class="orion-table-cell--center">Weather</th>
+                      <th class="orion-table-cell--right">Fees</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Toronto to London</td>
+                      <td class="orion-table-cell--center"><i class="orion-icon orion-icon-fog"></i></td>
+                      <td class="orion-table-cell--right">$10.00</td>
+                    </tr>
+                    <tr>
+                      <td>London to Toronto</td>
+                      <td class="orion-table-cell--center"><i class="orion-icon orion-icon-cloudy"></i></td>
+                      <td class="orion-table-cell--right">$20.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+                <h3>Native lined table</h3>
+                <table class="orion-table orion-table--lined">
+                  <thead>
+                    <tr><th>Flight name</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Toronto to London</td></tr>
+                    <tr><td>London to Toronto</td></tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </orion-tab-panel>
+
+      <orion-tab>Tabs</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-tabs</h3>
+              
+              <h4>2 tabs</h4>
+              <orion-tabs id="tabs-2" min-tab-width="30ch" active-tab="0">
+                <orion-tab>tab 1</orion-tab>
+                <orion-tab-panel>panel 1</orion-tab-panel>
+                <orion-tab>tab 2</orion-tab>
+                <orion-tab-panel>panel 2</orion-tab-panel>
+              </orion-tabs>
+              
+              <h4>3 tabs</h4>
+              <orion-tabs id="tabs-3" min-tab-width="231px" active-tab="1">
+                <orion-tab>tab 1</orion-tab>
+                <orion-tab>tab 2</orion-tab>
+                <orion-tab>tab 3</orion-tab>
+              </orion-tabs>
+              
+              <h4>Icon tabs</h4>
+              <orion-tabs id="tabs-icons" min-tab-width="231px" active-tab="2">
+                <orion-tab><i class="orion-icon orion-icon-alert"></i></orion-tab>
+                <orion-tab><i class="orion-icon orion-icon-alert"></i><i class="orion-icon orion-icon-alert"></i></orion-tab>
+                <orion-tab><i class="orion-icon orion-icon-alert"></i><i class="orion-icon orion-icon-alert"></i><i class="orion-icon orion-icon-alert"></i></orion-tab>
+              </orion-tabs>
+              
+              <h4>7 tabs</h4>
+              <orion-tabs id="tabs-7" min-tab-width="185px" active-tab="3">
+                <orion-tab>tab 1</orion-tab>
+                <orion-tab>tab 2</orion-tab>
+                <orion-tab>tab 3</orion-tab>
+                <orion-tab>tab 4</orion-tab>
+                <orion-tab>tab 5</orion-tab>
+                <orion-tab>tab 6</orion-tab>
+                <orion-tab>tab 7</orion-tab>
+              </orion-tabs>
+              
+              <h4>Narrow container</h4>
+              <div style="width: 50vw; margin: 25px 0; min-width: 250px;">
+                <orion-tabs id="tabs-narrow" min-tab-width="185px" active-tab="9">
+                  <orion-tab>tab 1</orion-tab>
+                  <orion-tab>tab 2</orion-tab>
+                  <orion-tab>tab 3</orion-tab>
+                  <orion-tab>A really long tab name</orion-tab>
+                  <orion-tab>tab 5</orion-tab>
+                  <orion-tab>tab 6</orion-tab>
+                  <orion-tab>tab 7</orion-tab>
+                  <orion-tab>tab 8</orion-tab>
+                  <orion-tab>tab 9</orion-tab>
+                  <orion-tab>tab 10</orion-tab>
+                </orion-tabs>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Text input</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-text-input</h3>
+              <orion-label for="text1">Label</orion-label>
+              <orion-text-input id="text1" value=""></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text2">
+                Label
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-text-input id="text2" value="Value"></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text3">Label<span slot="orion-label-conditional">(Required)</span></orion-label>
+              <orion-text-input id="text3" value="" placeholder="Placeholder"></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text4" disabled>Disabled label</orion-label>
+              <orion-text-input id="text4" value="" disabled></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text5" disabled>
+                Disabled label
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-text-input id="text5" value="Disabled value" disabled></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text6" disabled>
+                Disabled label
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-text-input id="text6" value="" placeholder="Disabled placeholder" disabled></orion-text-input>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text7" error>Label with error</orion-label>
+              <orion-text-input id="text7" value="" error></orion-text-input>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text8" error>
+                Label with error
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-text-input id="text8" value="Value" error></orion-text-input>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="text9" error>
+                Label with error
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-text-input id="text9" value="" placeholder="Placeholder" error></orion-text-input>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Text area</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-textarea</h3>
+              <orion-label for="textarea1">Label</orion-label>
+              <orion-textarea id="textarea1" value=""></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea2">
+                Label
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-textarea id="textarea2" value="Value"></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea3">
+                Label
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-textarea id="textarea3" value="" placeholder="Placeholder"></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea4" disabled>Disabled label</orion-label>
+              <orion-textarea id="textarea4" value="" disabled></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea5" disabled>
+                Disabled label
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-textarea id="textarea5" value="Value" disabled></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea6" disabled>
+                Disabled label
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-textarea id="textarea6" value="" placeholder="Placeholder" disabled></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea7" error>Label with error</orion-label>
+              <orion-textarea id="textarea7" value="" error></orion-textarea>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea8" error>
+                Label with error
+                <span slot="orion-label-conditional">(Optional)</span>
+              </orion-label>
+              <orion-textarea id="textarea8" value="Value" error></orion-textarea>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea9" error>
+                Label with error
+                <span slot="orion-label-conditional">(Required)</span>
+              </orion-label>
+              <orion-textarea id="textarea9" value="" placeholder="Placeholder" error></orion-textarea>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea10">Label</orion-label>
+              <orion-textarea id="textarea10" value="Resize" resize></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea11">Label</orion-label>
+              <orion-textarea id="textarea11" value="Resize horizontal only" resize-horizontal></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea12">Label</orion-label>
+              <orion-textarea id="textarea12" value="Resize vertical only" resize-vertical></orion-textarea>
+              <orion-note>This is a note</orion-note>
+              <br />
+              <orion-label for="textarea13" disabled>Disabled label</orion-label>
+              <orion-textarea id="textarea13" value="" placeholder="Disabled resize" disabled resize></orion-textarea>
+              <orion-note>Resize functionality is removed because this is disabled</orion-note>
+              <br />
+              <orion-label for="textarea14" error>Label with error</orion-label>
+              <orion-textarea id="textarea14" value="Error resize" resize error></orion-textarea>
+              <orion-error>Inline error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Toggles</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-toggle</h3>
+              <orion-label>No label</orion-label>
+              <orion-toggle id="toggle1" name="toggle1" value="1"></orion-toggle>
+              <script>
+                document.getElementById('toggle1')
+                  .addEventListener('valueChanged',
+                    (event) => console.log('toggle1', event.detail)
+                  )
+              </script>
+              <br />    
+        
+              <orion-label>No label disabled</orion-label>
+              <orion-toggle name="toggle2" value="1" disabled></orion-toggle>
+              <br />
+        
+              <orion-label>Options disabled and checked</orion-label>
+              <orion-toggle name="toggle3" value="1" checked>Item 1</orion-toggle>
+              <orion-toggle name="toggle3" value="2">Item 2</orion-toggle>
+              <orion-toggle name="toggle3" value="3" disabled>List item</orion-toggle>
+              <orion-toggle name="toggle3" value="4" disabled checked>Item 4</orion-toggle>
+              <orion-note>This is a note</orion-note>
+              <br />
+              
+              <orion-label error>Group error</orion-label>
+              <orion-error>Error feedback</orion-error>
+              <orion-toggle-group>
+                <orion-toggle name="toggle5" value="1" style="--orion-toggle--vertical-align: center;">Item with a very long label that will wrap and keep the toggle vertically alligned to the top lorem ipsum dolor sit amet</orion-toggle>
+                <orion-toggle name="toggle5" value="2">Item 2</orion-toggle>
+                <orion-toggle name="toggle5" value="3">List item</orion-toggle>
+              </orion-toggle-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label error>Inline group with error</orion-label>
+              <orion-error class="orion-is-hidden-desktop">Error feedback</orion-error>
+              <orion-toggle-group inline>
+                <orion-toggle name="toggle6" value="1">Item 1 has long text</orion-toggle>
+                <orion-toggle name="toggle6" value="2">Item 2 has even longer text</orion-toggle>
+                <orion-toggle name="toggle6" value="3">List item</orion-toggle>
+              </orion-toggle-group>
+              <orion-error class="orion-is-hidden-mobile">Error feedback</orion-error>
+              <orion-note>This is a note</orion-note>
+              <br />
+
+              <orion-label>Inline group with custom column gap</orion-label>
+              <orion-toggle-group inline style="--orion-toggle-group-column-gap: 16px;">
+                <orion-toggle name="toggle6" value="1">Item 1 has long text</orion-toggle>
+                <orion-toggle name="toggle6" value="2">Item 2 has even longer text</orion-toggle>
+                <orion-toggle name="toggle6" value="3">List item</orion-toggle>
+              </orion-toggle-group>
+              <br />
+              
+              <orion-label>Justify single toggle</orion-label>
+              <orion-toggle name="toggle7" value="1" justify>Item justified to use 100% of container width</orion-toggle>
+              <br />
+        
+              <orion-label>Justify group</orion-label>
+              <orion-toggle-group justify>
+                <orion-toggle name="toggle8" value="1">Item 1</orion-toggle>
+                <orion-toggle name="toggle8" value="2">Item 2 has longer text</orion-toggle>
+                <orion-toggle name="toggle8" value="3">List item</orion-toggle>
+              </orion-toggle-group>
+              <orion-note>This is a note</orion-note>
+              <br />
+        
+              <orion-label disabled>Disable group</orion-label>
+              <orion-toggle-group disabled>
+                <orion-toggle name="toggle9" value="1">Item 1</orion-toggle>
+                <orion-toggle name="toggle9" value="2">Item 2</orion-toggle>
+                <orion-toggle name="toggle9" value="3">List item</orion-toggle>
+              </orion-toggle-group>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      <orion-tab>Tooltips</orion-tab>
+      <orion-tab-panel>
+        <div class="orion-container">
+          <div class="orion-row">
+            <div class="orion-col-12">
+              <h3>orion-tooltip</h3>
+              <br/>
+              <p>Tooltip on -- <orion-tooltip>text<span slot="orion-tooltip-body">this is plain text</span></orion-tooltip> -- with tooltip content as plain text</p>
+              
+              <p>Tooltip on an icon (position = top, width = 450px) <orion-tooltip 
+                tooltip-position="top" 
+                tooltip-width="450">        
+                
+                <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                <span slot="orion-tooltip-body">Power outlets are available in all rows. These 110v power outlets accept plugs from the U.S. and other select countries.</span>
+              </orion-tooltip></p>
+        
+              <p>Tooltip on an icon (position = bottom, width = 300px) <orion-tooltip 
+                tooltip-position="bottom" 
+                tooltip-width="300">        
+                
+                <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                <span slot="orion-tooltip-body">Power outlets are available in all rows. These 110v power outlets accept plugs from the U.S. and other select countries.</span>
+              </orion-tooltip></p>
+        
+              <p>Tooltip on icon with HTML content <orion-tooltip 
+                tooltip-position="bottom" 
+                tooltip-width="456">        
+                
+                <i class="orion-icon orion-icon-in_seat_power" style="font-size: 18px;"></i>
+                <span slot="orion-tooltip-body">
+                  SEA - Seattle-Tacoma International Airport - Seattle, WA USA<br/>
+                  SFO - San Francisco Intl Airport - San Francisco, CA USA<br/>
+                  SPC - La Palma Airport - Santa Cruz de la Palma, Spain<br/>
+                  GRU - São Paulo-Guarulhos International Airport - São Paulo, Brazil
+                </span>
+              </orion-tooltip></p>
+
+            </div>
+          </div>
+        </div>
+      </orion-tab-panel>
+
+      
+
+    </orion-tabs>
+    <script>
+      const url_string = (window.location.href).toLowerCase();
+      const url = new URL(url_string);
+      const tab = url.searchParams.get("tab");
+      if (tab) {
+        document.querySelector("#page-tabs").activeTab = tab;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+:host {
+  display: block;
+}
+
+:host(:not([is-open])) {
+  display: none;
+}
+
+.orion-message {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  width: 100%;
+  border: var(--orion-border-standard, 1px solid);
+  border-left: var(--orion-border-thicker, 4px solid);
+  border-radius: var(--orion-border-radius, 4px);
+  box-sizing: border-box;
+  padding: var(--orion-space-xl, 16px);
+
+  &--high {
+    border-color: var(--orion-red, #d50032);
+  }
+  &--medium {
+    border-color: var(--orion-orange, #f46335);
+  }
+  &--low {
+    border-color: var(--orion-yellow, #edb72b);
+  }
+  &--success {
+    border-color: var(--orion-green, #208500);
+  }
+  &--info {
+    border-color: var(--orion-rhapsody-blue, #002244);
+  }
+
+  &__header {
+    margin-top: -4px;
+    margin-bottom: var(--orion-space-xs, 4px);
+    padding-right: 28px;
+  }
+
+  &__priority-icon {
+    position: relative;
+    display: inline-block;
+    top: -1px;
+    margin-right: var(--orion-space-md, 8px);
+  }
+
+  &__heading {
+    position: relative;
+    display: inline;
+    top: -4px;
+    margin: 0;
+    font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+    font-size: var(--orion-font-size-title3, 24px);
+    line-height: var(--orion-line-height-lg, 32px);
+    font-weight: var(--orion-font-weight-semi-bold, 600);
+
+    + ::slotted(*) {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &.small {
+    padding: 14px var(--orion-space-xl, 16px);
+
+    .orion-message__priority-icon {
+      top: 2px;
+      margin-right: 3px;
+    }
+  }
+
+  &.is-open {
+    display: inline-block;
+  }
+
+  // only for mobile
+  &--success-overlay {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--orion-green, #208500);
+    color: var(--orion-white, #fff);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    z-index: var(--orion-z-extreme, 9999);
+    border: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: var(--orion-space-md, 8px);
+    transition: var(--orion-transition, 200ms ease-in-out);
+    padding: var(--orion-space-xxl, 18px);
+
+    &.is-open {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      transition: var(--orion-transition, 200ms ease-in-out);
+
+      .orion-message__success-animation {
+        .checkmark {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          display: block;
+          stroke-width: 5;
+          stroke: var(--orion-green, #208500);
+          stroke-miterlimit: 10;
+          margin: 10% auto;
+          box-shadow: inset 0px 0px 0px var(--orion-green, #208500);
+          animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+
+          &__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: var(--orion-white, #fff);
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+          }
+
+          &__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+          }
+
+          @keyframes stroke {
+            100% {
+              stroke-dashoffset: 0;
+            }
+          }
+          @keyframes scale {
+            0%,
+            100% {
+              transform: none;
+            }
+            50% {
+              transform: scale3d(1.1, 1.1, 1);
+            }
+          }
+          @keyframes fill {
+            100% {
+              box-shadow: inset 0px 0px 0px 60px var(--orion-white, #fff);
+            }
+          }
+        }
+      }
+    }
+
+    .orion-message__priority-icon {
+      margin: 0;
+    }
+
+    .orion-message__heading {
+      font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+      font-size: 48px;
+      line-height: 64px;
+      margin-bottom: var(--orion-space-xs, 4px);
+    }
+
+    ::slotted(*) {
+      // !important needed to override any light DOM styles with higher specificity
+      font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+      font-size: var(--orion-font-size-title1, 32px) !important;
+      line-height: var(--orion-line-height-xl, 40px) !important;
+      text-align: center;
+    }
+
+    .orion-message__footer {
+      position: absolute;
+      bottom: 0;
+      font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+      font-size: var(--orion-font-size-title5, 16px);
+      line-height: var(--orion-line-height-md, 24px);
+      margin-bottom: var(--orion-line-height-normal, 24px);
+    }
+  }
+
+  .white {
+    color: var(--orion-white, #fff);
+  }
+  .black {
+    color: var(--orion-black, #000);
+  }
+  .red {
+    color: var(--orion-alert-red, #d50032);
+  }
+  .orange {
+    color: var(--orion-alert-orange, #f46335);
+  }
+  .yellow {
+    color: var(--orion-alert-yellow, #edb72b);
+  }
+  .green {
+    color: var(--orion-alert-green, #208500);
+  }
+  .rhapsody-blue {
+    color: var(--orion-rhapsody-blue, #002244);
+  }
+}
+
+::slotted(*) {
+  display: inline;
+}
+
+:host([dismissible]) {
+  .orion-message {
+    position: relative;
+    border-radius: var(--orion-border-radius-md, 8px);
+    border: none;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5);
+    min-height: 52px;
+    background-color: var(--orion-rhapsody-blue, #002244);
+    color: var(--orion-white, #fff);
+
+    &--high {
+      background-color: var(--orion-red, #d50032);
+      color: var(--orion-white, #fff);
+    }
+    &--medium {
+      background-color: var(--orion-orange, #f46335);
+      color: var(--orion-black, #000);
+    }
+    &--low {
+      background-color: var(--orion-yellow, #edb72b);
+      color: var(--orion-black, #000);
+    }
+    &--success {
+      background-color: var(--orion-green, #208500);
+      color: var(--orion-white, #fff);
+    }
+    &--info {
+      background-color: var(--orion-rhapsody-blue, #002244);
+      color: var(--orion-white, #fff);
+    }
+
+    &__close-btn {
+      float: right;
+      padding: 3px;
+      margin-top: -1px;
+      margin-right: -2px;
+      margin-left: 5px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+
+      /* For browsers that don't support :focus-visible */
+      &:focus {
+        outline: var(--orion-border-thicker, 4px solid) var(--orion-white, #fff);
+        border-radius: var(--orion-border-radius, 4px);
+        width: fit-content;
+      }
+
+      /* Remove :focus styling for browsers that do support :focus-visible */
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      /* Add focus styling back in browsers that do support :focus-visible */
+      &:focus-visible {
+        outline: var(--orion-border-thicker, 4px solid) var(--orion-white, #fff);
+        border-radius: var(--orion-border-radius, 4px);
+        width: fit-content;
+      }
+    }
+  }
+}

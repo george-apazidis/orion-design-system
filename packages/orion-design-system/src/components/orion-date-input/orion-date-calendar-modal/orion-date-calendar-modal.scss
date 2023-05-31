@@ -1,0 +1,106 @@
+@use '../../../css/_orion-base.css';
+/* Icon font */
+@use '../../../assets/icons/md/icons.css';
+@use '../../../assets/icons/sm/icons-sm.css';
+
+/* Flatpickr overrides */
+@use '../orion-date-input-flatpickr-overrides.css';
+@use './orion-date-calendar-modal-flatpickr-overrides.css';
+
+/* Flatpickr light theme */
+@import '~flatpickr/dist/themes/light.css';
+
+:host {
+  display: block;
+  --orion-date-calendar-modal-heading-height: 144px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.orion-date-calendar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--orion-z-mid, 100);
+  background-color: #fff;
+  flex-direction: column;
+  &--closed {
+    display: none;
+  }
+  &--open {
+    display: flex;
+  }
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+  &__label {
+    &-heading {
+      font-size: var(--orion-font-size-title4, 20px);
+      line-height: var(--orion-line-height-md, 24px);
+      font-weight: var(--orion-font-weight-semi-bold, 600);
+    }
+    height: calc(var(--orion-date-calendar-modal-heading-height, 72px) / 2);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+  &__close-button {
+    background: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--orion-gray-80, #333);
+  }
+  &__date-selections {
+    height: calc(var(--orion-date-calendar-modal-heading-height, 72px) / 2);
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--orion-gray-40, #999);
+    border-top: 1px solid var(--orion-gray-40, #999);
+    display: flex;
+  }
+  &__date-selection-label {
+    width: 50%;
+    font-size: var(--orion-font-size-body, 18px);
+    line-height: var(--orion-line-height-normal, 24px);
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    color: var(--orion-gray-80);
+    &:nth-of-type(2) {
+      border-left: 1px solid var(--orion-gray-40, #999);
+    }
+    &--selected {
+      background: var(--orion-dusk-25, #eaeaf3);
+    }
+  }
+  &__selected-date {
+    &--selected {
+      color: var(--orion-gray-80, #333);
+    }
+    &--empty {
+      color: var(--orion-gray-60, #666);
+    }
+  }
+  &__flatpickr {
+    flex-grow: 1;
+    height: calc(100% - var(--orion-date-calendar-modal-heading-height, 144px) - var(--orion-touch-size, 60px));
+  }
+  &__date-input {
+    display: none;
+  }
+  &__button {
+    flex-shrink: 0;
+    height: var(--orion-touch-size, 60px);
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Documents/Copy</title>
+    <defs>
+        <path d="M19,4 L19,9 C19,9.46428571 19.4311224,9.92857143 19.8930394,9.99252915 L20,10 L24,10 L24,23 C24,23.4642857 23.5688776,23.9285714 23.1069606,23.9925292 L23,24 L9,24 C8.53571429,24 8.07142857,23.5688776 8.00747085,23.1069606 L8,23 L8,5 C8,4.58214286 8.43112245,4.07806122 8.89303936,4.00818149 L9,4 L19,4 Z M11,0 L11,3 L9,3 L8.85830978,3.00603493 C7.92075186,3.08569698 7.08742941,3.9419575 7.00644106,4.85540165 L7,5 L7,20 L1,20 C0.535714286,20 0.0714285714,19.5688776 0.00747084548,19.1069606 L0,19 L0,1 C0,0.582142857 0.431122449,0.0780612245 0.893039359,0.00818148688 L1,0 L11,0 Z M20,5 L24,9 L20,9 L20,5 Z M12,1 L14,3 L12,3 L12,1 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Documents/Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)" fill="#333333">
+                <g id="Color/Grayscale/80%">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

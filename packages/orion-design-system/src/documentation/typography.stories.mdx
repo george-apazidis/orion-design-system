@@ -1,0 +1,76 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+
+<Meta title="Style guide/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Open Sans", Helvetica, Arial, sans-serif',
+  },
+  weight: {
+    semibold: '600',
+  },
+  size: {
+    t6: 13,
+    t5d: 16,
+    t5m: 18,
+    t4: 20,
+    t3: 24,
+    t2: 28,
+    t1: 32,
+  },
+};
+
+export const SampleText = 'The quick brown fox jumps over the lazy dog';
+
+# Typography
+
+Additional documentation available at [orion.united.com](https://orion.united.com/)
+
+**Font:** Open Sans (--orion-font-family)
+
+**Weights:**  
+100 (--orion-font-weight-thin)  
+200 (--orion-font-weight-extra-light)  
+300 (--orion-font-weight-light)  
+400 (--orion-font-weight-normal)  
+500 (--orion-font-weight-medium)  
+600 (--orion-font-weight-semi-bold)  
+700 (--orion-font-weight-bold)  
+800 (--orion-font-weight-extra-bold)  
+900 (--orion-font-weight-heavy)
+
+**Line heights:**  
+16px (--orion-line-height-sm)  
+24px (--orion-line-height-md)  
+24px (--orion-line-height-normal)  
+32px (--orion-line-height-lg)  
+40px (--orion-line-height-xl)  
+
+**Font sizes:**  
+13px (--orion-font-size-small)  
+13px (--orion-font-size-title6)  
+16px (--orion-font-size-body) (desktop)  
+16px (--orion-font-size-label) (desktop)  
+16px (--orion-font-size-title5) (desktop)  
+18px (--orion-font-size-body) (mobile)  
+18px (--orion-font-size-label) (mobile)  
+18px (--orion-font-size-title5) (mobile)   
+20px (--orion-font-size-title4)  
+24px (--orion-font-size-title3)  
+28px (--orion-font-size-title2)  
+32px (--orion-font-size-title1)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.t6), 
+    Number(typography.size.t5d),
+    Number(typography.size.t5m),
+    Number(typography.size.t4),
+    Number(typography.size.t3),
+    Number(typography.size.t2),
+    Number(typography.size.t1),
+  ]}
+  fontWeight={typography.weight.semibold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>

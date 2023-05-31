@@ -1,0 +1,70 @@
+.flatpickr-override {
+  &--modal {
+    .flatpickr-rContainer {
+      width: 100%;
+    }
+    .flatpickr-innerContainer {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .flatpickr-wrapper {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      height: 100%;
+    }
+    .flatpickr-calendar {
+      position: relative;
+      top: 0;
+      padding: 0 24px;
+      height: 100%;
+      max-height: none;
+      overflow-y: scroll;
+      box-shadow: none;
+      border: none;
+    }
+    .flatpickr-months {
+      display: none;
+    }
+    .flatpickr-weekdays {
+      display: none;
+    }
+    .flatpickr-days {
+      flex-direction: column;
+    }
+    .flatpickr-calendar.multiMonth::after {
+      display: none;
+    }
+    .flatpickr-calendar.multiMonth {
+      .dayContainer {
+        min-width: 0;
+        position: relative;
+        &:first-of-type {
+          margin: 0;
+          margin-top: 95px;
+        }
+        & + .dayContainer {
+          margin: 0;
+          margin-top: 100px;
+        }
+        .flatpickr-day {
+          height: 100%;
+          aspect-ratio: 0.89;
+        }
+      }
+      .flatpickr-weekdaycontainer:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+  &__header {
+    position: absolute;
+    width: 100%;
+    .flatpickr-month {
+      margin-bottom: 24px;
+    }
+    .flatpickr-weekdaycontainer {
+      display: flex;
+    }
+  }
+}

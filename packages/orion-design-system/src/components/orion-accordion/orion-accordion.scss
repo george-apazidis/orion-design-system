@@ -1,0 +1,142 @@
+@use '../../css/_orion-base.css';
+
+button {
+  border: none;
+  outline: none;
+  text-align: left;
+  background-color: transparent;
+}
+
+.orion-accordion__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: inset 0 -1px 0 0 var(--orion-gray-20, #ccc);
+  background-color: var(--orion-color-background, #fff);
+}
+
+.orion-accordion__container--visible {
+  border-radius: var(--orion-border-radius, 4px);
+  box-shadow: inset 0px 0px 0px 1px var(--orion-gray-40, #999);
+}
+
+.orion-accordion__header,
+.orion-accordion__header__title,
+.orion-accordion__panel {
+  width: 100%;
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: var(--orion-font-size-body, 18px);
+  letter-spacing: 0;
+  line-height: var(--orion-line-height-normal, 24px);
+  margin: 0;
+}
+
+.orion-accordion__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: var(--orion-space-md, 8px);
+  font-weight: var(--orion-font-weight-semi-bold, 600);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  outline: none;
+  padding: var(--orion-space-xxl, 18px) 0;
+  transition: var(--orion-transition, 200ms ease-in-out);
+}
+.orion-accordion__container--visible .orion-accordion__header {
+  padding: var(--orion-space-xxl, 18px) var(--orion-space-xl, 16px);
+  border-radius: var(--orion-border-radius, 4px);
+}
+.orion-accordion__header__title {
+  flex: 1;
+}
+
+.orion-accordion__panel {
+  font-weight: var(--orion-font-weight-normal, 400);
+  padding: 0 0 var(--orion-space-xxl, 18px) 0;
+}
+.orion-accordion__container--visible .orion-accordion__panel {
+  width: auto;
+  padding: 0 var(--orion-space-xl, 16px) var(--orion-space-xxl, 18px) var(--orion-space-xl, 16px);
+  border-radius: var(--orion-border-radius, 4px);
+}
+
+.orion-accordion__icon {
+  fill: var(--orion-color-activation, #6244bb);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--orion-icon-size, 24px);
+  height: var(--orion-icon-size, 24px);
+}
+
+/* For browsers that don't support :focus-visible */
+.orion-accordion__header:focus {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+  z-index: var(--orion-z-base, 1);
+}
+/* Remove :focus styling for browsers that do support :focus-visible */
+.orion-accordion__header:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+/* Add focus styling back in browsers that do support :focus-visible */
+.orion-accordion__header:focus-visible {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+  z-index: var(--orion-z-base, 1);
+}
+
+.orion-accordion__panel--open {
+  display: block;
+  height: auto;
+}
+.orion-accordion__panel--closed {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-accordion__header,
+  .orion-accordion__panel {
+    font-size: var(--orion-font-size-body, 16px);
+  }
+  .orion-accordion__header {
+    padding: var(--orion-space-md, 8px) 0;
+  }
+  .orion-accordion__container--visible .orion-accordion__header {
+    padding: var(--orion-space-md, 8px) var(--orion-space-xl, 16px);
+  }
+  .orion-accordion__header.chevron-left {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .orion-accordion__icon {
+    width: var(--orion-icon-size-sm, 16px);
+    height: var(--orion-icon-size-sm, 16px);
+    margin: var(--orion-space-xs, 4px) 0;
+  }
+  .orion-accordion__panel {
+    padding: 0 0 var(--orion-space-xl, 16px) 0;
+  }
+  .orion-accordion__container--visible .orion-accordion__panel {
+    padding: 0 var(--orion-space-xl, 16px) var(--orion-space-xl, 16px) var(--orion-space-xl, 16px);
+  }
+}

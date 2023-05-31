@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Interface/Arrow down</title>
+    <defs>
+        <path d="M18.7283216,14.315 C18.3493216,13.913 17.7173216,13.894 17.3143216,14.272 L10.5003216,20.686 L10.5003216,1 C10.5003216,0.448 10.0523216,0 9.50032155,0 C8.94732155,0 8.50032155,0.448 8.50032155,1 L8.50032155,20.686 L1.68532155,14.272 C1.28332155,13.894 0.650321551,13.913 0.272321551,14.315 C-0.106678449,14.717 -0.0876784487,15.35 0.314321551,15.729 L8.81432155,23.729 C8.86032155,23.772 8.91632155,23.792 8.96732155,23.825 C9.02032155,23.859 9.06632155,23.901 9.12532155,23.925 C9.36532155,24.022 9.63432155,24.022 9.87532155,23.925 C9.93432155,23.901 9.98032155,23.859 10.0323216,23.825 C10.0833216,23.792 10.1393216,23.772 10.1853216,23.729 L18.6853216,15.729 C19.0873216,15.35 19.1063216,14.717 18.7283216,14.315" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-469.000000, -706.000000)" id="Icons/24px/Interface/Arrow-down">
+            <g transform="translate(469.500108, 705.999100)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Fill-1" fill="#D8D8D8" xlink:href="#path-1"></use>
+                <g id="Color/Grayscale/80%" mask="url(#mask-2)" fill="#333333">
+                    <g transform="translate(-2.500108, 0.000900)" id="Rectangle">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

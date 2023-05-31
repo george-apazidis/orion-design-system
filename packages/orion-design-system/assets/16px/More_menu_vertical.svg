@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Interface/More menu vertical</title>
+    <defs>
+        <path d="M3.5,1.5 C3.5,2.32842712 2.82842712,3 2,3 C1.17157288,3 0.5,2.32842712 0.5,1.5 C0.5,0.671572875 1.17157288,4.54747351e-13 2,4.54747351e-13 C2.82842712,4.54747351e-13 3.5,0.671572875 3.5,1.5 Z M3.5,14.5 C3.5,15.3284271 2.82842712,16 2,16 C1.17157288,16 0.5,15.3284271 0.5,14.5 C0.5,13.6715729 1.17157288,13 2,13 C2.82842712,13 3.5,13.6715729 3.5,14.5 Z M3.5,8 C3.5,8.82842712 2.82842712,9.5 2,9.5 C1.17157288,9.5 0.5,8.82842712 0.5,8 C0.5,7.17157288 1.17157288,6.5 2,6.5 C2.82842712,6.5 3.5,7.17157288 3.5,8 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Interface/More-menu-vertical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Color/Grayscale/80%" transform="translate(6.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#7C878E" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-6.000000, 0.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

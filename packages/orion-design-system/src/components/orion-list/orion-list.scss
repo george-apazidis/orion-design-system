@@ -1,0 +1,31 @@
+@use '../../css/_orion-base.css';
+
+:host {
+  display: block;
+}
+
+.orion-list {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  // top border of list container
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--orion-gray-40, #999);
+    z-index: var(--orion-z-base, 1);
+  }
+}

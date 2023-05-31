@@ -1,0 +1,34 @@
+@use '../../css/_orion-base.css';
+
+/**
+* @prop --orion-radio-group-column-gap: value of the column-gap property. Default is 56px. Inline group only displays for desktop (769px and above).
+*/
+
+:host {
+  display: block;
+  outline: none;
+  --orion-radio-group-column-gap: 56px;
+}
+
+fieldset {
+  border: none;
+}
+
+.orion-radio-group--inline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-radio-group--inline {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    column-gap: var(--orion-radio-group-column-gap);
+    row-gap: 0px;
+  }
+}

@@ -1,0 +1,131 @@
+@use '../../css/_orion-base.css';
+
+/**
+ * @prop --orion-progress-meter__color-progress: Color of progress meter
+ * @prop --orion-progress-meter__color-circle-label: Color of center circle background
+ * @prop --orion-progress-meter__color-progess-background: Color of progress meter background
+ * @prop --orion-progress-meter__color-success: Color of progress meter when value equals target
+ * @prop --orion-progress-meter__color-warn: Color of progress meter when value is less than target, but greater than or equal to the percent of target (default 80%)
+ * @prop --orion-progress-meter__color-error: Color of progress meter when value is less than percent of target (default 80%)
+ */
+:host {
+  --orion-progress-meter__color-progress: var(--orion-info, #002244);
+  --orion-progress-meter__color-circle-label: var(--orion-color-background, #fff);
+  --orion-progress-meter__color-progess-background: var(--orion-gray-10, #e6e6e6);
+  --orion-progress-meter__color-success: var(--orion-green, #208500);
+  --orion-progress-meter__color-warn: var(--orion-yellow, #edb72b);
+  --orion-progress-meter__color-error: var(--orion-red, #d50032);
+
+  display: block;
+}
+
+*::selection {
+  background-color: var(--orion-color-background--selection, #d8d9eb);
+}
+
+.orion-progress-meter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--orion-space-md, 8px);
+  border-radius: var(--orion-space-xl, 16px);
+  position: relative;
+}
+
+.orion-progress-meter--circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  &.orion-progress-meter {
+    &--small {
+      width: 56px;
+      height: 56px;
+
+      .orion-progress-meter--circle__overlay {
+        width: 40px;
+        height: 40px;
+      }
+
+      .orion-progress-meter__segment--circle {
+        width: 56px;
+      }
+    }
+    &--medium {
+      width: 88px;
+      height: 88px;
+
+      .orion-progress-meter--circle__overlay {
+        width: 64px;
+        height: 64px;
+      }
+
+      .orion-progress-meter__segment--circle {
+        width: 88px;
+      }
+    }
+    &--large {
+      width: 120px;
+      height: 120px;
+
+      .orion-progress-meter--circle__overlay {
+        width: 88px;
+        height: 88px;
+
+        .orion-progress-meter--circle__value {
+          font-size: 16px;
+        }
+      }
+
+      .orion-progress-meter__segment--circle {
+        width: 120px;
+      }
+    }
+  }
+}
+
+.orion-progress-meter--circle__overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: var(--orion-z-base, 1);
+}
+
+.orion-progress-meter--circle__value {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  font-size: 13px;
+  font-weight: var(--orion-font-weight-bold, 700);
+  letter-spacing: 0;
+  z-index: var(--orion-z-base, 1);
+}
+
+.orion-progress-meter__segment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--orion-space-md, 8px);
+}
+.orion-progress-meter__segment:first-child {
+  border-top-left-radius: var(--orion-space-xl, 16px);
+  border-bottom-left-radius: var(--orion-space-xl, 16px);
+}
+.orion-progress-meter__segment:last-child {
+  border-top-right-radius: var(--orion-space-xl, 16px);
+  border-bottom-right-radius: var(--orion-space-xl, 16px);
+}
+
+.orion-progress-meter__segment--circle {
+  position: absolute;
+  width: 48px;
+  height: 2px;
+}

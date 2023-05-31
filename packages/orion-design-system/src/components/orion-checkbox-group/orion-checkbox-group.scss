@@ -1,0 +1,41 @@
+@use '../../css/_orion-base.css';
+
+/**
+* @prop --orion-checkbox-group-column-gap: value of the column-gap property. Default is 56px. Inline group only displays for desktop (769px and above).
+*/
+
+:host {
+  display: block;
+  --orion-checkbox-group-column-gap: 56px;
+}
+
+.orion-checkbox-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--orion-container-width-md, 944px);
+  margin: 0;
+  padding: 0;
+}
+
+.orion-checkbox-group--inline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-checkbox-group--inline {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    column-gap: var(--orion-checkbox-group-column-gap);
+    row-gap: 0px;
+  }
+}

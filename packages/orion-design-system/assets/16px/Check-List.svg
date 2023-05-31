@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Interface/Check-List</title>
+    <defs>
+        <path d="M5.42866667,8.90333333 L2.27755689,5.75277648 C1.91961354,5.39489594 1.33932363,5.39494686 0.981443091,5.7528902 C0.981406502,5.7529268 0.981369916,5.7529634 0.981333333,5.753 C0.623439585,6.11107785 0.623552195,6.69147622 0.981584866,7.04941517 L4.71946733,10.7863191 C5.1101414,11.1765671 5.74318153,11.1765567 6.13384277,10.7862959 L14.9797698,1.9421032 C15.3372822,1.58466095 15.337339,1.00507573 14.9798968,0.647563382 C14.9798201,0.647486686 14.9797434,0.647410003 14.9796667,0.647333333 C14.6219433,0.289794055 14.0421313,0.289868677 13.6845,0.647500021" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Interface/Check-List" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(0.000000, 2.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#333333" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(0.000000, -2.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

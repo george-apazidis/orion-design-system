@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Documents/Download Excel</title>
+    <defs>
+        <path d="M14,0 L14,6 C14,6.5 14.5,7 15,7 L15,7 L20,7 L20,23 C20,23.5 19.5,24 19,24 L19,24 L1,24 C0.5,24 0,23.5 0,23 L0,23 L0,1 C0,0.5 0.5,0 1,0 L1,0 L14,0 Z M8.17471108,10 L5.1971448,10 L8.29707682,14.8837209 L5,20 L8.03874915,20 L9.95581237,16.874145 L11.8932699,20 L15,20 L11.6145479,15.0957592 L14.7620666,10 L11.6961251,10 L9.96940857,13.0916553 L8.17471108,10 Z M15,1 L20,6 L15,6 L15,1 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Documents/Download-Excel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(2.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-2.000000, 0.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

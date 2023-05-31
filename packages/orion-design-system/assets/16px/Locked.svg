@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Digital/Lock/Locked</title>
+    <defs>
+        <path d="M6.66666667,0.0020612419 C8.66666667,1.57840754e-13 10.6666667,1.77333333 10.6666667,4 L10.6666667,5.33333333 L10.6666667,5.33333333 L12,5.33333333 L12,5.33333333 C12.6666667,5.33333333 13.3333333,6 13.3333333,6.66666667 L13.3333333,14 L13.3333333,14 C13.3333333,14.6666667 12.6666667,15.3333333 12,15.3333333 L1.33333333,15.3333333 L1.33333333,15.3333333 C0.514668109,15.3333333 0,14.6666667 0,14 L0,6.66666667 L0,6.66666667 C0,6 0.666666667,5.33333333 1.33333333,5.33333333 L2.66666667,5.33333333 L2.66666667,5.33333333 L2.66666667,4 C2.66666667,1.77333333 4.66666667,0.00414415702 6.66666667,0.0020612419 Z M6.66666667,2 C5.66666667,2 4.66666667,2.88888889 4.66666667,4 L4.66666667,4 L4.66666667,5.33333333 L8.66666667,5.33333333 L8.66666667,5.33333333 L8.66666667,4 C8.66666667,2.88888889 7.66666667,2 6.66666667,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Digital/Lock/Locked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(1.333333, 0.666667)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-1.333333, -0.666667)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

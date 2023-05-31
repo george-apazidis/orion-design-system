@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Background shape/Info</title>
+    <defs>
+        <path d="M12,24 C18.627417,24 24,18.627417 24,12 C24,5.372583 18.627417,0 12,0 C5.372583,0 0,5.372583 0,12 C0,18.627417 5.372583,24 12,24 Z M10.7,7.1640625 C10.7,6.38801695 11.1322873,6 11.996875,6 C12.8614627,6 13.29375,6.38801695 13.29375,7.1640625 C13.29375,7.53385602 13.1856782,7.82161355 12.9695313,8.02734375 C12.7533843,8.23307395 12.4291688,8.3359375 11.996875,8.3359375 C11.1322873,8.3359375 10.7,7.94531641 10.7,7.1640625 Z M13.184375,18.15625 L10.8015625,18.15625 L10.8015625,9.421875 L13.184375,9.421875 L13.184375,18.15625 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Background-shape/Info" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#002244" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

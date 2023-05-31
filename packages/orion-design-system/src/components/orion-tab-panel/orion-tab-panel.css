@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  --orion-tab-panel-active-display: block;
+  --orion-tab-panel-inactive-display: none;
+}
+
+.orion-tab-panel--active {
+  display: var(--orion-tab-panel-active-display);
+}
+.orion-tab-panel--inactive {
+  display: var(--orion-tab-panel-inactive-display);
+}
+
+/*# sourceMappingURL=orion-tab-panel.css.map */

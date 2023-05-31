@@ -1,0 +1,66 @@
+.flatpickr-override--modal .flatpickr-rContainer {
+  width: 100%;
+}
+.flatpickr-override--modal .flatpickr-innerContainer {
+  position: relative;
+  margin-bottom: 30px;
+}
+.flatpickr-override--modal .flatpickr-wrapper {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  height: 100%;
+}
+.flatpickr-override--modal .flatpickr-calendar {
+  position: relative;
+  top: 0;
+  padding: 0 24px;
+  height: 100%;
+  max-height: none;
+  overflow-y: scroll;
+  box-shadow: none;
+  border: none;
+}
+.flatpickr-override--modal .flatpickr-months {
+  display: none;
+}
+.flatpickr-override--modal .flatpickr-weekdays {
+  display: none;
+}
+.flatpickr-override--modal .flatpickr-days {
+  flex-direction: column;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth::after {
+  display: none;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth .dayContainer {
+  min-width: 0;
+  position: relative;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth .dayContainer:first-of-type {
+  margin: 0;
+  margin-top: 95px;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth .dayContainer + .dayContainer {
+  margin: 0;
+  margin-top: 100px;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth .dayContainer .flatpickr-day {
+  height: 100%;
+  aspect-ratio: 0.89;
+}
+.flatpickr-override--modal .flatpickr-calendar.multiMonth .flatpickr-weekdaycontainer:last-of-type {
+  margin: 0;
+}
+.flatpickr-override__header {
+  position: absolute;
+  width: 100%;
+}
+.flatpickr-override__header .flatpickr-month {
+  margin-bottom: 24px;
+}
+.flatpickr-override__header .flatpickr-weekdaycontainer {
+  display: flex;
+}
+
+/*# sourceMappingURL=orion-date-calendar-modal-flatpickr-overrides.css.map */

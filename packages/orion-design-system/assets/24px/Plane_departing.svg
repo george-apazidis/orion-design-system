@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Travel &amp; Airport/Plane departing</title>
+    <defs>
+        <path d="M23,16.99975 C23.552,16.99975 24,17.44775 24,17.99975 C24,18.55175 23.552,18.99975 23,18.99975 L1,18.99975 C0.448,18.99975 0,18.55175 0,17.99975 C0,17.44775 0.448,16.99975 1,16.99975 L23,16.99975 Z M19.361,1.23675 C20.785,0.56175 22.584,1.08675 23.109,1.23675 C24.159,1.61175 24.309,2.28675 23.409,3.03675 C22.959,3.41075 18.086,5.58575 8.714,9.63375 C5.64,10.83375 2.341,10.68375 1.816,10.45875 C1.366,10.23375 1.516,9.93375 1.966,9.33475 C1.291,8.65975 0.616,7.90975 0.017,7.15975 C-0.133,6.85975 0.766,6.40975 1.216,6.33475 C1.741,6.33475 2.941,6.78475 5.115,7.53475 C6.39,7.00975 7.889,6.33475 9.689,5.51075 L5.04,1.23675 C4.89,1.08675 5.265,0.78675 5.64,0.56175 C5.94,0.41175 6.24,0.26175 6.54,0.11175 C6.914,-0.03725 7.289,-0.03725 7.664,0.11175 L14.862,3.41075 C16.811,2.43675 18.386,1.76175 19.361,1.23675" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-947.000000, -1173.000000)" id="Icons/24px/Travel-&amp;-Airport/Plane-departing">
+            <g transform="translate(947.000000, 1173.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Fill-1" fill="#333333" xlink:href="#path-1"></use>
+                <g id="Color/Grayscale/80%" mask="url(#mask-2)" fill="#333333">
+                    <g transform="translate(0.000000, -4.000000)" id="Rectangle">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

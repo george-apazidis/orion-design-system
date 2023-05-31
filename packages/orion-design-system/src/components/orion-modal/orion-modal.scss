@@ -1,0 +1,334 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+* @prop --orion-modal-max-height-mobile: value of the max-height property. Default value is 480px. Value can be in px, percentage or vh. Recommend do not exceed 667px (iPhone SE height).
+* @prop --orion-modal-max-height-desktop: value of the max-height property. Default value is 50vh. Value can be in px, percentage or vh.
+* @prop --orion-modal-height-mobile: value of the height property. Default value is auto. Value can be in px, percentage or vh.
+* @prop --orion-modal-height-desktop: value of the height property. Default value is auto. Value can be in px, percentage or vh.
+* @prop --orion-modal-footer-divider-color: value of the custom footer divider color. Default value is var(--orion-gray-40, #999).
+*/
+
+:host {
+  display: block;
+  --orion-modal-max-height-mobile: 480px;
+  --orion-modal-max-height-desktop: 50vh;
+  --orion-modal-height-mobile: auto;
+  --orion-modal-height-desktop: auto;
+  --orion-modal-footer-divider-color: var(--orion-gray-40, #999);
+}
+
+button {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.orion-modal__wrapper {
+  position: fixed;
+  z-index: var(--orion-z-very-high, 5000);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.orion-modal__scrim {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.orion-modal {
+  position: fixed;
+  /* Center top left corner of modal */
+  top: 50%;
+  left: 50%;
+  /* Center modal on screen and push off bottom of page */
+  transform: translate(-50%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: none;
+  border-radius: var(--orion-border-radius, 4px);
+  box-sizing: border-box;
+  box-shadow: var(--orion-box-shadow-standard, inset 0 0 0 1px) var(--orion-gray-40, #999), 4px 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: var(--orion-color-background, #fff);
+  padding: var(--orion-space-xl, 16px);
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  color: var(--orion-color-text, #333);
+  width: 368px;
+  min-height: 140px;
+  height: var(--orion-modal-height-mobile);
+  max-height: var(--orion-modal-max-height-mobile);
+  opacity: 0;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: var(--orion-space-md, 8px);
+    width: 100%;
+    position: relative;
+  }
+
+  &__icon {
+    display: inline-flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: var(--orion-line-height-lg, 32px);
+    width: var(--orion-line-height-lg, 32px);
+    height: var(--orion-line-height-lg, 32px);
+  }
+
+  &__title {
+    align-self: flex-start;
+    text-align: left;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    font-size: var(--orion-font-size-title3, 24px);
+    font-weight: var(--orion-font-weight-semi-bold, 600);
+    letter-spacing: 0;
+    line-height: var(--orion-line-height-lg, 32px);
+    padding: 0;
+    margin: 0 var(--orion-space-xxxl, 32px) var(--orion-space-xl, 16px) 0;
+  }
+
+  &__title--centered {
+    text-align: center;
+    margin-left: var(--orion-space-xxxl, 32px);
+  }
+
+  &__title--centered-with-icon {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 100%;
+    font-size: var(--orion-font-size-body, 18px);
+    font-weight: var(--orion-font-weight-normal, 400);
+    letter-spacing: 0;
+    line-height: var(--orion-line-height-normal, 24px);
+    margin: 0 0 var(--orion-space-xl, 16px) 0;
+    padding-right: 2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 64px;
+
+    &--no-title-with-cancel {
+      margin-top: 40px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    gap: var(--orion-space-xl, 16px);
+  
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--orion-space-xl, 16px);
+      gap: 20px;
+      width: 100%;
+      border-top: var(--orion-border-standard, 1px solid) var(--orion-modal-footer-divider-color);
+      padding-top: var(--orion-space-xl, 16px);
+    }
+
+    &-button-row {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--orion-space-xl, 16px);
+      width: 100%;
+  
+      > * {
+        flex: 1;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--orion-space-xl, 16px);
+      width: 100%;
+  
+      > * {
+        flex: 1;
+      }
+    }
+
+    &-left {
+      justify-content: flex-start;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-right {
+      justify-content: flex-end;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  &__close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+
+    & svg {
+      fill: var(--orion-gray-60, #666);
+    }
+
+    /* For browsers that don't support :focus-visible */
+    &:focus {
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+      box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+    }
+
+    /* Remove :focus styling for browsers that do support :focus-visible */
+    &:focus:not(:focus-visible) {
+      box-shadow: none;
+    }
+
+    /* Add focus styling back in browsers that do support :focus-visible */
+    &:focus-visible {
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+      box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+    }
+  }
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.orion-modal__wrapper.is-open .orion-modal__scrim {
+  transition: var(--orion-transition--slow, 400ms ease-in-out);
+  opacity: 1;
+}
+.orion-modal__wrapper.is-open .orion-modal {
+  transition: var(--orion-transition--slow, 400ms ease-in-out);
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.orion-modal--fullscreen,
+.orion-modal--fullscreen-mobile {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+}
+
+::slotted([slot="orion-modal-footer-left"]) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+::slotted([slot="orion-modal-footer-center"]) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+::slotted([slot="orion-modal-footer-right"]) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 769px) {
+  .orion-modal {
+    min-width: 368px;
+    width: auto;
+    max-width: 50vw;
+    min-height: 216px;
+    height: var(--orion-modal-height-desktop);
+    max-height: var(--orion-modal-max-height-desktop);
+
+    &__icon {
+      font-size: var(--orion-line-height-normal, 24px);
+      width: var(--orion-line-height-normal, 24px);
+      height: var(--orion-line-height-normal, 24px);
+    }
+
+    &__title {
+      font-size: var(--orion-font-size-title4, 20px);
+      line-height: var(--orion-line-height-normal, 24px);
+    }
+
+    &__body {
+      font-size: var(--orion-modal__body-font-size, 16px);
+      margin-bottom: var(--orion-space-xxxl, 32px);
+
+      &--no-title-with-cancel {
+        margin-top: 36px;
+      }
+    }
+
+    &__footer {
+
+      &-button-row {
+        display: flex;
+        flex-direction: row;
+      }
+      &-buttons {
+        > * {
+          flex: 0;
+          min-width: 146px;
+        }
+      }
+    }
+
+    &__close-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .orion-modal--fullscreen {
+    width: 80vw;
+    max-width: 80%;
+    height: 80vh;
+    max-height: 80%;
+  }
+}

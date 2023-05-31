@@ -1,0 +1,112 @@
+@use '../../css/_orion-base.css';
+/* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+/**
+* @prop --orion-nav-menu-top-value-mobile: top starting position of nav-menu on mobile (default is 60px)
+* @prop --orion-nav-menu-top-value-desktop: top starting position of nav-menu on desktop (default is 80px)
+* @prop --orion-nav-menu-bg-color: Background color of nav-menu (default is #334e69)
+* @prop --orion-nav-menu-color: Text color of nav-menu (default is #fff)
+* @prop --orion-nav-menu-width-mobile: Width of nav-menu on mobile (default is 100%)
+* @prop --orion-nav-menu-width-desktop: Width of nav-menu on desktop (default is 414px)
+*/
+
+:host {
+  display: block;
+  --orion-nav-menu-top-value-mobile: 60px;
+  --orion-nav-menu-top-value-desktop: 80px;
+  --orion-nav-menu-bg-color: var(--orion-rhapsody-blue-80, #334e69);
+  --orion-nav-menu-color: var(--orion-white, #fff);
+  --orion-nav-menu-width-mobile: 100%;
+  --orion-nav-menu-width-desktop: 414px;
+}
+
+.orion-nav-menu {
+  font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--orion-nav-menu-top-value-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100% - var(--orion-nav-menu-top-value-mobile));
+  width: var(--orion-nav-menu-width-mobile);
+  transform: translateX(-100%);
+  z-index: var(--orion-z-negative, -1);
+  background-color: var(--orion-nav-menu-bg-color);
+  color: var(--orion-nav-menu-color);
+  visibility: hidden;
+  transition: var(--orion-transition, 200ms ease-in-out);
+  box-sizing: border-box;
+
+  &.is-open {
+    transform: translateX(0);
+    z-index: var(--orion-z-high, 500);
+    visibility: visible;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 24px;
+    background-color: transparent;
+    color: var(--orion-nav-menu-color);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 0;
+
+    /* For browsers that don't support :focus-visible */
+    &:focus {
+      outline: var(--orion-border-thicker, 4px solid) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+      width: fit-content;
+    }
+
+    /* Remove :focus styling for browsers that do support :focus-visible */
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Add focus styling back in browsers that do support :focus-visible */
+    &:focus-visible {
+      outline: var(--orion-border-thicker, 4px solid) var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+      border-radius: var(--orion-border-radius, 4px);
+      width: fit-content;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px 18px;
+    font-size: var(--orion-font-size-title3, 24px);
+    line-height: var(--orion-line-height-lg, 32px);
+    font-weight: var(--orion-font-weight-semi-bold, 600);
+    height: var(--orion-line-height-lg, 32px);
+
+    &:has(> button) {
+      padding-right: 72px;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .orion-nav-menu {
+    top: var(--orion-nav-menu-top-value-desktop);
+    width: var(--orion-nav-menu-width-desktop);
+    height: calc(100vh - var(--orion-nav-menu-top-value-desktop));
+
+    &__header {
+      padding-bottom: 23px;
+    }
+  }
+}

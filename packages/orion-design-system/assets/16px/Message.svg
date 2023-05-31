@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Digital/Message</title>
+    <defs>
+        <path d="M14,0.5 L2,0.5 C0.8954305,0.5 -1.3527075e-16,1.3954305 0,2.5 L0,9.30609091 C1.3527075e-16,10.4106604 0.8954305,11.3060909 2,11.3060909 L2.66666667,11.3060909 L2.66666667,11.3060909 L2.66666667,14.5 L7.33333333,11.3060909 L14,11.3060909 C15.1045695,11.3060909 16,10.4106604 16,9.30609091 L16,2.5 C16,1.3954305 15.1045695,0.5 14,0.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Digital/Message" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(0.000000, 0.500000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(0.000000, -0.681818)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16.3636364"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

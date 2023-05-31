@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Digital/Mileageplus</title>
+    <defs>
+        <path d="M1.89503613,0 C1.67403151,0 1.5,0.180790071 1.5,0.410377463 L1.5,15.5887439 C1.5,15.9991214 1.84566956,16.0295355 2.029025,15.9743227 L8,13.7344457 L13.970975,15.9743227 C14.1313202,16.0410502 14.5,15.9991214 14.5,15.5887439 L14.5,0.410377463 C14.5,0.180790071 14.318268,0 14.1049639,0 L1.89503613,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Digital/Mileageplus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

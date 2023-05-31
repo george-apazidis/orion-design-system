@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/16px/Interface/Check-Box</title>
+    <defs>
+        <path d="M11.3320047,0.714609929 L5.07740717,6.8996899 L5.07740717,6.8996899 L3.03397247,4.87916465 C2.56598346,4.41642239 1.81279604,4.41634639 1.34471366,4.8789942 C0.883460125,5.33489245 0.879118812,6.07839087 1.33501706,6.5396444 C1.33814235,6.5428064 1.34128557,6.54595063 1.34444657,6.54907693 L3.38729809,8.56950249 L3.38729809,8.56950249 L3.38729809,8.57085075 L4.1292837,9.304864 C4.51868295,9.69007931 5.14551711,9.69034283 5.53524012,9.30545507 L6.52344242,8.32951328 L6.52344242,8.32951328 L12.777428,2.14382978 C13.1720773,1.75349058 13.1755713,1.11713166 12.7852321,0.722482344 C12.7826105,0.71983179 12.7799742,0.717195843 12.7773233,0.714574626 C12.3768944,0.318635046 11.7324142,0.318650788 11.3320047,0.714609929 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/16px/Interface/Check-Box" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(1.000000, 3.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#333333" xlink:href="#path-1"></use>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(-1.000000, -3.000000)" id="Color/Grayscale/80%">
+                    <rect id="Rectangle" fill="#333333" x="0" y="0" width="16" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

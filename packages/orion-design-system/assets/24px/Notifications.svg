@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/24px/Digital/Notifications</title>
+    <defs>
+        <path d="M16.0374568,21.0335555 C15.504112,22.7567814 13.8919834,24 12.0065308,24 C10.0956807,24 8.48355218,22.7567814 7.95020733,21.0335555 L7.95020733,21.0335555 Z M12.006047,0 C13.3956462,0 14.5240152,1.11961679 14.5240152,2.49843748 L14.5240152,2.49843748 L14.5240152,3.37205058 C17.4640636,4.4064661 19.573255,7.17490762 19.573255,10.4497567 L19.573255,10.4497567 L19.573255,14.3138147 L22.5,17.2178583 L22.5,19.802697 L1.5,19.802697 L1.5,17.2178583 L4.42674499,14.3138147 L4.42674499,10.4497567 C4.42674499,7.17490762 6.52384243,4.38126572 9.4759848,3.37205058 L9.4759848,3.37205058 L9.4759848,2.49843748 C9.4759848,1.11961679 10.6043538,0 12.006047,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/24px/Digital/Notifications" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#0C2340" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#333333">
+            <g id="Color/Grayscale/80%">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

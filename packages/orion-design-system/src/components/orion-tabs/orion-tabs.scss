@@ -1,0 +1,163 @@
+@use '../../css/_orion-base.css';
+// /* Icon font */
+@use '../../assets/icons/md/icons.css';
+@use '../../assets/icons/sm/icons-sm.css';
+
+:host {
+  display: block;
+  --orion-tabs-focus: var(--orion-color-focus, rgba(182, 184, 220, 0.5));
+}
+
+.orion-icon {
+  height: var(--orion-icon-size-sm, 16px);
+  position: relative;
+  top: 1px;
+  .orion-tabs__nav-button--left & {
+    margin-right: 5px;
+  }
+  .orion-tabs__nav-button--right & {
+    margin-left: 1px;
+  }
+}
+
+.orion-tabs {
+  position: relative;
+  margin: var(--orion-space-xs, 4px) 0;
+  &__nav-button {
+    position: absolute;
+    top: -4px;
+    z-index: var(--orion-z-mid, 100);
+    justify-content: center;
+    align-items: center;
+    height: calc(100% + 8px);
+    color: var(--orion-atlantic-amethyst, #6244bb);
+    border-color: var(--orion-gray-20, #ccc);
+    border-style: solid;
+    border-width: 0;
+    background: var(--orion-white, #fff);
+    font-size: var(--orion-font-size-title6, 16px);
+    line-height: var(--orion-line-height-sm, 24px);
+    cursor: pointer;
+    display: none;
+    @media screen and (min-width: 769px) {
+      display: flex;
+    }
+    &--left {
+      padding: 0 var(--orion-space-xl, 16px) 0 var(--orion-space-xs, 4px);
+      left: 0;
+      border-right-width: 1px;
+      box-shadow: 6px 0 6px -6px rgba(0, 0, 0, 0.13);
+      &::after {
+        left: 0;
+      }
+    }
+    &--right {
+      padding: 0 var(--orion-space-xs, 4px) 0 var(--orion-space-xl, 16px);
+      right: 0;
+      border-left-width: 1px;
+      box-shadow: -6px 0 6px -6px rgba(0, 0, 0, 0.13);
+      &::after {
+        right: 0;
+      }
+    }
+    &--hidden {
+      opacity: 0;
+      transition: opacity var(--orion-transition, 0.1s ease-in);
+      pointer-events: none;
+    }
+    &--visible {
+      opacity: 1;
+      transition: opacity var(--orion-transition, 0.1s ease-out);
+      pointer-events: auto;
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: var(--orion-space-xs, 4px);
+      width: calc(100% - 7px);
+      height: 1px;
+      background-color: var(--orion-atlantic-amethyst, #6244bb);
+      transition: height var(--orion-transition, 0.1s ease-out);
+    }
+    &--offscreen-selection {
+      &::after {
+        height: 4px;
+        bottom: 3px;
+      }
+    }
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      height: 0;
+      display: none;
+    }
+    &--held {
+      scroll-behavior: auto;
+      .orion-tabs__list-button {
+        cursor: grab;
+      }
+    }
+  }
+  &__list-item {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    flex: 1 1 0;
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: var(--orion-gray-60, #666);
+      left: 0;
+      bottom: 0;
+      transition: all var(--orion-transition, 0.1s ease-out);
+      z-index: var(--orion-z-low, 10);
+    }
+    &--active {
+      &::after {
+        height: 4px;
+        background: var(--orion-rhapsody-blue, #002244);
+      }
+    }
+  }
+  &__list-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 10px 25px;
+    color: inherit;
+    color: var(--orion-gray-60, #666);
+    font-size: var(--orion-font-size-title5, 16px);
+    line-height: var(--orion-line-height-normal, 24px);
+    font-family: var(--orion-font-family, 'Open Sans', Arial, Helvetica, sans-serif);
+    border: 4px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    &:focus-visible {
+      border-color: var(--orion-tabs-focus);
+    }
+    &:focus {
+      outline: none;
+    }
+    .orion-tabs__list-item--active & {
+      color: var(--orion-rhapsody-blue, #002244);
+    }
+  }
+}

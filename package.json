@@ -1,0 +1,32 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo tests",
+    "deleteCopies": "rm -rf **/*/package.jsonpackage.copyfile",
+    "release-react": "cd packages/orion-design-system-react && npm run release",
+    "release-vue": "cd packages/orion-design-system-vue && npm run release",
+    "release-stencil": "cd packages/orion-design-system && npm run release",
+    "release": "bash release.sh",
+    "build-storybook": "cd packages/orion-design-system && npm run build-storybook",
+    "install-stencil": "cd packages/orion-design-system && npm install",
+    "lint-stencil": "cd packages/orion-design-system && npm run lint",
+    "build-stencil": "cd packages/orion-design-system && npm run build",
+    "husky-prettier": "prettier --write './packages/orion-design-system/src/components/**/*.{js, tsx}'",
+    "husky-eslint-check": "eslint './packages/orion-design-system/src/components/**/*.js'",
+    "husky-eslint-fix": "eslint --fix './packages/orion-design-system/src/components/**/*.js'",
+    "deploy": "bash release.sh"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "husky": "^8.0.0",
+    "lerna": "^6.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifactorycloud.ual.com/artifactory/api/npm/l-npm/"
+  },
+  "version": "1.15.0"
+}

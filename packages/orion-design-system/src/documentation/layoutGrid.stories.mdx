@@ -1,0 +1,255 @@
+import { Meta } from '@storybook/addon-docs/';
+
+
+<Meta title="Style guide/Layout grid" />
+
+# Layout grid
+
+The layout grid is a 12-column grid that is used to create consistent layouts. It is based on the [Bootstrap grid](https://getbootstrap.com/docs/4.0/layout/grid/).
+
+The grid is responsive and will automatically adjust to the size of the viewport. The grid is built using CSS flexbox. Use the layout grid classes to create a responsive grid layout. 
+
+For viewports 768px and smaller (XS and SM), mobile patterns will be used.
+
+For viewports 769px and larger (SM, MD, LG and XL), desktop patterns will be used.
+
+Additional documentation available at [orion.united.com](https://orion.united.com/)
+#
+
+## Breakpoints
+
+The grid has 5 breakpoints:
+
+| Breakpoint | Viewport size | Component pattern |
+| --- | --- | --- |
+| XS | 0px - 743px | Mobile |
+| SM | 744px - 768px | Mobile |
+| SM | 769px - 1023px | Desktop |
+| MD | 1024px - 1439px | Desktop |
+| LG | 1440px - 1919px | Desktop |
+| XL | 1920px - ∞ | Desktop |
+#
+
+## Containers
+
+The grid is built using containers. The container class `orion-container` is used to create a container that will center the grid and add padding to the left and right of the grid. The container class is required for the grid to work.
+
+The grid has 5 container sizes:
+
+| Breakpoint | Container size |
+| --- | --- |
+| XS | 368px |
+| SM | 656px |
+| MD | 944px | 
+| LG | 1320px |
+| XL | 1792px |
+#
+
+### Fluid containers
+
+A fluid container is a container that will expand to the full width of the viewport and is not limited to a fixed width. It is useful for layouts that need to be full width. The fluid container class `orion-container-fluid` is used to create a fluid container. The fluid container class is required for the grid to work.
+#
+
+## Row
+
+The row class `orion-row` is used to create a row that will contain the columns. The row class is required for the grid to work.
+#
+
+## Columns
+
+The column classes are used to create the columns. The column classes are required for the grid to work.
+
+The column classes are named using the format `orion-col-{breakpoint}-{number of columns}`. The breakpoint is the viewport size that the column will be used for. The number of columns is the number of columns that the column will span.
+
+The column classes are:
+
+| Class | Breakpoint | Number of columns |
+| --- | --- | --- |
+| orion-col-1 | XS, SM, MD, LG, XL | 1 |
+| orion-col-2 | XS, SM, MD, LG, XL | 2 |
+| orion-col-3 | XS, SM, MD, LG, XL | 3 |
+| orion-col-4 | XS, SM, MD, LG, XL | 4 |
+| orion-col-5 | XS, SM, MD, LG, XL | 5 |
+| orion-col-6 | XS, SM, MD, LG, XL | 6 |
+| orion-col-7 | XS, SM, MD, LG, XL | 7 |
+| orion-col-8 | XS, SM, MD, LG, XL | 8 |
+| orion-col-9 | XS, SM, MD, LG, XL | 9 |
+| orion-col-10 | XS, SM, MD, LG, XL | 10 |
+| orion-col-11 | XS, SM, MD, LG, XL | 11 |
+| orion-col-12 | XS, SM, MD, LG, XL | 12 |
+| orion-col-xs-1 | XS | 1 |
+| orion-col-xs-2 | XS | 2 |
+| orion-col-xs-3 | XS | 3 |
+| orion-col-xs-4 | XS | 4 |
+| orion-col-xs-5 | XS | 5 |
+| orion-col-xs-6 | XS | 6 |
+| orion-col-xs-7 | XS | 7 |
+| orion-col-xs-8 | XS | 8 |
+| orion-col-xs-9 | XS | 9 |
+| orion-col-xs-10 | XS | 10 |
+| orion-col-xs-11 | XS | 11 |
+| orion-col-xs-12 | XS | 12 |
+| orion-col-sm-1 | SM | 1 |
+| orion-col-sm-2 | SM | 2 |
+| orion-col-sm-3 | SM | 3 |
+| orion-col-sm-4 | SM | 4 |
+| orion-col-sm-5 | SM | 5 |
+| orion-col-sm-6 | SM | 6 |
+| orion-col-sm-7 | SM | 7 |
+| orion-col-sm-8 | SM | 8 |
+| orion-col-sm-9 | SM | 9 |
+| orion-col-sm-10 | SM | 10 |
+| orion-col-sm-11 | SM | 11 |
+| orion-col-sm-12 | SM | 12 |
+| orion-col-md-1 | MD | 1 |
+| orion-col-md-2 | MD | 2 |
+| orion-col-md-3 | MD | 3 |
+| orion-col-md-4 | MD | 4 |
+| orion-col-md-5 | MD | 5 |
+| orion-col-md-6 | MD | 6 |
+| orion-col-md-7 | MD | 7 |
+| orion-col-md-8 | MD | 8 |
+| orion-col-md-9 | MD | 9 |
+| orion-col-md-10 | MD | 10 |
+| orion-col-md-11 | MD | 11 |
+| orion-col-md-12 | MD | 12 |
+| orion-col-lg-1 | LG | 1 |
+| orion-col-lg-2 | LG | 2 |
+| orion-col-lg-3 | LG | 3 |
+| orion-col-lg-4 | LG | 4 |
+| orion-col-lg-5 | LG | 5 |
+| orion-col-lg-6 | LG | 6 |
+| orion-col-lg-7 | LG | 7 |
+| orion-col-lg-8 | LG | 8 |
+| orion-col-lg-9 | LG | 9 |
+| orion-col-lg-10 | LG | 10 |
+| orion-col-lg-11 | LG | 11 |
+| orion-col-lg-12 | LG | 12 |
+| orion-col-xl-1 | XL | 1 |
+| orion-col-xl-2 | XL | 2 |
+| orion-col-xl-3 | XL | 3 |
+| orion-col-xl-4 | XL | 4 |
+| orion-col-xl-5 | XL | 5 |
+| orion-col-xl-6 | XL | 6 |
+| orion-col-xl-7 | XL | 7 |
+| orion-col-xl-8 | XL | 8 |
+| orion-col-xl-9 | XL | 9 |
+| orion-col-xl-10 | XL | 10 |
+| orion-col-xl-11 | XL | 11 |
+| orion-col-xl-12 | XL | 12 |
+#
+
+## Gutters
+
+Gutters, the space between the columns, is pre-defined in the grid. The gutters are 16px wide for XS, SM and MD breakpoints. The gutters are 24px wide for LG  breakpoints. The gutters are 32px wide for XL breakpoints.
+#
+
+### No gutters
+
+The class `orion-no-gutters` is used to remove the gutters from the row.
+#
+
+### Vertical spacing
+
+Vertical spacing is the space between the rows. The vertical spacing is pre-defined at 8px for all viewports.
+#
+
+## Ordering
+
+The order classes are used to change the order of the columns. The order classes are named using the format `orion-order-{breakpoint}-{number}`. The breakpoint is the viewport size that the order will be used for. The number is the order that the column will be ordered to.
+
+The order classes are:
+
+| Class | Breakpoint | Number |
+| --- | --- | --- |
+| orion-order-1 | XS, SM, MD, LG, XL | 1 |
+| orion-order-2 | XS, SM, MD, LG, XL | 2 |
+| orion-order-3 | XS, SM, MD, LG, XL | 3 |
+| orion-order-4 | XS, SM, MD, LG, XL | 4 |
+| orion-order-5 | XS, SM, MD, LG, XL | 5 |
+| orion-order-6 | XS, SM, MD, LG, XL | 6 |
+| orion-order-7 | XS, SM, MD, LG, XL | 7 |
+| orion-order-8 | XS, SM, MD, LG, XL | 8 |
+| orion-order-9 | XS, SM, MD, LG, XL | 9 |
+| orion-order-10 | XS, SM, MD, LG, XL | 10 |
+| orion-order-11 | XS, SM, MD, LG, XL | 11 |
+| orion-order-12 | XS, SM, MD, LG, XL | 12 |
+| orion-order-xs-1 | XS | 1 |
+| ... | .. | .. |
+| orion-order-xs-12 | XS | 12 |
+| orion-order-sm-1 | SM | 1 |
+| ... | .. | .. |
+| orion-order-sm-12 | SM | 12 |
+| orion-order-md-1 | MD | 1 |
+| ... | .. | .. |
+| orion-order-md-12 | MD | 12 |
+| orion-order-lg-1 | LG | 1 |
+| ... | .. | .. |
+| orion-order-lg-12 | LG | 12 |
+| orion-order-xl-1 | XL | 1 |
+| ... | .. | .. |
+| orion-order-xl-12 | XL | 12 |
+#
+
+## Offsets
+
+The offset classes are used to offset the columns. The offset classes are named using the format `orion-offset-{breakpoint}-{number of columns}`. The breakpoint is the viewport size that the offset will be used for. The number of columns is the number of columns that the offset will offset the column by.
+
+The offset classes are:
+
+| Class | Breakpoint | Number of columns |
+| --- | --- | --- |
+| orion-offset-1 | XS, SM, MD, LG, XL | 1 |
+| orion-offset-2 | XS, SM, MD, LG, XL | 2 |
+| orion-offset-3 | XS, SM, MD, LG, XL | 3 |
+| orion-offset-4 | XS, SM, MD, LG, XL | 4 |
+| orion-offset-5 | XS, SM, MD, LG, XL | 5 |
+| orion-offset-6 | XS, SM, MD, LG, XL | 6 |
+| orion-offset-7 | XS, SM, MD, LG, XL | 7 |
+| orion-offset-8 | XS, SM, MD, LG, XL | 8 |
+| orion-offset-9 | XS, SM, MD, LG, XL | 9 |
+| orion-offset-10 | XS, SM, MD, LG, XL | 10 |
+| orion-offset-11 | XS, SM, MD, LG, XL | 11 |
+| orion-offset-12 | XS, SM, MD, LG, XL | 12 |
+| orion-offset-xs-1 | XS | 1 |
+| ... | .. | .. |
+| orion-offset-xs-12 | XS | 12 |
+| orion-offset-sm-1 | SM | 1 |
+| ... | .. | .. |
+| orion-offset-sm-12 | SM | 12 |
+| orion-offset-md-1 | MD | 1 |
+| ... | .. | .. |
+| orion-offset-md-12 | MD | 12 |
+| orion-offset-lg-1 | LG | 1 |
+| ... | .. | .. |
+| orion-offset-lg-12 | LG | 12 |
+| orion-offset-xl-1 | XL | 1 |
+| ... | .. | .. |
+| orion-offset-xl-12 | XL | 12 |
+#
+
+## Auto width
+
+The auto width classes are used to set the width of the column to auto. The auto width classes are named using the format `orion-col-{breakpoint}-auto`. The breakpoint is the viewport size that the auto width will be used for.
+
+The auto width classes are:
+
+| Class | Breakpoint |
+| --- | --- |
+| orion-col-auto | XS, SM, MD, LG, XL |
+| orion-col-xs-auto | XS |
+| orion-col-sm-auto | SM |
+| orion-col-md-auto | MD |
+| orion-col-lg-auto | LG |
+| orion-col-xl-auto | XL |
+#
+
+## CSS file
+
+The full CSS file for the grid is available at [https://github.com/United-Airlines-Org/orion-design-system/blob/main/packages/orion-design-system/src/css/_orion-grid.css](https://github.com/United-Airlines-Org/orion-design-system/blob/main/packages/orion-design-system/src/css/_orion-grid.css)
+#
+
+## HTML sample code
+
+The HTML sample code for the grid is available at [https://github.com/United-Airlines-Org/orion-design-system/blob/main/packages/orion-design-system/src/index.html](https://github.com/United-Airlines-Org/orion-design-system/blob/main/packages/orion-design-system/src/index.html)
+#
